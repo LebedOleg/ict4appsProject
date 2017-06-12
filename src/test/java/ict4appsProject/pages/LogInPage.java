@@ -10,7 +10,19 @@ import net.thucydides.core.pages.PageObject;
 public class LogInPage extends PageObject {
 
 
-    public static void enterEmailAddress() {
-        $(Locators)
+    public void enterEmailAddress() {
+        $(Locators.LogInEmailField).clear();
+        $(Locators.LogInEmailField).sendKeys("test@liferay.com");
+
+    }
+
+    public void enterPassword() {
+        $(Locators.LogInPasswordField).clear();
+        $(Locators.LogInPasswordField).sendKeys("test-ict4apps!");
+    }
+
+
+    public void clickOnLogInButton() {
+        $(Locators.LogInButton).click();
     }
 }

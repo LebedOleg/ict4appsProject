@@ -7,6 +7,12 @@ public interface Locators {
     String LogInLink = "//a[text()='Войти']";
     String LogInEmailField = ".//*[@id='_58_login']";
     String LogInPasswordField = ".//*[@id='_58_password']";
+    String LogInButton = "//button[text()=' Войти ']";
+
+
+    String ControlDropDownMenu = "//span[text()=' Управление ']";
+    String ControllDropDownMenuCatalogItem = "//span[text()=' Каталог ']";
+    String ProductsCatalogItem = "//span[text()='Продукты']";
 
 
     //TODO:   WELCOME PAGE

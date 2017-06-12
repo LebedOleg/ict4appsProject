@@ -9,7 +9,8 @@ Scenario: Create product with SKU
   And Enter Email address
   And Enter Password
   And Click on LogInButton
-  When
+  When Click on Control DropDown menu
+  And Click on Catalog item of Control DropDown menu
   Then
 
   Scenario: Create product without SKU

@@ -39,6 +39,16 @@ public class EndUserSteps {
 
 @Step
     public void enterEmailAddress() {
-        LogInPage.enterEmailAddress();
+        logInPage.enterEmailAddress();
+    }
+
+    @Step
+    public void enterPassword() {
+        logInPage.enterPassword();
+    }
+
+    @Step
+    public void clickOnLogInButton() {
+        logInPage.clickOnLogInButton();
     }
 }

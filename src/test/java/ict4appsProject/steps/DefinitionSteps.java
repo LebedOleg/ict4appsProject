@@ -41,4 +41,24 @@ public class DefinitionSteps {
     public void enterEmailAddress() throws Throwable {
         anna.enterEmailAddress();
     }
+
+    @And("^Enter Password$")
+    public void enterPassword() throws Throwable {
+        anna.enterPassword();
+    }
+
+    @And("^Click on LogInButton$")
+    public void clickOnLogInButton() throws Throwable {
+        anna.clickOnLogInButton();
+    }
+
+    @When("^Click on Control DropDown menu$")
+    public void clickOnControlDropDownMenu() throws Throwable {
+
+    }
+
+    @And("^Click on Catalog item of Control DropDown menu$")
+    public void clickOnCatalogItemOfControlDropDownMenu() throws Throwable {
+        // Writ
+    }
 }
