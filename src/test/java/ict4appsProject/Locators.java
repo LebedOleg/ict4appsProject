@@ -23,4 +23,4 @@ public interface Locators {
     //TODO:   WELCOME PAGE
     String SuperCarouselItem = "((//div[@class='slick-track' ])[2]/div[@aria-hidden='false']//img)[$1]";
 }
-sfgfs
+sfgfscasdcvas
