@@ -81,4 +81,49 @@ public class DefinitionSteps {
     public void clickOnTypeOfStructuresDropdownItem() throws Throwable {
         anna.clickOnTypeOfStructuresDropdownItem();
     }
+
+    @And("^Enter random test data to Name field$")
+    public void enterRandomTestDateToNameField() throws Throwable {
+        anna.enterRandomTestDateToNameField();
+    }
+
+    @And("^Enter random test data to Description field$")
+    public void enterRandomTestDateToDescriptionField() throws Throwable {
+        anna.enterRandomTestDateToDescriptionField();
+    }
+
+    @And("^Click on Categories tab of Products portlet$")
+    public void clickOnCategoriesTabOfProductsPortlet() throws Throwable {
+        anna.clickOnCategoriesTabOfProductsPortlet();
+    }
+
+    @And("^Select Test Category$")
+    public void selectTestCategory() throws Throwable {
+        anna.selectTestCategory();
+    }
+
+    @And("^Click on Detail tab of Products portlet$")
+    public void clickOnDetailTabOfProductsPortlet() throws Throwable {
+        anna.clickOnDetailTabOfProductsPortlet();
+    }
+
+    @And("^Enter random test data to Retail price field$")
+    public void enterRandomTestDataToRetailPriceField() throws Throwable {
+        anna.enterRandomTestDataToRetailPriceField();
+    }
+
+    @And("^Enter random test data to Sale price field$")
+    public void enterRandomTestDataToSalePriceField() throws Throwable {
+        anna.enterRandomTestDataToSalePriceField();
+    }
+
+    @And("^Enter random test data to Quantity field$")
+    public void enterRandomTestDataToQuntityField() throws Throwable {
+        anna.enterRandomTestDataToQuntityField();
+    }
+
+    @And("^Click on Publish button$")
+    public void clickOnPublishButton() throws Throwable {
+        anna.clickOnPublishButton();
+    }
 }

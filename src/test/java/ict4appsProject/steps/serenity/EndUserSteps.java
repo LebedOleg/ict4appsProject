@@ -82,4 +82,47 @@ public class EndUserSteps {
     public void clickOnTypeOfStructuresDropdownItem() {
         adminControlPage.clickOnTypeOfStructuresDropdownItem();
     }
+
+    @Step
+    public void enterRandomTestDateToNameField() {
+        adminControlPage.enterRandomTestDateToNameField();
+    }
+
+    @Step
+    public void enterRandomTestDateToDescriptionField() {
+        adminControlPage.enterRandomTestDateToDescriptionField();
+    }
+
+    @Step
+    public void clickOnCategoriesTabOfProductsPortlet() {
+        adminControlPage.clickOnCategoriesTabOfProductsPortlet();
+    }
+
+    @Step
+    public void selectTestCategory() {
+        adminControlPage.selectTestCategory();
+    }
+    @Step
+    public void clickOnDetailTabOfProductsPortlet() {
+        adminControlPage.clickOnDetailTabOfProductsPortlet();
+    }
+
+    @Step
+    public void enterRandomTestDataToRetailPriceField() {
+        adminControlPage.enterRandomTestDataToRetailPriceField();
+    }
+
+    @Step
+    public void enterRandomTestDataToSalePriceField() {
+        adminControlPage.enterRandomTestDataToSalePriceField();
+    }
+
+    @Step
+    public void enterRandomTestDataToQuntityField() {
+        adminControlPage.enterRandomTestDataToQuntityField();
+    }
+    @Step
+    public void clickOnPublishButton() {
+        adminControlPage.clickOnPublishButton();
+    }
 }

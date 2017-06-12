@@ -5,6 +5,7 @@ Feature: Products cart testing.
     Given the user is on Ictapps staging page
 
 Scenario: Create product with SKU
+  Given the user is on Ictapps staging page
   Given Click on LogInLink
   And Enter Email address
   And Enter Password
@@ -15,8 +16,17 @@ Scenario: Create product with SKU
   And Click on Add product button
   And Click on Type of Structures dropdown menu
   And Click on Type of Structures dropdown item
-  And
-  Then
+  And Enter random test data to Name field
+  And Enter random test data to Description field
+  And Click on Categories tab of Products portlet
+  And Select Test Category
+  And Click on Detail tab of Products portlet
+  And Enter random test data to Retail price field
+  And Enter random test data to Sale price field
+  And Enter random test data to Quantity field
+  And Click on Publish button
+  Then Product name according to name that was entered
+
 
   Scenario: Create product without SKU
     Given
