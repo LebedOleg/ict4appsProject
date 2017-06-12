@@ -17,4 +17,14 @@ public class WelcomePage extends PageObject {
     public void clickOnLogInLink() {
         $(Locators.LogInLink).click();
     }
+
+    public void clickOnControlDropDownMenu() {
+        $(Locators.ControlDropDownMenu).click();
+    }
+
+    public void clickOnCatalogItemOfControlDropDownMenu() {
+        $(Locators.ControllDropDownMenuCatalogItem).click();
+    }
+
+
 }

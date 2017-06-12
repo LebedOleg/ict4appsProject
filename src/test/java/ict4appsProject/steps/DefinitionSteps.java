@@ -54,11 +54,31 @@ public class DefinitionSteps {
 
     @When("^Click on Control DropDown menu$")
     public void clickOnControlDropDownMenu() throws Throwable {
-
+        anna.clickOnControlDropDownMenu();
     }
 
     @And("^Click on Catalog item of Control DropDown menu$")
     public void clickOnCatalogItemOfControlDropDownMenu() throws Throwable {
-        // Writ
+        anna.clickOnCatalogItemOfControlDropDownMenu();
+    }
+
+    @And("^Click on Products item of Catalog Tab$")
+    public void clickOnProductsItemOfCatalogTab() throws Throwable {
+        anna.clickOnProductsItemOfCatalogTab();
+    }
+
+    @And("^Click on Add product button$")
+    public void clickOnAddProductButton() throws Throwable {
+        anna.clickOnAddProductButton();
+    }
+
+    @And("^Click on Type of Structures dropdown menu$")
+    public void clickOnTypeOfStructuresDropdownMenu() throws Throwable {
+        anna.clickOnTypeOfStructuresDropdownMenu();
+    }
+
+    @And("^Click on Type of Structures dropdown item$")
+    public void clickOnTypeOfStructuresDropdownItem() throws Throwable {
+        anna.clickOnTypeOfStructuresDropdownItem();
     }
 }

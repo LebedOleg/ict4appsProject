@@ -15,6 +15,11 @@ public interface Locators {
     String ProductsCatalogItem = "//span[text()='Продукты']";
 
 
+    String AdminProductPortletAddProduct = "//span[text()=' Добавить ']";
+    String AdminProductPortletTypeOfStructure = ".//*[@id='fields-structures']";
+    String AdminProductPortletTypeOfStructureItem = ".//*[@id='fields-structures']/option[contains(text(),'тест структуры')]";
+
+
     //TODO:   WELCOME PAGE
     String SuperCarouselItem = "((//div[@class='slick-track' ])[2]/div[@aria-hidden='false']//img)[$1]";
 }

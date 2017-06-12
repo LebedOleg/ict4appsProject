@@ -1,5 +1,6 @@
 package ict4appsProject.steps.serenity;
 
+import ict4appsProject.pages.AdminControlPage;
 import ict4appsProject.pages.LogInPage;
 import ict4appsProject.pages.ProductsPage;
 import ict4appsProject.pages.WelcomePage;
@@ -16,6 +17,7 @@ public class EndUserSteps {
     WelcomePage welcomePage;
     ProductsPage productsPage;
     LogInPage logInPage;
+    AdminControlPage adminControlPage;
 
 
     @Step
@@ -50,5 +52,34 @@ public class EndUserSteps {
     @Step
     public void clickOnLogInButton() {
         logInPage.clickOnLogInButton();
+    }
+
+    @Step
+    public void clickOnControlDropDownMenu() {
+        welcomePage.clickOnControlDropDownMenu();
+    }
+
+    @Step
+    public void clickOnCatalogItemOfControlDropDownMenu() {
+        welcomePage.clickOnCatalogItemOfControlDropDownMenu();
+    }
+
+    @Step
+    public void clickOnProductsItemOfCatalogTab() {
+        adminControlPage.clickOnProductsItemOfCatalogTab();
+    }
+
+    @Step
+    public void clickOnAddProductButton() {
+        adminControlPage.clickOnAddProductButton();
+    }
+    @Step
+    public void clickOnTypeOfStructuresDropdownMenu() {
+        adminControlPage.clickOnTypeOfStructuresDropdownMenu();
+    }
+
+    @Step
+    public void clickOnTypeOfStructuresDropdownItem() {
+        adminControlPage.clickOnTypeOfStructuresDropdownItem();
     }
 }
