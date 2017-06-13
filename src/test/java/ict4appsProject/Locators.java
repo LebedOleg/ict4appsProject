@@ -13,10 +13,14 @@ public interface Locators {
 
 
     String AdminProductPortletAddProduct = "//span[text()=' Добавить ']";
+    String AdminProductPortletLastPaginationButton = "(//a[text()='Последняя →'])[1]";
+    String AdminProductPortletListOfProductsNames = "//h4[@class='media-heading']/a";
+
+
     String AdminProductPortletTypeOfStructure = ".//*[@id='fields-structures']";
     String AdminProductPortletTypeOfStructureItem = ".//*[@id='fields-structures']/option[contains(text(),'тест структуры')]";
     String AdminProductPortletNameField = "//label[text()='Имя']/..//input[@type='text']";
-    String AdminProductPortletDescriptionField = "//textarea[@class='language-value']";
+    String AdminProductPortletDescriptionField = "//span[@class='input-localized input-localized-textarea']//textarea";
     String AdminProductPortletCategoriesTab = "//a[text()='Категории']";
     String AdminProductPortletCategoriesTabItemCheckbox = "//span[text()='Категория для тестов']/../input";
     String AdminProductPortletDetailsTab = "//a[text()='Детали']";

@@ -29,6 +29,8 @@ public class AdminControlPage extends PageObject {
         $(Locators.AdminProductPortletTypeOfStructureItem).click();
     }
 
+
+
     public void enterRandomTestDateToNameField() {
         int sizeName = 8; // size of random string
         String charac = "0123456789abcdefghijklmnopqrstuvwxyz"; //Create the character set for random string

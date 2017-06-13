@@ -1,11 +1,13 @@
 package ict4appsProject.steps.serenity;
 
-import ict4appsProject.pages.AdminControlPage;
-import ict4appsProject.pages.LogInPage;
-import ict4appsProject.pages.ProductsPage;
-import ict4appsProject.pages.WelcomePage;
+import ict4appsProject.Locators;
+import ict4appsProject.pages.*;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
@@ -18,6 +20,7 @@ public class EndUserSteps {
     ProductsPage productsPage;
     LogInPage logInPage;
     AdminControlPage adminControlPage;
+    CRUD crud;
 
 
     @Step
@@ -128,5 +131,15 @@ public class EndUserSteps {
 
     public void productNameAccordingToNameThatWasEntered() {
         Assert.assertTrue(adminControlPage.compareCurrentNameOfProductWithEntered() );
+    }
+
+    @Step
+    public void clickOnLASTPaginationButton() {
+        crud.clickMethod(Locators.AdminProductPortletLastPaginationButton);
+    }
+
+    @Step
+    public void productsListShouldContainsProductThatWasCreated() {
+
     }
 }

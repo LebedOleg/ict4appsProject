@@ -131,4 +131,14 @@ public class DefinitionSteps {
     public void productNameAccordingToNameThatWasEntered() throws Throwable {
         anna.productNameAccordingToNameThatWasEntered();
     }
+
+    @And("^Click on LAST pagination button$")
+    public void clickOnLASTPaginationButton() throws Throwable {
+        anna.clickOnLASTPaginationButton();
+    }
+
+    @Then("^Products List should contains product that was created$")
+    public void productsListShouldContainsProductThatWasCreated() throws Throwable {
+        anna.productsListShouldContainsProductThatWasCreated();
+    }
 }

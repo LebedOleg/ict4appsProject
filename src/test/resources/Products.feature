@@ -25,6 +25,9 @@ Scenario: Create product with SKU
   And Enter random test data to Sale price field
   And Enter random test data to Quantity field
   And Click on Publish button
+  And Click on Products item of Catalog Tab
+  And Click on LAST pagination button
+  Then Products List should contains product that was created
   Then Product name according to name that was entered
 
 
