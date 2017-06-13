@@ -14,10 +14,13 @@ public class DefinitionSteps {
     @Steps
     EndUserSteps anna;
 
+
+
     @Given("^the user is on Ictapps staging page$")
     public void theUserIsOnIctAppsStagingPage() throws Throwable {
         anna.theUserIsOnIctAppsStagingPage();
     }
+
 
     @When("^the user click on \"([^\"]*)\"th product image in Super image carousel$")
     public void theUserClickOnThProductImageInSuperImageCarousel(String arg0) throws Throwable {
@@ -137,49 +140,5 @@ public class DefinitionSteps {
     @Then("^Products List should contains product that was created$")
     public void productsListShouldContainsProductThatWasCreated() throws Throwable {
         anna.productsListShouldContainsProductThatWasCreated();
-    }
-
-    @When("^Click on the \"([^\"]*)\" span$")
-    public void clickOnTheSpan(String arg0) throws Throwable {
-        anna.clickOnTheSpan(arg0);
-    }
-
-    @When("^Click on first product title$")
-    public void clickOnFirstProductTitle() throws Throwable {
-        anna.clickOnFirstProductTitle();
-    }
-
-    @When("^Click on the \"([^\"]*)\" button$")
-    public void clickOnTheButton(String arg0) throws Throwable {
-        anna.clickOnTheButton(arg0);
-    }
-
-    @When("^Click on the Cart icon$")
-    public void clickOnTheCartIcon() throws Throwable {
-        anna.clickOnTheCartIcon();
-    }
-    @When("^Click on the \"([^\"]*)\" link$")
-    public void clickOnTheLink(String arg0) throws Throwable {
-        anna.clickOnTheLink(arg0);
-    }
-
-    @Then("^Check that Type of Structures dropdown menu has right item$")
-    public void checkThatTypeOfStructuresDropdownMenuHasRightItem() throws Throwable {
-        anna.checkThatTypeOfStructuresDropdownMenuHasRightItem();
-    }
-
-    @Then("^Check that Description field has right data$")
-    public void checkThatDescriptionFieldHasRightData() throws Throwable {
-        anna.checkThatDescriptionFieldHasRightData();
-    }
-
-    @Then("^Check that right category is selected$")
-    public void checkThatRightCategoryIsSelected() throws Throwable {
-        anna.checkThatRightCategoryIsSelected();
-    }
-
-    @Then("^Check that Retail price field has right data$")
-    public void checkThatRetailPriceFieldHasRightData() throws Throwable {
-        anna.checkThatRetailPriceFieldHasRightData();
     }
 }

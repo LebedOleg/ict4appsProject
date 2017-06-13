@@ -29,14 +29,6 @@ Scenario: Create product with SKU
   And Click on LAST pagination button
   Then Products List should contains product that was created
   Then Product name according to name that was entered
-  Then Check that Type of Structures dropdown menu has right item
-  Then Check that Description field has right data
-  When Click on Categories tab of Products portlet
-  Then Check that right category is selected
-  When Click on Detail tab of Products portlet
-  Then Check that Retail price field has right data
-#  Then Check that Sale price field has right data
-#  Then Check that Quantity field has right data
 
 
 #  Scenario: Create product without SKU
