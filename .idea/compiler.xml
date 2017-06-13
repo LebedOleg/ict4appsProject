@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ict4apps" />
+        <module name="ict4appsProject" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ict4apps" target="1.7" />
+      <module name="ict4appsProject" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
