@@ -2,41 +2,32 @@ package ict4appsProject.pages;
 
 import ict4appsProject.Locators;
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.WebElement;
 
+import java.util.List;
 import java.util.Random;
 
 /**
  * Created by userqa on 12.06.17.
  */
 public class AdminControlPage extends PageObject {
-    String FirstName;
+    CRUD crud;
 
-
-    public void clickOnProductsItemOfCatalogTab() {
-        $(Locators.ProductsCatalogItem).click();
-    }
-
-    public void clickOnAddProductButton() {
-        $(Locators.AdminProductPortletAddProduct).click();
-    }
-
-    public void clickOnTypeOfStructuresDropdownMenu() {
-        $(Locators.AdminProductPortletTypeOfStructure).click();
-    }
-
-    public void clickOnTypeOfStructuresDropdownItem() {
-        $(Locators.AdminProductPortletTypeOfStructureItem).click();
-    }
-
+    String Name;
+    String Description;
+    String RetailPrice;
+    String SalePrice;
+    String Quantity;
 
 
     public void enterRandomTestDateToNameField() {
         int sizeName = 8; // size of random string
         String charac = "0123456789abcdefghijklmnopqrstuvwxyz"; //Create the character set for random string
         Random r = new Random();
-         FirstName = generateString(r, charac, sizeName);
-        $(Locators.AdminProductPortletNameField).sendKeys(FirstName);
+         Name = generateString(r, charac, sizeName);
+        $(Locators.AdminProductPortletNameField).sendKeys(Name);
     }
 
 
@@ -54,7 +45,7 @@ public class AdminControlPage extends PageObject {
         int sizeName = 8; // size of random string
         String charac = "0123456789abcdefghijklmnopqrstuvwxyz"; //Create the character set for random string
         Random r = new Random();
-        String Description = generateString(r, charac, sizeName);
+         Description = generateString(r, charac, sizeName);
         $(Locators.AdminProductPortletDescriptionField).sendKeys(Description);
     }
 
@@ -74,7 +65,7 @@ public class AdminControlPage extends PageObject {
         int sizeName = 4; // size of random string
         String charac = "123456789"; //Create the character set for random string
         Random r = new Random();
-        String RetailPrice = generateString(r, charac, sizeName);
+        RetailPrice = generateString(r, charac, sizeName);
         $(Locators.AdminProductPortletDetailsTabRetailPriceField).sendKeys(RetailPrice);
     }
 
@@ -82,7 +73,7 @@ public class AdminControlPage extends PageObject {
         int sizeName = 4; // size of random string
         String charac = "123456789"; //Create the character set for random string
         Random r = new Random();
-        String SalePrice = generateString(r, charac, sizeName);
+        SalePrice = generateString(r, charac, sizeName);
         $(Locators.AdminProductPortletDetailsTabSaleField).sendKeys(SalePrice);
     }
 
@@ -90,7 +81,7 @@ public class AdminControlPage extends PageObject {
         int sizeName = 3; // size of random string
         String charac = "123456789"; //Create the character set for random string
         Random r = new Random();
-        String Quantity = generateString(r, charac, sizeName);
+        Quantity = generateString(r, charac, sizeName);
         $(Locators.AdminProductPortletDetailsTabQuantityField).sendKeys(Quantity);
     }
 
@@ -99,6 +90,17 @@ public class AdminControlPage extends PageObject {
     }
 
     public boolean compareCurrentNameOfProductWithEntered() {
-       return  $(Locators.AdminProductPortletNameField).getText().equals(FirstName);
+       return  $(Locators.AdminProductPortletNameField).getText().equals(Name);
+    }
+
+
+    public void productsListShouldContainsProductThatWasCreated(String Locator) {
+        List<WebElementFacade> list = findAll(Locator);
+        for (WebElement element : list) {
+           if (element.getText().equals()) {
+               crud.clickMethod(Locator.);
+           }
+        }
+
     }
 }

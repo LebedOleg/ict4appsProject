@@ -69,21 +69,21 @@ public class EndUserSteps {
 
     @Step
     public void clickOnProductsItemOfCatalogTab() {
-        adminControlPage.clickOnProductsItemOfCatalogTab();
+        crud.clickMethod(Locators.ProductsCatalogItem);
     }
 
     @Step
     public void clickOnAddProductButton() {
-        adminControlPage.clickOnAddProductButton();
+        crud.clickMethod(Locators.AdminProductPortletAddProduct);
     }
     @Step
     public void clickOnTypeOfStructuresDropdownMenu() {
-        adminControlPage.clickOnTypeOfStructuresDropdownMenu();
+        crud.clickMethod(Locators.AdminProductPortletTypeOfStructure);
     }
 
     @Step
     public void clickOnTypeOfStructuresDropdownItem() {
-        adminControlPage.clickOnTypeOfStructuresDropdownItem();
+        crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem);
     }
 
     @Step
@@ -140,6 +140,6 @@ public class EndUserSteps {
 
     @Step
     public void productsListShouldContainsProductThatWasCreated() {
-
+        adminControlPage.productsListShouldContainsProductThatWasCreated(Locators.AdminProductPortletListOfProductsNames);
     }
 }
