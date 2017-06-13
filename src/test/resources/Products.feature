@@ -28,11 +28,11 @@ Scenario: Create product with SKU
   Then Product name according to name that was entered
 
 
-  Scenario: Create product without SKU
-    Given
-    Then
-
-  Scenario: Delete product with SKU
-    Given
-    Then
-  Scenario: Delete product without SKU
+#  Scenario: Create product without SKU
+#    Given
+#    Then
+#
+#  Scenario: Delete product with SKU
+#    Given
+#    Then
+#  Scenario: Delete product without SKU
