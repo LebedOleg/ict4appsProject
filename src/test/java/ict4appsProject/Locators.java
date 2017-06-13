@@ -15,6 +15,7 @@ public interface Locators {
     String AdminProductPortletAddProduct = "//span[text()=' Добавить ']";
     String AdminProductPortletLastPaginationButton = "(//a[text()='Последняя →'])[1]";
     String AdminProductPortletListOfProductsNames = "//h4[@class='media-heading']/a";
+    String AdminProductPortletProductName = "//h4/a[contains(text(),'$1')]";
 
 
     String AdminProductPortletTypeOfStructure = ".//*[@id='fields-structures']";

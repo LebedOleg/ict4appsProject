@@ -90,15 +90,15 @@ public class AdminControlPage extends PageObject {
     }
 
     public boolean compareCurrentNameOfProductWithEntered() {
-       return  $(Locators.AdminProductPortletNameField).getText().equals(Name);
+       return  $(Locators.AdminProductPortletNameField).getValue().equals(Name);
     }
 
 
     public void productsListShouldContainsProductThatWasCreated(String Locator) {
         List<WebElementFacade> list = findAll(Locator);
         for (WebElement element : list) {
-           if (element.getText().equals()) {
-               crud.clickMethod(Locator.);
+           if (element.getText().equals(Name)) {
+               crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
            }
         }
 
