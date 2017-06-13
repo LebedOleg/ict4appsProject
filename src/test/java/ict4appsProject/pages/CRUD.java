@@ -7,9 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by userqa on 13.06.17.
- */
 public class CRUD extends PageObject{
 
     public void clickMethod(String Locator) {

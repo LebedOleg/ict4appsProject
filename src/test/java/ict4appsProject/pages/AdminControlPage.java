@@ -9,9 +9,6 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by userqa on 12.06.17.
- */
 public class AdminControlPage extends PageObject {
     CRUD crud;
 

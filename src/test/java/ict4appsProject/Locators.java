@@ -30,6 +30,17 @@ public interface Locators {
     String AdminProductPortletDetailsTabQuantityField = ".//*[@id='stockQuantity-input']";
     String AdminProductPortletPublishButton = "//a[contains(text(),'Опубликовать')]";
 
+    //TODO: WORKFLOW
+
+    String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[1]";
+    String CART = "//div[@class='card']//div[@class='cart-icon']/./..";
+
+    //TODO:   COMMON ELEMENTS
+
+    String LINK = "//a[contains(text(),'$1')]";
+    String BUTTON = "//button[contains(text(),'$1')]";
+    String SPAN = "//span[contains(text(),'$1')]";
+    String DIV = "//div[contains(text(),'$1')]";
 
     //TODO:   WELCOME PAGE
     String SuperCarouselItem = "((//div[@class='slick-track' ])[2]/div[@aria-hidden='false']//img)[$1]";

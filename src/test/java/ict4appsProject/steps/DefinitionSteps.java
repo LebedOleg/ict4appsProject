@@ -14,13 +14,10 @@ public class DefinitionSteps {
     @Steps
     EndUserSteps anna;
 
-
-
     @Given("^the user is on Ictapps staging page$")
     public void theUserIsOnIctAppsStagingPage() throws Throwable {
         anna.theUserIsOnIctAppsStagingPage();
     }
-
 
     @When("^the user click on \"([^\"]*)\"th product image in Super image carousel$")
     public void theUserClickOnThProductImageInSuperImageCarousel(String arg0) throws Throwable {
@@ -140,5 +137,25 @@ public class DefinitionSteps {
     @Then("^Products List should contains product that was created$")
     public void productsListShouldContainsProductThatWasCreated() throws Throwable {
         anna.productsListShouldContainsProductThatWasCreated();
+    }
+
+    @When("^Click on the \"([^\"]*)\" span$")
+    public void clickOnTheSpan(String arg0) throws Throwable {
+        anna.clickOnTheSpan(arg0);
+    }
+
+    @When("^Click on first product title$")
+    public void clickOnFirstProductTitle() throws Throwable {
+        anna.clickOnFirstProductTitle();
+    }
+
+    @When("^Click on the \"([^\"]*)\" button$")
+    public void clickOnTheButton(String arg0) throws Throwable {
+        anna.clickOnTheButton(arg0);
+    }
+
+    @When("^Click on the Cart icon$")
+    public void clickOnTheCartIcon() throws Throwable {
+        anna.clickOnTheCartIcon();
     }
 }
