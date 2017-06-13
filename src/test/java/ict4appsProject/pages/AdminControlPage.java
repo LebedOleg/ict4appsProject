@@ -95,4 +95,8 @@ public class AdminControlPage extends PageObject {
     public void clickOnPublishButton() {
         $(Locators.AdminProductPortletPublishButton).click();
     }
+
+    public boolean compareCurrentNameOfProductWithEntered() {
+       return  $(Locators.AdminProductPortletNameField).getText().equals(FirstName);
+    }
 }

@@ -125,4 +125,8 @@ public class EndUserSteps {
     public void clickOnPublishButton() {
         adminControlPage.clickOnPublishButton();
     }
+
+    public void productNameAccordingToNameThatWasEntered() {
+        Assert.assertTrue(adminControlPage.compareCurrentNameOfProductWithEntered() );
+    }
 }

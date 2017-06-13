@@ -17,7 +17,7 @@ public class DefinitionSteps {
 
 
     @Given("^the user is on Ictapps staging page$")
-    public void theUserIsOnIctAppsStagingPage(int arg0) throws Throwable {
+    public void theUserIsOnIctAppsStagingPage() throws Throwable {
         anna.theUserIsOnIctAppsStagingPage();
     }
 
@@ -125,5 +125,10 @@ public class DefinitionSteps {
     @And("^Click on Publish button$")
     public void clickOnPublishButton() throws Throwable {
         anna.clickOnPublishButton();
+    }
+
+    @Then("^Product name according to name that was entered$")
+    public void productNameAccordingToNameThatWasEntered() throws Throwable {
+        anna.productNameAccordingToNameThatWasEntered();
     }
 }
