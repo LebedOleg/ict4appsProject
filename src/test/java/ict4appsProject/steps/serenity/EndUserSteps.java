@@ -69,6 +69,7 @@ public class EndUserSteps {
 
     @Step
     public void clickOnProductsItemOfCatalogTab() {
+        crud.waitBit(1500);
         crud.clickMethod(Locators.ProductsCatalogItem);
     }
 
@@ -141,5 +142,46 @@ public class EndUserSteps {
     @Step
     public void productsListShouldContainsProductThatWasCreated() {
         adminControlPage.productsListShouldContainsProductThatWasCreated(Locators.AdminProductPortletListOfProductsNames);
+    }
+
+    @Step
+    public void checkThatTypeOfStructuresDropdownMenuHasRightItem() {
+        adminControlPage.checkThatTypeOfStructuresDropdownMenuHasRightItem();
+    }
+    @Step
+    public void checkThatDescriptionFieldHasRightData() {
+        adminControlPage.checkThatDescriptionFieldHasRightData();
+    }
+    @Step
+    public void checkThatRightCategoryIsSelected() {
+        adminControlPage.checkThatRightCategoryIsSelected();
+    }
+
+    public void checkThatRetailPriceFieldHasRightData() {
+        Assert.assertTrue(adminControlPage.checkThatPriceFieldHasRightData());
+    }
+
+    @Step
+    public void clickOnTheSpan(String arg0) {
+        crud.clickMethod(Locators.SPAN.replace("$1", arg0));
+    }
+
+    @Step
+    public void clickOnFirstProductTitle() {
+        crud.clickMethod(Locators.FIRST_PRODUCT_TITLE);
+    }
+
+    @Step
+    public void clickOnTheButton(String arg0) {
+        crud.clickMethod(Locators.BUTTON.replace("$1", arg0));
+    }
+
+    @Step
+    public void clickOnTheCartIcon() {
+        crud.clickMethod(Locators.CART);
+    }
+    @Step
+    public void clickOnTheLink(String arg0) {
+        crud.clickMethod(Locators.LINK.replace("$1",arg0));
     }
 }

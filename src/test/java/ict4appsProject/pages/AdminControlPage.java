@@ -9,6 +9,9 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Created by userqa on 12.06.17.
+ */
 public class AdminControlPage extends PageObject {
     CRUD crud;
 
@@ -63,7 +66,7 @@ public class AdminControlPage extends PageObject {
         String charac = "123456789"; //Create the character set for random string
         Random r = new Random();
         RetailPrice = generateString(r, charac, sizeName);
-        $(Locators.AdminProductPortletDetailsTabRetailPriceField).sendKeys(RetailPrice);
+        $(Locators.AdminProductPortletDetailsTabRetailPriceField.replace("$1", "retail")).sendKeys(RetailPrice);
     }
 
     public void enterRandomTestDataToSalePriceField() {
@@ -71,7 +74,7 @@ public class AdminControlPage extends PageObject {
         String charac = "123456789"; //Create the character set for random string
         Random r = new Random();
         SalePrice = generateString(r, charac, sizeName);
-        $(Locators.AdminProductPortletDetailsTabSaleField).sendKeys(SalePrice);
+        $(Locators.AdminProductPortletDetailsTabSalePriceField.replace("$1", "sale")).sendKeys(SalePrice);
     }
 
     public void enterRandomTestDataToQuntityField() {
@@ -111,6 +114,10 @@ public class AdminControlPage extends PageObject {
     }
 
     public boolean checkThatRightCategoryIsSelected() {
-        return $(Locators.AdminProductPortletCategoriesTabItemCheckbox + "[@checked='']");
+        return $(Locators.AdminProductPortletCategoriesTabItemCheckbox + "[@checked='']").isPresent();
+    }
+
+    public boolean checkThatPriceFieldHasRightData() {
+      return   $(Locators.AdminProductPortletDetailsTabSalePriceField.replace("$1", "retail")).getValue().contains(RetailPrice);
     }
 }

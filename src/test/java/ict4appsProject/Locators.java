@@ -25,8 +25,8 @@ public interface Locators {
     String AdminProductPortletCategoriesTab = "//a[text()='Категории']";
     String AdminProductPortletCategoriesTabItemCheckbox = "//span[text()='Категория для тестов']/../input";
     String AdminProductPortletDetailsTab = "//a[text()='Детали']";
-    String AdminProductPortletDetailsTabRetailPriceField = ".//*[@id='retailPrice-input']";
-    String AdminProductPortletDetailsTabSaleField = ".//*[@id='salePrice-input']";
+    String AdminProductPortletDetailsTabRetailPriceField = ".//*[@id='$1Price-input']";
+    String AdminProductPortletDetailsTabSalePriceField = ".//*[@id='salePrice-input']";
     String AdminProductPortletDetailsTabQuantityField = ".//*[@id='stockQuantity-input']";
     String AdminProductPortletPublishButton = "//a[contains(text(),'Опубликовать')]";
 

@@ -158,4 +158,28 @@ public class DefinitionSteps {
     public void clickOnTheCartIcon() throws Throwable {
         anna.clickOnTheCartIcon();
     }
+    @When("^Click on the \"([^\"]*)\" link$")
+    public void clickOnTheLink(String arg0) throws Throwable {
+        anna.clickOnTheLink(arg0);
+    }
+
+    @Then("^Check that Type of Structures dropdown menu has right item$")
+    public void checkThatTypeOfStructuresDropdownMenuHasRightItem() throws Throwable {
+        anna.checkThatTypeOfStructuresDropdownMenuHasRightItem();
+    }
+
+    @Then("^Check that Description field has right data$")
+    public void checkThatDescriptionFieldHasRightData() throws Throwable {
+        anna.checkThatDescriptionFieldHasRightData();
+    }
+
+    @Then("^Check that right category is selected$")
+    public void checkThatRightCategoryIsSelected() throws Throwable {
+        anna.checkThatRightCategoryIsSelected();
+    }
+
+    @Then("^Check that Retail price field has right data$")
+    public void checkThatRetailPriceFieldHasRightData() throws Throwable {
+        anna.checkThatRetailPriceFieldHasRightData();
+    }
 }
