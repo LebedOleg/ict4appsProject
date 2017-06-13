@@ -32,10 +32,9 @@ public class EndUserSteps {
     public void theUserClickOnFirstProductImageInSuperImageCarousel(String arg0) {
         welcomePage.theUserClickOnFirstProductImageInSuperImageCarousel(arg0);
     }
-
     @Step
     public void productURLShouldContain(String arg0) {
-        Assert.assertThat(productsPage.getCurrentURL(), containsString(arg0));
+       Assert.assertThat(productsPage.getCurrentURL(), containsString(arg0));
     }
 
     @Step
@@ -43,7 +42,7 @@ public class EndUserSteps {
         welcomePage.clickOnLogInLink();
     }
 
-    @Step
+@Step
     public void enterEmailAddress() {
         logInPage.enterEmailAddress();
     }
@@ -77,7 +76,6 @@ public class EndUserSteps {
     public void clickOnAddProductButton() {
         crud.clickMethod(Locators.AdminProductPortletAddProduct);
     }
-
     @Step
     public void clickOnTypeOfStructuresDropdownMenu() {
         crud.clickMethod(Locators.AdminProductPortletTypeOfStructure);
@@ -107,7 +105,6 @@ public class EndUserSteps {
     public void selectTestCategory() {
         adminControlPage.selectTestCategory();
     }
-
     @Step
     public void clickOnDetailTabOfProductsPortlet() {
         adminControlPage.clickOnDetailTabOfProductsPortlet();
@@ -127,14 +124,13 @@ public class EndUserSteps {
     public void enterRandomTestDataToQuntityField() {
         adminControlPage.enterRandomTestDataToQuntityField();
     }
-
     @Step
     public void clickOnPublishButton() {
         adminControlPage.clickOnPublishButton();
     }
 
     public void productNameAccordingToNameThatWasEntered() {
-        Assert.assertTrue(adminControlPage.compareCurrentNameOfProductWithEntered());
+        Assert.assertTrue(adminControlPage.compareCurrentNameOfProductWithEntered() );
     }
 
     @Step
@@ -145,25 +141,5 @@ public class EndUserSteps {
     @Step
     public void productsListShouldContainsProductThatWasCreated() {
         adminControlPage.productsListShouldContainsProductThatWasCreated(Locators.AdminProductPortletListOfProductsNames);
-    }
-
-    @Step
-    public void clickOnTheSpan(String arg0) {
-        crud.clickMethod(Locators.SPAN.replace("$1", arg0));
-    }
-
-    @Step
-    public void clickOnFirstProductTitle() {
-        crud.clickMethod(Locators.FIRST_PRODUCT_TITLE);
-    }
-
-    @Step
-    public void clickOnTheButton(String arg0) {
-        crud.clickMethod(Locators.BUTTON.replace("$1",arg0));
-    }
-
-    @Step
-    public void clickOnTheCartIcon() {
-        crud.clickMethod(Locators.CART);
     }
 }

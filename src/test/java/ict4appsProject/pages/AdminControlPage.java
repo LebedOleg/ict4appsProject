@@ -100,4 +100,17 @@ public class AdminControlPage extends PageObject {
         }
 
     }
+
+    public boolean checkThatTypeOfStructuresDropdownMenuHasRightItem() {
+       return  $(Locators.AdminProductPortletTypeOfStructure + "/option[@selected='']").getText().equals(" тест структуры ");
+
+    }
+
+    public boolean checkThatDescriptionFieldHasRightData() {
+        return $(Locators.AdminProductPortletDescriptionField).getText().equals(Description);
+    }
+
+    public boolean checkThatRightCategoryIsSelected() {
+        return $(Locators.AdminProductPortletCategoriesTabItemCheckbox + "[@checked='']");
+    }
 }

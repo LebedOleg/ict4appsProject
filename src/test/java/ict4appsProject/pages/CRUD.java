@@ -17,4 +17,8 @@ public class CRUD extends PageObject{
     public void waitForElementVisibility(int $1, String Locator) {
         withTimeoutOf($1, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locator)));
     }
+
+    public void waitBit(int i) {
+        waitABit(i);
+    }
 }
