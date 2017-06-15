@@ -13,7 +13,7 @@ public class DefinitionSteps {
 
     @Steps
     EndUserSteps anna;
-
+    private String arg0;
 
 
     @Given("^the user is on Ictapps staging page$")
@@ -57,14 +57,14 @@ public class DefinitionSteps {
         anna.clickOnControlDropDownMenu();
     }
 
-    @And("^Click on Catalog item of Control DropDown menu$")
-    public void clickOnCatalogItemOfControlDropDownMenu() throws Throwable {
-        anna.clickOnCatalogItemOfControlDropDownMenu();
+    @And("^Click on \"([^\"]*)\" item of Control DropDown menu$")
+    public void clickOnCatalogItemOfControlDropDownMenu(String arg0) throws Throwable {
+        anna.clickOnCatalogItemOfControlDropDownMenu(arg0);
     }
 
-    @And("^Click on Products item of Catalog Tab$")
-    public void clickOnProductsItemOfCatalogTab() throws Throwable {
-        anna.clickOnProductsItemOfCatalogTab();
+    @And("^Click on \"([^\"]*)\" item of Catalog Tab$")
+    public void clickOnProductsItemOfCatalogTab(String arg0) throws Throwable {
+        anna.clickOnProductsItemOfCatalogTab(arg0);
     }
 
     @And("^Click on Add product button$")
@@ -107,15 +107,15 @@ public class DefinitionSteps {
         anna.clickOnDetailTabOfProductsPortlet();
     }
 
-    @And("^Enter random test data to Retail price field$")
-    public void enterRandomTestDataToRetailPriceField() throws Throwable {
-        anna.enterRandomTestDataToRetailPriceField();
+    @And("^Enter random test data to \"([^\"]*)\" price field$")
+    public void enterRandomTestDataToPriceField(String arg0) throws Throwable {
+        anna.enterRandomTestDataToRetailPriceField(arg0);
     }
 
-    @And("^Enter random test data to Sale price field$")
-    public void enterRandomTestDataToSalePriceField() throws Throwable {
-        anna.enterRandomTestDataToSalePriceField();
-    }
+//    @And("^Enter random test data to Sale price field$")
+//    public void enterRandomTestDataToSalePriceField() throws Throwable {
+//        anna.enterRandomTestDataToSalePriceField();
+//    }
 
     @And("^Enter random test data to Quantity field$")
     public void enterRandomTestDataToQuntityField() throws Throwable {
@@ -141,4 +141,164 @@ public class DefinitionSteps {
     public void productsListShouldContainsProductThatWasCreated() throws Throwable {
         anna.productsListShouldContainsProductThatWasCreated();
     }
+
+    @Then("^Check that Description field has right data$")
+    public void checkThatDescriptionFieldHasRightData() throws Throwable {
+        anna.checkThatDescriptionFieldHasRightData();
+    }
+
+    @Then("^Check that Type of Structures Dropdown menu has right item$")
+    public void checkThatTypeOfStructuresDropdownMenuHasRightItem() throws Throwable {
+        anna.checkThatTypeOfStructuresDropdownMenuHasRightItem();
+    }
+
+    @Then("^Check that right category is selected$")
+    public void checkThatRightCategoryIsSelected() throws Throwable {
+        anna.checkThatRightCategoryIsSelected();
+    }
+
+
+    @Then("^Check that \"([^\"]*)\" price field has right data$")
+    public void checkThatPriceFieldHasRightData(String arg0) throws Throwable {
+        anna.checkThatPriceFieldHasRightData(arg0);
+    }
+
+    @Then("^Check that quntity field has right data$")
+    public void checkThatQuntityFieldHasRightData() throws Throwable {
+        anna.checkThatQuntityFieldHasRightData();
+    }
+
+    @Then("^Test$")
+    public void test() throws Throwable {
+        anna.test();
+    }
+
+    @And("^Click on Add Category button$")
+    public void clickOnAddCategoryButton() throws Throwable {
+        anna.clickOnAddCategoryButton();
+    }
+
+    @And("^Enter random test data to Category name field$")
+    public void enterRandomTestDataToCategoryNameField() throws Throwable {
+        anna.enterRandomTestDataToCategoryNameField();
+    }
+
+    @And("^Click on Save button of Create Category form$")
+    public void clickOnSaveButtonOfCreateCategoryForm() throws Throwable {
+        anna.clickOnSaveButtonOfCreateCategoryForm();
+    }
+
+    @And("^Click on Add Sructure button$")
+    public void clickOnAddSructureButton() throws Throwable {
+        anna.clickOnAddSructureButton();
+    }
+
+    @And("^Enter data to Structure name field$")
+    public void enterDataToStructureNameField() throws Throwable {
+        anna.enterDataToStructureNameField();
+    }
+
+    @And("^Click on Save Structure button$")
+    public void clickOnSaveStructureButton() throws Throwable {
+        anna.clickOnSaveStructureButton();
+    }
+
+    @Then("^Categories list should contain category that was created$")
+    public void categoriesListShouldContainCategoryThatWasCreated() throws Throwable {
+        anna.categoriesListShouldContainCategoryThatWasCreated();
+    }
+
+    @Then("^Structures list should contain structure that was created$")
+    public void structuresListShouldContainStructureThatWasCreated() throws Throwable {
+        anna.structuresListShouldContainStructureThatWasCreated();
+    }
+
+    @And("^Click on Structure that was created$")
+    public void clickOnStructureThatWasCreated() throws Throwable {
+        anna.clickOnStructureThatWasCreated();
+    }
+
+    @And("^Click on Add Field on Structure button$")
+    public void clickOnAddFieldOnStructureButton() throws Throwable {
+        anna.clickOnAddFieldOnStructureButton();
+    }
+
+    @And("^Select Create new item of Add field to Structure dropdown menu$")
+    public void selectCreateNewItemOfAddFieldToStructureDropdownMenu() throws Throwable {
+        anna.selectCreateNewItemOfAddFieldToStructureDropdownMenu();
+    }
+
+
+    @And("^Click on Add new field to Structure button$")
+    public void clickOnAddNewFieldToStructureButton() throws Throwable {
+        anna.clickOnAddNewFieldToStructureButton();
+    }
+
+    @Then("^Structure should contained \"([^\"]*)\" field that was created$")
+    public void structureShouldContainedFieldThatWasCreated(String arg0) throws Throwable {
+        anna.structureShouldContainedFieldThatWasCreated(arg0);
+    }
+
+    @And("^Enter \"([^\"]*)\" to field name field$")
+    public void enterToFieldNameField(String arg0) throws Throwable {
+        anna.enterTestDataToFieldNameField(arg0);
+    }
+
+    @And("^Click on name of \"([^\"]*)\" field that was created$")
+    public void clickOnNameOfFieldThatWasCreated(String arg0) throws Throwable {
+        anna.clickOnNameOfFieldThatWasCreated(arg0);
+    }
+
+    @And("^Click on Type of display dropdown menu$")
+    public void clickOnTypeOfDisplayDropdownMenu() throws Throwable {
+        anna.clickOnTypeOfDisplayDropdownMenu();
+    }
+
+    @And("^Select \"([^\"]*)\" option of Type of display dropdown menu$")
+    public void selectOptionOfTypeOfDisplayDropdownMenu(String arg0) throws Throwable {
+        anna.selectOptionOfTypeOfDisplayDropdownMenu(arg0);
+    }
+
+    @Then("^Add field option button should appeared$")
+    public void addFieldOptionButtonShouldAppeared() throws Throwable {
+        anna.addFieldOptionButtonShouldAppeared();
+    }
+
+    @When("^Click on Add field option button$")
+    public void clickOnAddFieldOptionButton() throws Throwable {
+        anna.clickOnAddFieldOptionButton();
+    }
+
+    @And("^Enter \"([^\"]*)\" on Values field of Add option popup$")
+    public void enterOnValuesFieldOfAddOptionPopup(String arg0) throws Throwable {
+        anna.enterOnValuesFieldOfAddOptionPopup(arg0);
+    }
+
+    @And("^Click on Save button of Add option popup$")
+    public void clickOnSaveButtonOfAddOptionPopup() throws Throwable {
+        anna.clickOnSaveButtonOfAddOptionPopup();
+    }
+
+    @Then("^Option \"([^\"]*)\" should appeared on option list$")
+    public void optionShouldAppearedOnOptionList(String arg0) throws Throwable {
+        anna.optionShouldAppearedOnOptionList(arg0);
+    }
+
+    @And("^Click on Add Field to Structure button$")
+    public void clickOnAddFieldToStructureButton() throws Throwable {
+        anna.clickOnAddFieldToStructureButton();
+    }
+
+    @When("^Click on back button of Admin CP$")
+    public void clickOnBackButtonOfAdminCP() throws Throwable {
+        anna.clickOnBackButtonOfAdminCP();
+    }
+
+    @When("^Click on Save button of Field eddit page$")
+    public void clickOnSaveButtonOfFieldEdditPage() throws Throwable {
+        anna.clickOnSaveButtonOfFieldEdditPage();
+    }
+
+
+//
 }

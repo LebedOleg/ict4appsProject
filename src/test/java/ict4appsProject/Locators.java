@@ -8,9 +8,11 @@ public interface Locators {
 
 
     String ControlDropDownMenu = "//span[text()=' Управление ']";
-    String ControllDropDownMenuCatalogItem = "//span[text()=' Каталог ']";
-    String ProductsCatalogItem = "//span[text()='Продукты']";
+    String ControllDropDownMenuCatalogItem = "//span[text()='$1']";
+    String ProductsCatalogItem = "//span[text()='$1']";
 
+
+    String AdminControlPanelBackButton = "//a[@title='Назад' and @class='icon-circle-arrow-left previous-level']";
 
     String AdminProductPortletAddProduct = "//span[text()=' Добавить ']";
     String AdminProductPortletLastPaginationButton = "(//a[text()='Последняя →'])[1]";
@@ -23,12 +25,38 @@ public interface Locators {
     String AdminProductPortletNameField = "//label[text()='Имя']/..//input[@type='text']";
     String AdminProductPortletDescriptionField = "//span[@class='input-localized input-localized-textarea']//textarea";
     String AdminProductPortletCategoriesTab = "//a[text()='Категории']";
-    String AdminProductPortletCategoriesTabItemCheckbox = "//span[text()='Категория для тестов']/../input";
+    String AdminProductPortletCategoriesTabItemCheckbox = "//span[text()='$1']/../input";
     String AdminProductPortletDetailsTab = "//a[text()='Детали']";
-    String AdminProductPortletDetailsTabRetailPriceField = ".//*[@id='$1Price-input']";
-    String AdminProductPortletDetailsTabSalePriceField = ".//*[@id='salePrice-input']";
+    String AdminProductPortletDetailsTabPriceField = ".//*[@id='$1Price-input']";
     String AdminProductPortletDetailsTabQuantityField = ".//*[@id='stockQuantity-input']";
     String AdminProductPortletPublishButton = "//a[contains(text(),'Опубликовать')]";
+
+    String AdminCategoryPortletAddButton = "//span[@class='nav-item-label' and contains(text(),'Добавить Категорию')]";
+    String AddCategoryPopUpContainer = "//fieldset[@class='formData']//div[@class='form-group']//input[@class='language-value']";
+    String AddCategoryPopUpSaveButton = "//button[contains(@class,'publishCategoryBtn')]";
+    String AdminCategoryPortletCategoriesList = "//span[contains(@class, 'jqtree')]";
+
+
+    String AdminStructurePortletAddStructureButton = "//a[@class='btn']";
+    String AdminStructurePortletStructureNameField = ".//*[@id='name']";
+    String AdminStructurePortletSaveStructureButton = "//button[contains(@class,'btn btn-primary')]";
+    String AdminStructurePortletStructuresList = "//a[text()='$1']";
+
+
+    String AdminStructurePortletAddFieldButton = "//a[@title='Добавить Поле']";
+    String AdminStructurePortletAddButton = "//button[contains(text(),'Добавить') and @form='addNewField']";
+    String AdminStructurePortletAddFieldButtonItem = "//span[contains(text(), 'Создать Новое')]";
+    String AdminStructurePortletNameOfNewField = "//label[text()=' Имя Поля ']/ancestor::div[@class='control-group']//input";
+    String AdminStructurePortletAddNewFieldButton = "//button[text()=' Добавить ']";
+    String AdminStructurePortletFieldIsVisible = "//a[text()='$1']";
+    String AdminStructurePortletNameOfField = "//a[text()='$1']";
+    String AdminStructurePortletTypeOfDisplayDropDown = "//select[@id='typeStr']";
+    String AdminStructurePortletTypeOfDisplayDropDownItem = "//option[text()='$1']";
+    String AdminStructurePortletAddOptionOfFieldButton = "//a[contains(text(),'Добавить опцию поля')]";
+    String AdminStructurePortletValueFieldOfAddOptionPopUp = ".//input[@id='optionValue']";
+    String AdminStructurePortletSaveButtonOfAddOptionPopUp = "//span[text()='Сохранить']";
+    String AdminStructurePortletSaveButtonOfFieldEddit = "//button[text()='Сохранить']";
+
 
     //TODO: WORKFLOW
 
