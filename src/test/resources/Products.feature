@@ -125,6 +125,8 @@ Scenario: 005 Create product with SKU
   Then Check that "sale" price field has right data
   Then Check that quntity field has right data
 
+
+
 #  Scenario: Create product without SKU
 #    Then Test
 

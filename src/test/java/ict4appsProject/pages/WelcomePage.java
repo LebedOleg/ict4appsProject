@@ -10,21 +10,10 @@ import net.thucydides.core.pages.PageObject;
 @DefaultUrl("https://staging.ict4apps.aimprosoft.com")
 public class WelcomePage extends PageObject {
 
-    public void theUserClickOnFirstProductImageInSuperImageCarousel(String arg0) {
-        $(Locators.SuperCarouselItem).click();
-    }
 
-    public void clickOnLogInLink() {
-        $(Locators.LogInLink).click();
-    }
 
-    public void clickOnControlDropDownMenu() {
-        $(Locators.ControlDropDownMenu).click();
-    }
 
-    public void clickOnCatalogItemOfControlDropDownMenu() {
-        $(Locators.ControllDropDownMenuCatalogItem).click();
-    }
+
 
 
 }

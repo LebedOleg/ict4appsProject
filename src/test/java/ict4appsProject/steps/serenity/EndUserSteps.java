@@ -31,7 +31,7 @@ public class EndUserSteps {
 
     @Step
     public void theUserClickOnFirstProductImageInSuperImageCarousel(String arg0) {
-        welcomePage.theUserClickOnFirstProductImageInSuperImageCarousel(arg0);
+        crud.clickMethod(Locators.SuperCarouselItem);
     }
     @Step
     public void productURLShouldContain(String arg0) {
@@ -40,7 +40,7 @@ public class EndUserSteps {
 
     @Step
     public void clickOnLogInLink() {
-        welcomePage.clickOnLogInLink();
+        crud.clickMethod(Locators.LogInLink);
     }
 
 @Step
@@ -60,7 +60,7 @@ public class EndUserSteps {
 
     @Step
     public void clickOnControlDropDownMenu() {
-        welcomePage.clickOnControlDropDownMenu();
+        crud.clickMethod(Locators.ControlDropDownMenu);
     }
 
     @Step
@@ -123,11 +123,6 @@ public class EndUserSteps {
     public void enterRandomTestDataToRetailPriceField(String arg0) {
         adminControlPage.enterRandomTestDataToRetailPriceField(4,"charac", arg0);
     }
-
-//    @Step
-//    public void enterRandomTestDataToSalePriceField() {
-//        adminControlPage.enterRandomTestDataToSalePriceField();
-//    }
 
     @Step
     public void enterRandomTestDataToQuntityField() {
