@@ -149,6 +149,9 @@ Scenario: 005 Create product without additional SKU
 
 
 
+
+
+
 #  Scenario: Create product without SKU
 #    Then Test1
 
