@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -60,4 +61,41 @@ public class CRUD extends PageObject {
         withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locator)));
         return $(Locator).isVisible();
     }
+
+
+    public JavascriptExecutor jsExecutor() {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        return js;
+    }
+
+    public void scrollPage() {
+        for (int i = 0; i < 75; i++) {
+            waitABit(5);
+            jsExecutor().executeScript("window.scrollBy(0,05)");
+        }
+    }
+
+    public void refreshPage() {
+        getDriver().navigate().refresh();
+    }
+
+    public void writeIntoInputField(String Locator,String arg0 ) {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locator)));
+        $(Locator).sendKeys(arg0);
+    }
+
+    public void enterRandomValue(String Locator) {
+        int sizeName = 10; // size of random string
+        String charac = "1234567890"; //Create the character set for random string
+        Random r = new Random();
+        String rndm = generateString(r, charac, sizeName);
+        $(Locator).sendKeys(rndm);
+    }
+
+    public void switchTab(String arg0) {
+        Integer x = Integer.parseInt(arg0);
+        ArrayList<String> windows = new ArrayList<String>(getDriver().getWindowHandles());
+        getDriver().switchTo().window(windows.get(x));
+    }
+
 }
