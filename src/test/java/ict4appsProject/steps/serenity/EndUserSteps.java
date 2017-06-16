@@ -83,8 +83,8 @@ public class EndUserSteps {
     }
 
     @Step
-    public void clickOnTypeOfStructuresDropdownItem() {
-        crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem.replace("$1", Variables.StructureName));
+    public void clickOnTypeOfStructuresDropdownItem(String StructureItem) {
+        crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem.replace("$1", StructureItem));
 
     }
 
@@ -104,8 +104,8 @@ public class EndUserSteps {
     }
 
     @Step
-    public void selectTestCategory() {
-        crud.clickMethod(Locators.AdminProductPortletCategoriesTabItemCheckbox.replace("$1", Variables.CategoryName));
+    public void selectTestCategory(String testCategory) {
+        crud.clickMethod(Locators.AdminProductPortletCategoriesTabItemCheckbox.replace("$1", testCategory));
     }
     @Step
     public void clickOnDetailTabOfProductsPortlet() {
@@ -300,20 +300,7 @@ public class EndUserSteps {
     public void controlDropDownMenuShouldAppeared() {
         Assert.assertTrue(crud.elementIsPresent(Locators.ControlDropDownMenu));
     }
-    @Step
-    public void allRequiredFieldsOfProductAddPageIsFilled() {
-        clickOnTypeOfStructuresDropdownMenu();
-        clickOnTypeOfStructuresDropdownItem();
-        adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", "Name");
-        adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", "Description");
-        clickOnCategoriesTabOfProductsPortlet();
-        selectTestCategory();
-        clickOnDetailTabOfProductsPortlet();
-        enterRandomTestDataToRetailPriceField("retail");
-        enterRandomTestDataToRetailPriceField("sale");
-        enterRandomTestDataToQuntityField();
-        clickOnPublishButton();
-    }
+
     @Step
     public void checkThatProductFieldIsCreatedRight() {
         clickOnProductsItemOfCatalogTab("Продукты");
@@ -463,8 +450,52 @@ public class EndUserSteps {
         crud.clickMethod(Locators.CUSTOMER);
     }
 
+
     @Step
-    public void clickOnMainDataTabOfProductPortlet() {
-        crud.clickOnMainDataTabOfProductPortlet(Locators.AdminProductPortletMainDataTab);
+    public void clickOnTabOfProductPortlet(String tabName) {
+        crud.clickMethod(Locators.AdminProductPortletTabs.replace("$1", tabName));
+    }
+    @Step
+    public void fillFieldsAndSelectStructureOnTab(String addProductNameField, String addProductDescriptionField, String structureDropDownItem, String tab) {
+        clickOnTypeOfStructuresDropdownMenu();
+        clickOnTypeOfStructuresDropdownItem(structureDropDownItem);
+        adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", addProductNameField);
+        adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", addProductDescriptionField);
+    }
+
+    @Step
+    public void selectCategoryOnTab(String testCategory, String categoryTab) {
+        clickOnTabOfProductPortlet(categoryTab);
+        selectTestCategory(testCategory);
+    }
+    @Step
+    public void enterRandomTestDataToFieldOfDetailTab(String field) {
+        adminControlPage.enterRandomTestDataToRetailPriceField(4,"charac", field);
+    }
+
+    @Step
+    public void fillAndFieldsOnTab(String retailPrice, String salePrice, String quantityField, String tab) {
+        clickOnTabOfProductPortlet(tab);
+        enterRandomTestDataToFieldOfDetailTab(retailPrice);
+        enterRandomTestDataToFieldOfDetailTab(salePrice);
+        enterRandomTestDataToFieldOfDetailTab(quantityField);
+        clickOnPublishButton();
+
+    }
+    @Step
+    public void checkThatTabIsAppeared(String tabName) {
+        crud.elementIsPresent(Locators.AdminProductPortletTabs.replace("$1", tabName));
+    }
+    @Step
+    public void clickOnAddArticulesDropdownMenu() {
+        crud.clickMethod(Locators.AdminProductPortletAddArticulesDropDown);
+    }
+    @Step
+    public void clickOnAutoGenerationItemOfAddArticulesDropdownMenu() {
+        crud.clickMethod(Locators.AdminProductPortletAddArticulesAutoGenerationItem);
+    }
+
+    public void clickOnConfirmButtonOfAutoGenerationPopUpWindow() {
+        crud.clickMethod(Locators.AdminProductPortletConfirmPopUpButton);
     }
 }

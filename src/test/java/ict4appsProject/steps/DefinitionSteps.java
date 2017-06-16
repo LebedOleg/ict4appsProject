@@ -77,10 +77,6 @@ public class DefinitionSteps {
         anna.clickOnTypeOfStructuresDropdownMenu();
     }
 
-    @And("^Click on Type of Structures dropdown item$")
-    public void clickOnTypeOfStructuresDropdownItem() throws Throwable {
-        anna.clickOnTypeOfStructuresDropdownItem();
-    }
 
     @And("^Enter random test data to Name field$")
     public void enterRandomTestDateToNameField() throws Throwable {
@@ -97,10 +93,6 @@ public class DefinitionSteps {
         anna.clickOnCategoriesTabOfProductsPortlet();
     }
 
-    @And("^Select Test Category$")
-    public void selectTestCategory() throws Throwable {
-        anna.selectTestCategory();
-    }
 
     @And("^Click on Detail tab of Products portlet$")
     public void clickOnDetailTabOfProductsPortlet() throws Throwable {
@@ -112,10 +104,7 @@ public class DefinitionSteps {
         anna.enterRandomTestDataToRetailPriceField(arg0);
     }
 
-//    @And("^Enter random test data to Sale price field$")
-//    public void enterRandomTestDataToSalePriceField() throws Throwable {
-//        anna.enterRandomTestDataToSalePriceField();
-//    }
+
 
     @And("^Enter random test data to Quantity field$")
     public void enterRandomTestDataToQuntityField() throws Throwable {
@@ -314,10 +303,7 @@ public class DefinitionSteps {
         anna.controlDropDownMenuShouldAppeared();
     }
 
-    @And("^All required fields of product add page is filled$")
-    public void allRequiredFieldsOfProductAddPageIsFilled() throws Throwable {
-        anna.allRequiredFieldsOfProductAddPageIsFilled();
-    }
+
 
     @Then("^Check that product field is created right$")
     public void checkThatProductFieldIsCreatedRight() throws Throwable {
@@ -443,10 +429,7 @@ public class DefinitionSteps {
         anna.clickOnTheLinkOnTheLeftAccordion(arg0);
     }
 
-    @And("^Click on Main data tab of Product portlet$")
-    public void clickOnMainDataTabOfProductPortlet() throws Throwable {
-        anna.clickOnMainDataTabOfProductPortlet();
-    }
+
 
     @When("^Write \"([^\"]*)\" into search user text box$")
     public void writeIntoSearchUserTextBox(String arg0) throws Throwable {
@@ -456,5 +439,57 @@ public class DefinitionSteps {
     @When("^Select customer who doesn't have a phone$")
     public void selectCustomerWhoDoesnTHaveAPhone() throws Throwable {
         anna.selectCustomerWhoDoesntHaveAPhone();
+    }
+
+    @And("^Click on \"([^\"]*)\" tab of Product portlet$")
+    public void clickOnTabOfProductPortlet(String tabName) throws Throwable {
+        anna.clickOnTabOfProductPortlet(tabName);
+    }
+
+    @And("^Fill \"([^\"]*)\" \"([^\"]*)\" fields and select \"([^\"]*)\" structure on \"([^\"]*)\" tab$")
+    public void fillFieldsAndSelectStructureOnTab(String addProductNameField, String addProductDescriptionField, String structureDropDownItem, String tab) throws Throwable {
+        anna.fillFieldsAndSelectStructureOnTab(addProductNameField, addProductDescriptionField,structureDropDownItem,tab);
+    }
+
+    @And("^Select \"([^\"]*)\" category on \"([^\"]*)\" tab$")
+    public void selectCategoryOnTab(String testCategory, String categoryTab) throws Throwable {
+        anna.selectCategoryOnTab(testCategory, categoryTab);
+    }
+
+    @And("^Enter random test data to \"([^\"]*)\" field of Detail tab$")
+    public void enterRandomTestDataToFieldOfDetailTab(String field) throws Throwable {
+        anna.enterRandomTestDataToFieldOfDetailTab(field);
+    }
+
+    @And("^Fill \"([^\"]*)\" \"([^\"]*)\" and \"([^\"]*)\" fields on \"([^\"]*)\" tab$")
+    public void fillAndFieldsOnTab(String retailPrice, String salePrice, String quantityField, String tab) throws Throwable {
+        anna.fillAndFieldsOnTab(retailPrice, salePrice, quantityField, tab);
+    }
+
+    @And("^Click on \"([^\"]*)\" Type Of Structures Dropdown Item$")
+    public void clickOnTypeOfStructuresDropdownItem(String arg0) throws Throwable {
+        anna.clickOnTypeOfStructuresDropdownItem(arg0);
+    }
+
+    @Then("^Check that \"([^\"]*)\" tab is appeared$")
+    public void checkThatTabIsAppeared(String tabName) throws Throwable {
+        anna.checkThatTabIsAppeared(tabName);
+    }
+
+    @And("^Click on Add Articules dropdown menu$")
+    public void clickOnAddArticulesDropdownMenu() throws Throwable {
+        anna.clickOnAddArticulesDropdownMenu();
+
+    }
+
+    @And("^Click on Auto Generation item of Add Articules dropdown menu$")
+    public void clickOnAutoGenerationItemOfAddArticulesDropdownMenu() throws Throwable {
+        anna.clickOnAutoGenerationItemOfAddArticulesDropdownMenu();
+
+    }
+
+    @And("^Click on Confirm button of Auto Generation Pop Up window$")
+    public void clickOnConfirmButtonOfAutoGenerationPopUpWindow() throws Throwable {
+        anna.clickOnConfirmButtonOfAutoGenerationPopUpWindow();
     }
 }

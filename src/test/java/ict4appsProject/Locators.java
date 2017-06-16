@@ -21,16 +21,19 @@ public interface Locators {
 
 
     String AdminProductPortletTypeOfStructure = ".//*[@id='fields-structures']";
-    String AdminProductPortletTypeOfStructureItem = ".//*[@id='fields-structures']/option[contains(text(),'$1')]";
+    String AdminProductPortletTypeOfStructureItem = "//select[@id='fields-structures']/option[contains(text(),'$1')]";
     String AdminProductPortletNameField = "//label[text()='Название товара']/..//input[@type='text']";
     String AdminProductPortletDescriptionField = "//span[@class='input-localized input-localized-textarea']//textarea";
     String AdminProductPortletCategoriesTab = "//a[text()='Категории']";
-    String AdminProductPortletMainDataTab = "//a[contains(text(),'Основные')]";
+    String AdminProductPortletTabs = "//a[text()='$1']";
     String AdminProductPortletCategoriesTabItemCheckbox = "//span[text()='$1']/../input";
     String AdminProductPortletDetailsTab = "//a[text()='Детали']";
     String AdminProductPortletDetailsTabPriceField = ".//*[@id='$1Price-input']";
     String AdminProductPortletDetailsTabQuantityField = ".//*[@id='stockQuantity-input']";
     String AdminProductPortletPublishButton = "//a[contains(text(),'Опубликовать')]";
+    String AdminProductPortletAddArticulesDropDown = "//a[@class=' dropdown-toggle']/span [contains(text(),'Добавить')]";
+    String AdminProductPortletAddArticulesAutoGenerationItem = "//span[contains(text(), 'Автогенерация Артикулов')]";
+    String AdminProductPortletConfirmPopUpButton = "//span[text()='Подтвердить']";
 
     String AdminCategoryPortletAddButton = "//span[@class='nav-item-label' and contains(text(),'Добавить Категорию')]";
     String AddCategoryPopUpContainer = "//fieldset[@class='formData']//div[@class='form-group']//input[@class='language-value']";

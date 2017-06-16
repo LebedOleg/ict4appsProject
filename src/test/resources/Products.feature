@@ -102,15 +102,14 @@ Scenario: 005 Create product without additional SKU
   And Click on "Продукты" item of Catalog Tab
   And Click on Add product button
   And Click on Type of Structures dropdown menu
-  And Click on Type of Structures dropdown item
+  And Click on "TestStucture" Type Of Structures Dropdown Item
   And Enter random test data to Name field
   And Enter random test data to Description field
-  And Click on Categories tab of Products portlet
-  And Select Test Category
+  And Select "TestCategory" category on "Категории" tab
   And Click on Detail tab of Products portlet
-  And Enter random test data to "retail" price field
-  And Enter random test data to "sale" price field
-  And Enter random test data to Quantity field
+  And Enter random test data to "retail" field of Detail tab
+  And Enter random test data to "sale" field of Detail tab
+  And Enter random test data to "Quantity" field of Detail tab
   And Click on Publish button
   And Click on "Продукты" item of Catalog Tab
   And Click on LAST pagination button
@@ -129,12 +128,23 @@ Scenario: 005 Create product without additional SKU
     Given the user is on Ictapps staging page
     Given Log in into system as admin
     When Go to Products admin CP page and click on Add button
-    And All required fields of product add page is filled
+    And Fill "Name" "Description" fields and select "TestStucture" structure on "Основные Данные" tab
+    And Select "TestCategory" category on "Категории" tab
+    And Fill "retail" "sale" and "Quantity" fields on "Детали" tab
     Then Check that product field is created right
-    And Click on Main data tab of Product portlet
+    And Click on "Основные Данные" tab of Product portlet
     And Click on Type of Structures dropdown menu
-    And Click on Type of Structures dropdown item
+    And Click on "TestStucture" Type Of Structures Dropdown Item
     And Click on Publish button
+    And Click on "Продукты" item of Catalog Tab
+    And Click on LAST pagination button
+    Then Products List should contains product that was created
+    Then Check that "Артикулы" tab is appeared
+    When  Click on "Артикулы" tab of Product portlet
+    And  Click on Add Articules dropdown menu
+    And Click on Auto Generation item of Add Articules dropdown menu
+    And Click on Confirm button of Auto Generation Pop Up window
+
 
 
 
