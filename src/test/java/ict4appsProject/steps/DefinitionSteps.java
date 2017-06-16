@@ -22,10 +22,10 @@ public class DefinitionSteps {
     }
 
 
-    @When("^the user click on \"([^\"]*)\"th product image in Super image carousel$")
-    public void theUserClickOnThProductImageInSuperImageCarousel(String arg0) throws Throwable {
-        anna.theUserClickOnFirstProductImageInSuperImageCarousel(arg0);
-    }
+//    @When("^the user click on \"([^\"]*)\"th product image in Super image carousel$")
+//    public void theUserClickOnThProductImageInSuperImageCarousel(String arg0) throws Throwable {
+//        anna.theUserClickOnFirstProductImageInSuperImageCarousel(arg0);
+//    }
 
     @Then("^product URL should contain \"([^\"]*)\"$")
     public void productURLShouldContain(String arg0) throws Throwable {
@@ -304,14 +304,29 @@ public class DefinitionSteps {
         anna.logInIntoSystemAsAdmin();
     }
 
+    @When("^Go to Products admin CP page and click on Add button$")
+    public void goToProductsAdminCPPageAndClickOnAddButton() throws Throwable {
+        anna.goToProductsAdminCPPageAndClickOnAddButton();
+    }
+
     @Then("^Control DropDown menu should appeared$")
     public void controlDropDownMenuShouldAppeared() throws Throwable {
         anna.controlDropDownMenuShouldAppeared();
     }
 
-    @When("^Go to Products admin CP page and click on Add button$")
-    public void goToProductsAdminCPPageAndClickOnAddButton() throws Throwable {
-        anna.goToProductsAdminCPPageAndClickOnAddButton();
+    @And("^All required fields of product add page is filled$")
+    public void allRequiredFieldsOfProductAddPageIsFilled() throws Throwable {
+        anna.allRequiredFieldsOfProductAddPageIsFilled();
+    }
+
+    @Then("^Check that product field is created right$")
+    public void checkThatProductFieldIsCreatedRight() throws Throwable {
+        anna.checkThatProductFieldIsCreatedRight();
+    }
+
+    @And("^Select test Structure at Structures dropdown menu$")
+    public void selectTestStructureAtStructuresDropdownMenu() throws Throwable {
+
     }
 
 

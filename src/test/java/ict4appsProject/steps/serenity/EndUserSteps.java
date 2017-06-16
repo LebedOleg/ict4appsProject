@@ -29,10 +29,10 @@ public class EndUserSteps {
         welcomePage.open();
     }
 
-    @Step
-    public void theUserClickOnFirstProductImageInSuperImageCarousel(String arg0) {
-        crud.clickMethod(Locators.SuperCarouselItem);
-    }
+//    @Step
+//    public void theUserClickOnFirstProductImageInSuperImageCarousel(String arg0) {
+//        welcomePage.theUserClickOnFirstProductImageInSuperImageCarousel(arg0);
+//    }
     @Step
     public void productURLShouldContain(String arg0) {
        Assert.assertThat(productsPage.getCurrentURL(), containsString(arg0));
@@ -71,8 +71,6 @@ public class EndUserSteps {
     @Step
     public void clickOnProductsItemOfCatalogTab(String arg0) {
         crud.waitBit(1500);
-
-
         crud.clickMethod(Locators.ProductsCatalogItem.replace("$1", arg0));
     }
 
@@ -87,8 +85,7 @@ public class EndUserSteps {
 
     @Step
     public void clickOnTypeOfStructuresDropdownItem() {
-        crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem);
-
+        crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem.replace("$1", Variables.StructureName));
     }
 
     @Step
@@ -123,6 +120,11 @@ public class EndUserSteps {
     public void enterRandomTestDataToRetailPriceField(String arg0) {
         adminControlPage.enterRandomTestDataToRetailPriceField(4,"charac", arg0);
     }
+
+//    @Step
+//    public void enterRandomTestDataToSalePriceField() {
+//        adminControlPage.enterRandomTestDataToSalePriceField();
+//    }
 
     @Step
     public void enterRandomTestDataToQuntityField() {
@@ -283,6 +285,7 @@ public class EndUserSteps {
     public void clickOnSaveButtonOfFieldEdditPage() {
         crud.clickMethod(Locators.AdminStructurePortletSaveButtonOfFieldEddit);
     }
+
     @Step
     public void logInIntoSystemAsAdmin() {
         crud.clickMethod(Locators.LogInLink);
@@ -291,17 +294,45 @@ public class EndUserSteps {
         logInPage.clickOnLogInButton();
         Assert.assertTrue(crud.elementIsPresent(Locators.ControlDropDownMenu));
     }
-    @Step
-    public void controlDropDownMenuShouldAppeared() {
-        Assert.assertTrue(crud.elementIsPresent(Locators.ControlDropDownMenu));
-    }
 
     @Step
     public void goToProductsAdminCPPageAndClickOnAddButton() {
         crud.clickMethod(Locators.ControlDropDownMenu);
-        crud.clickMethod(Locators.ControllDropDownMenuCatalogItem.replace("$1", " Каталог "));
-        crud.waitBit(1500);
-        crud.clickMethod(Locators.ProductsCatalogItem.replace("$1", "Продукты"));
-        crud.clickMethod(Locators.AdminProductPortletAddProduct);
+        clickOnCatalogItemOfControlDropDownMenu(" Каталог ");
+        clickOnProductsItemOfCatalogTab("Продукты");
+        clickOnAddProductButton();
+    }
+@Step
+    public void controlDropDownMenuShouldAppeared() {
+        Assert.assertTrue(crud.elementIsPresent(Locators.ControlDropDownMenu));
+    }
+    @Step
+    public void allRequiredFieldsOfProductAddPageIsFilled() {
+        clickOnTypeOfStructuresDropdownMenu();
+        clickOnTypeOfStructuresDropdownItem();
+        adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", "Name");
+        adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", "Description");
+        clickOnCategoriesTabOfProductsPortlet();
+        selectTestCategory();
+        clickOnDetailTabOfProductsPortlet();
+        enterRandomTestDataToRetailPriceField("retail");
+        enterRandomTestDataToRetailPriceField("sale");
+        enterRandomTestDataToQuntityField();
+        clickOnPublishButton();
+    }
+    @Step
+    public void checkThatProductFieldIsCreatedRight() {
+        clickOnProductsItemOfCatalogTab("Продукты");
+        clickOnLASTPaginationButton();
+        productsListShouldContainsProductThatWasCreated();
+        productNameAccordingToNameThatWasEntered();
+        checkThatDescriptionFieldHasRightData();
+        checkThatTypeOfStructuresDropdownMenuHasRightItem();
+        clickOnCategoriesTabOfProductsPortlet();
+        checkThatRightCategoryIsSelected();
+        clickOnDetailTabOfProductsPortlet();
+        checkThatPriceFieldHasRightData("retail");
+        checkThatPriceFieldHasRightData("sale");
+        checkThatQuntityFieldHasRightData();
     }
 }

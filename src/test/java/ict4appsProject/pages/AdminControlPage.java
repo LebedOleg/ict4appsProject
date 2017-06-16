@@ -79,12 +79,10 @@ public class AdminControlPage extends PageObject {
     }
 
     public boolean checkThatRightCategoryIsSelected() {
-        return $(Locators.AdminProductPortletCategoriesTabItemCheckbox + "[@checked='']").isPresent();
+        return $(Locators.AdminProductPortletCategoriesTabItemCheckbox.replace("$1",Variables.CategoryName) + "[@checked='']").isPresent();
     }
 
     public boolean checkThatPriceFieldHasRightData(String arg0) {
-        System.out.println(RetailPrice);
-        System.out.println(SalePrice);
         if (arg0.equals("retail")) {
       return   $(Locators.AdminProductPortletDetailsTabPriceField.replace("$1", arg0)).getValue().contains(RetailPrice); }
       else {
