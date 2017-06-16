@@ -126,7 +126,7 @@ Scenario: 005 Create product with SKU
   Then Check that quntity field has right data
 
 #  Scenario: Create product without SKU
-#    Then Test
+#    Then Test1
 
 #
 #  Scenario: Delete product with SKU
