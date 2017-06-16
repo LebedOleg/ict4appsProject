@@ -91,7 +91,7 @@ Feature: Products cart testing.
      And Click on Save button of Add option popup
      Then Option "AlphaCharacters" should appeared on option list
 
-Scenario: 005 Create product with SKU
+Scenario: 005 Create product without SKU
   Given the user is on Ictapps staging page
   Given Click on LogInLink
   And Enter Email address
