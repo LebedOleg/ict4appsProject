@@ -62,6 +62,10 @@ public interface Locators {
 
     String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[1]";
     String CART = "//div[@class='card']//div[@class='cart-icon']/./..";
+    String SAVE_ORDER_BTN = "//div[@class='pull-right']//button[contains(text(),'Сохранить')]";
+    String ORDER_SPAN = "//ul[@class='category-portlets']//span[contains(text(),'$1')]";
+
+
 
     //TODO:   COMMON ELEMENTS
 
