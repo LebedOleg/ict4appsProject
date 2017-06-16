@@ -403,10 +403,10 @@ public class DefinitionSteps {
         anna.clickOnTheOrderButton(arg0);
     }
 
-    @When("^Click on the \"([^\"]*)\"$")
-    public void clickOnThe(String arg0) throws Throwable {
-        anna.clickOnThe(arg0);
-    }
+//    @When("^Click on the \"([^\"]*)\"$")
+//    public void clickOnThe(String arg0) throws Throwable {
+//        anna.clickOnThe(arg0);
+//    }
 
     @When("^Click on the \"([^\"]*)\" link on the left accordion$")
     public void clickOnTheLinkOnTheLeftAccordion(String arg0) throws Throwable {

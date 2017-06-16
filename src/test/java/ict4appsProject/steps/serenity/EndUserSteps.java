@@ -23,7 +23,6 @@ public class EndUserSteps {
     AdminControlPage adminControlPage;
     CRUD crud;
 
-
     @Step
     public void theUserIsOnIctAppsStagingPage() {
         welcomePage.open();
@@ -43,7 +42,7 @@ public class EndUserSteps {
         crud.clickMethod(Locators.LogInLink);
     }
 
-@Step
+    @Step
     public void enterEmailAddress() {
         logInPage.enterEmailAddress();
     }
@@ -71,8 +70,6 @@ public class EndUserSteps {
     @Step
     public void clickOnProductsItemOfCatalogTab(String arg0) {
         crud.waitBit(1500);
-
-
         crud.clickMethod(Locators.ProductsCatalogItem.replace("$1", arg0));
     }
 
@@ -88,25 +85,21 @@ public class EndUserSteps {
     @Step
     public void clickOnTypeOfStructuresDropdownItem() {
         crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem);
-
     }
 
     @Step
     public void enterRandomTestDateToNameField() {
-
         adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", "Name");
     }
 
     @Step
     public void enterRandomTestDateToDescriptionField() {
-
         adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", "Description");
     }
 
     @Step
     public void clickOnCategoriesTabOfProductsPortlet() {
         crud.clickMethod(Locators.AdminProductPortletCategoriesTab);
-
     }
 
     @Step
@@ -116,7 +109,6 @@ public class EndUserSteps {
     @Step
     public void clickOnDetailTabOfProductsPortlet() {
         crud.clickMethod(Locators.AdminProductPortletDetailsTab);
-
     }
 
     @Step
@@ -399,10 +391,10 @@ public class EndUserSteps {
         crud.clickMethod(Locators.SAVE_ORDER_BTN.replace("$1",arg0));
     }
 
-    @Step
-    public void clickOnThe(String arg0) {
-            adminControlPage.clickOnThe(arg0);
-        }
+//    @Step
+//    public void clickOnThe(String arg0) {
+//            adminControlPage.clickOnThe(arg0);
+//        }
 
     @Step
     public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
