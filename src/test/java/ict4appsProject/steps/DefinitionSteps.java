@@ -299,6 +299,21 @@ public class DefinitionSteps {
         anna.clickOnSaveButtonOfFieldEdditPage();
     }
 
+    @Given("^Log in into system as admin$")
+    public void logInIntoSystemAsAdmin() throws Throwable {
+        anna.logInIntoSystemAsAdmin();
+    }
+
+    @Then("^Control DropDown menu should appeared$")
+    public void controlDropDownMenuShouldAppeared() throws Throwable {
+        anna.controlDropDownMenuShouldAppeared();
+    }
+
+    @When("^Go to Products admin CP page and click on Add button$")
+    public void goToProductsAdminCPPageAndClickOnAddButton() throws Throwable {
+        anna.goToProductsAdminCPPageAndClickOnAddButton();
+    }
+
 
 //
 }

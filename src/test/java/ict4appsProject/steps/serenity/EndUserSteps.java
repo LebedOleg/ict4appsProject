@@ -283,4 +283,25 @@ public class EndUserSteps {
     public void clickOnSaveButtonOfFieldEdditPage() {
         crud.clickMethod(Locators.AdminStructurePortletSaveButtonOfFieldEddit);
     }
+    @Step
+    public void logInIntoSystemAsAdmin() {
+        crud.clickMethod(Locators.LogInLink);
+        logInPage.enterEmailAddress();
+        logInPage.enterPassword();
+        logInPage.clickOnLogInButton();
+        Assert.assertTrue(crud.elementIsPresent(Locators.ControlDropDownMenu));
+    }
+    @Step
+    public void controlDropDownMenuShouldAppeared() {
+        Assert.assertTrue(crud.elementIsPresent(Locators.ControlDropDownMenu));
+    }
+
+    @Step
+    public void goToProductsAdminCPPageAndClickOnAddButton() {
+        crud.clickMethod(Locators.ControlDropDownMenu);
+        crud.clickMethod(Locators.ControllDropDownMenuCatalogItem.replace("$1", " Каталог "));
+        crud.waitBit(1500);
+        crud.clickMethod(Locators.ProductsCatalogItem.replace("$1", "Продукты"));
+        crud.clickMethod(Locators.AdminProductPortletAddProduct);
+    }
 }

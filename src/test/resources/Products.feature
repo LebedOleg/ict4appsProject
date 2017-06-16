@@ -5,11 +5,11 @@ Feature: Products cart testing.
     Given the user is on Ictapps staging page
 
     Scenario: 001 Create test Category
-      Given the user is on Ictapps staging page
       Given Click on LogInLink
       And Enter Email address
       And Enter Password
       And Click on LogInButton
+      Then Control DropDown menu should appeared
       When Click on Control DropDown menu
       And Click on " Каталог " item of Control DropDown menu
       And Click on "Категории" item of Catalog Tab
@@ -19,11 +19,11 @@ Feature: Products cart testing.
       Then Categories list should contain category that was created
 
    Scenario: 002 Create Test Structure
-     Given the user is on Ictapps staging page
      Given Click on LogInLink
      And Enter Email address
      And Enter Password
      And Click on LogInButton
+     Then Control DropDown menu should appeared
      When Click on Control DropDown menu
      And Click on " Каталог " item of Control DropDown menu
      And Click on "Параметры" item of Catalog Tab
@@ -33,11 +33,11 @@ Feature: Products cart testing.
      Then Structures list should contain structure that was created
 
    Scenario: 003 Create Test field in test Structure
-     Given the user is on Ictapps staging page
      Given Click on LogInLink
      And Enter Email address
      And Enter Password
      And Click on LogInButton
+     Then Control DropDown menu should appeared
      When Click on Control DropDown menu
      And Click on " Каталог " item of Control DropDown menu
      And Click on "Параметры" item of Catalog Tab
@@ -50,11 +50,11 @@ Feature: Products cart testing.
 
 
    Scenario: 004 Create Test fields for Additional SKu in test Structure
-     Given the user is on Ictapps staging page
      Given Click on LogInLink
      And Enter Email address
      And Enter Password
      And Click on LogInButton
+     Then Control DropDown menu should appeared
      When Click on Control DropDown menu
      And Click on " Каталог " item of Control DropDown menu
      And Click on "Параметры" item of Catalog Tab
@@ -91,12 +91,12 @@ Feature: Products cart testing.
      And Click on Save button of Add option popup
      Then Option "AlphaCharacters" should appeared on option list
 
-Scenario: 005 Create product without SKU
-  Given the user is on Ictapps staging page
+Scenario: 005 Create product without additional SKU
   Given Click on LogInLink
   And Enter Email address
   And Enter Password
   And Click on LogInButton
+  Then Control DropDown menu should appeared
   When Click on Control DropDown menu
   And Click on " Каталог " item of Control DropDown menu
   And Click on "Продукты" item of Catalog Tab
@@ -124,6 +124,11 @@ Scenario: 005 Create product without SKU
   Then Check that "retail" price field has right data
   Then Check that "sale" price field has right data
   Then Check that quntity field has right data
+
+  Scenario: 006 Create product with additional SKU
+    Given the user is on Ictapps staging page
+    Given Log in into system as admin
+    When Go to Products admin CP page and click on Add button
 
 
 
