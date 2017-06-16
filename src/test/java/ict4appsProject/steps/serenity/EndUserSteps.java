@@ -283,4 +283,126 @@ public class EndUserSteps {
     public void clickOnSaveButtonOfFieldEdditPage() {
         crud.clickMethod(Locators.AdminStructurePortletSaveButtonOfFieldEddit);
     }
-}
+        @Step
+        public void clickOnTheSpan(String arg0) {
+            crud.clickMethod(Locators.SPAN.replace("$1", arg0));
+        }
+
+        @Step
+        public void clickOnFirstProductTitle() {
+            crud.clickMethod(Locators.FIRST_PRODUCT_TITLE);
+        }
+
+        @Step
+        public void clickOnTheButton(String arg0) {
+            crud.clickMethod(Locators.BUTTON.replace("$1", arg0));
+        }
+
+        @Step
+        public void clickOnTheCartIcon() {
+            welcomePage.checkForCartOptionsVisibility();
+            crud.waitBit(100);
+            crud.clickMethod(Locators.CART);
+        }
+
+        @Step
+        public void clickOnTheLink(String arg0) {
+            crud.clickMethod(Locators.LINK.replace("$1", arg0));
+            crud.waitBit(2000);
+        }
+
+        @Step
+        public void checkThatCreatedOrderHasStatus(String arg0) {
+            Assert.assertTrue(adminControlPage.checkThatCreatedOrderHasStatus(arg0));
+        }
+
+        @Step
+        public void clickOnTheCreatedOrderId() {
+            adminControlPage.clickOnTheCreatedOrderId();
+        }
+
+        @Step
+        public void checkThatCreatedOrderPageHasStatusTag(String arg0) {
+            Assert.assertTrue(adminControlPage.checkThatCreatedOrderPageHasStatusTag(arg0));
+        }
+
+        @Step
+        public void checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
+            Assert.assertTrue(adminControlPage.checkThatCreatedOrderPageHasStatusInStatusHistory(arg0));
+        }
+
+        @Step
+        public void checkThatCreatedOrderPageHasStatusInShortStatusHistory(String arg0) {
+            Assert.assertTrue(adminControlPage.checkThatCreatedOrderPageHasStatusInShortStatusHistory(arg0));
+        }
+
+        @Step
+        public void openNewTab() {
+            welcomePage.openNewTab();
+        }
+
+        @Step
+        public void clickOnTheSelfPickUpCheckbox() {
+            crud.clickMethod(Locators.SELF_PICK_UP_CHECKBOX);
+        }
+
+        @Step
+        public void selectAddress() {
+            crud.waitBit(1000);
+            adminControlPage.selectAddress();
+        }
+
+        @Step
+        public void switchTab(String arg0) {
+            crud.switchTab(arg0);
+        }
+
+        @Step
+        public void refreshPage() {
+            crud.refreshPage();
+        }
+
+        @Step
+        public void scrollPage() {
+            crud.scrollPage();
+        }
+
+        @Step
+        public void writeIntoInputField(String arg0) {
+            crud.writeIntoInputField(Locators.ADD_PRODUCT_INPUT,arg0);
+        }
+
+        @Step
+        public void clickOnTheProductFromProductSearch() {
+            crud.waitBit(1000);
+            crud.clickMethod(Locators.PRODUCT_FROM_PRODUCT_SEARCH);
+        }
+
+        @Step
+        public void writeDataIntoField(String arg0) {
+            crud.waitBit(500);
+            crud.enterRandomValue(Locators.CREATE_CUSTOMER_FIELDS.replace("$1",arg0));
+        }
+
+        @Step
+        public void saveCreatedUser() {
+            adminControlPage.saveCreatedUser();
+        }
+
+        @Step
+        public void clickOnTheOrderButton(String arg0) {
+            adminControlPage.clickOnTheOrderButton(arg0);
+        }
+
+        @Step
+        public void clickOnThe(String arg0) {
+            adminControlPage.clickOnThe(arg0);
+        }
+
+        @Step
+        public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
+            adminControlPage.clickOnTheLinkOnTheLeftAccordion(arg0);
+        }
+
+
+    }

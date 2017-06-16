@@ -60,12 +60,29 @@ public interface Locators {
 
     //TODO: WORKFLOW
 
-    String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[1]";
-    String CART = "//div[@class='card']//div[@class='cart-icon']/./..";
+    //TODO: WORKFLOW
+
+    String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[2]";
+    String CART = "//div[@class='card']//div[@class='cart-icon']/..";
+    String ORDER_LINE_STATUS = "//tr[contains(@class,'order-entity')]//td[5]//strong";
+    String ORDER_LINE_ID = "//tr[contains(@class,'order-entity')]//td[2]//a";
+    String ORDER_PAGE_STATUS_TAG = "//span[@class='order-status-bar']/span[contains(text(),'$1')]";
+    String ORDER_PAGE_HISTORY_STATUS = "(//span[contains(@class,'new-value')])[1]";
+    String ORDER_PAGE_HISTORY_SHORT_STATUS = "(//span[@class='status'])[2]";
+    String SELF_PICK_UP_CHECKBOX = ".//*[@id='self-pickup']";
+    String ADDRESS_SELECT = ".//*[@id='officeAddress']";
+    String ADDRESS = "(//select[@id='officeAddress']/option)[2]";
+    String CART_OPTIONS = "//div[@class='card']//span[contains(text(),'Корзина Резюме')]";
+    String OFF_OPTIONS = "//span[contains(text(),'Режим Редактирования')]";
+    String ORDERS_LINK = "//a[@class=\"taglib-icon\"]/span[contains(text(),'$1')]";
+    String BACK_LINK = "//a[@title='Back']";
+    String ADD_PRODUCT_INPUT = ".//*[@id='accordion']/input";
+    String PRODUCT_FROM_PRODUCT_SEARCH = ".//*[@id='checkbox-tree']/ul/li[1]";
+    String CREATE_CUSTOMER_FIELDS = "//div[contains(text(),'$1')] /ancestor::div[@class='control-group row-fluid']//div/input";
+    String SAVE_USER_BTN = ".//*[@id='userSaveBtn']";
+    //    String SAVE_ORDER_BTN = "//div[@class='pull-right']//button[contains(text(),'$1')]";
     String SAVE_ORDER_BTN = "//div[@class='pull-right']//button[contains(text(),'Сохранить')]";
     String ORDER_SPAN = "//ul[@class='category-portlets']//span[contains(text(),'$1')]";
-
-
 
     //TODO:   COMMON ELEMENTS
 

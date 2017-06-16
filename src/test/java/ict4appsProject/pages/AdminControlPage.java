@@ -5,6 +5,7 @@ import ict4appsProject.Locators;
 import ict4appsProject.Variables;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -113,4 +114,57 @@ public class AdminControlPage extends PageObject {
         }
         return false;
     }
+
+    //TODO: WORKFLOW
+
+    public boolean checkThatCreatedOrderHasStatus(String arg0) {
+        List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_STATUS));
+        if (list.get(list.size()-1).getText().contains(arg0)) {
+            return true;
+        }
+        else return false;
+    }
+
+    public void clickOnTheCreatedOrderId() {
+        List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_ID));
+        list.get(list.size()-1).click();
+    }
+
+    public boolean checkThatCreatedOrderPageHasStatusTag(String arg0) {
+        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1",arg0)).isPresent();
+    }
+
+    public boolean checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
+        return $(Locators.ORDER_PAGE_HISTORY_STATUS).getText().equalsIgnoreCase(arg0);
+    }
+
+    public boolean checkThatCreatedOrderPageHasStatusInShortStatusHistory(String arg0) {
+        return $(Locators.ORDER_PAGE_HISTORY_SHORT_STATUS).getText().equalsIgnoreCase(arg0);
+    }
+
+    public void selectAddress() {
+        $(Locators.ADDRESS_SELECT).click();
+        $(Locators.ADDRESS).click();
+    }
+
+    public void saveCreatedUser() {
+        $(Locators.SAVE_USER_BTN).click();
+    }
+
+    public void clickOnTheOrderButton(String arg0) {
+        crud.waitBit(1000);
+//        withTimeoutOf(5,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locators.SAVE_ORDER_BTN)));
+        $(Locators.SAVE_ORDER_BTN.replace("$1",arg0)).click();
+    }
+
+    public void clickOnThe(String arg0) {
+        $(Locators.ORDERS_LINK.replace("$1",arg0)).click();
+    }
+
+    public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
+        $(Locators.ORDER_SPAN.replace("$1",arg0)).click();
+    }
+
+
+
 }
