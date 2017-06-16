@@ -25,6 +25,7 @@ public interface Locators {
     String AdminProductPortletNameField = "//label[text()='Название товара']/..//input[@type='text']";
     String AdminProductPortletDescriptionField = "//span[@class='input-localized input-localized-textarea']//textarea";
     String AdminProductPortletCategoriesTab = "//a[text()='Категории']";
+    String AdminProductPortletMainDataTab = "//a[contains(text(),'Основные')]";
     String AdminProductPortletCategoriesTabItemCheckbox = "//span[text()='$1']/../input";
     String AdminProductPortletDetailsTab = "//a[text()='Детали']";
     String AdminProductPortletDetailsTabPriceField = ".//*[@id='$1Price-input']";

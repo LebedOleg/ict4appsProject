@@ -87,7 +87,7 @@ public class EndUserSteps {
 
     @Step
     public void clickOnTypeOfStructuresDropdownItem() {
-        crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem);
+        crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem.replace("$1", Variables.StructureName));
 
     }
 
@@ -333,7 +333,7 @@ public class EndUserSteps {
         checkThatPriceFieldHasRightData("sale");
         checkThatQuntityFieldHasRightData();
     }
-}
+
         @Step
         public void clickOnTheSpan(String arg0) {
             crud.clickMethod(Locators.SPAN.replace("$1", arg0));
@@ -455,5 +455,8 @@ public class EndUserSteps {
             adminControlPage.clickOnTheLinkOnTheLeftAccordion(arg0);
         }
 
-
+    @Step
+    public void clickOnMainDataTabOfProductPortlet() {
+        crud.clickMethod(Locators.AdminProductPortletMainDataTab);
     }
+}

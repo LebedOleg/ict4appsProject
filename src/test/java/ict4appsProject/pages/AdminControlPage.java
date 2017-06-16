@@ -71,7 +71,7 @@ public class AdminControlPage extends PageObject {
     }
 
     public boolean checkThatTypeOfStructuresDropdownMenuHasRightItem() {
-       return  $(Locators.AdminProductPortletTypeOfStructure + "/option[@selected='']").getText().equals(" тест структуры ");
+       return  $(Locators.AdminProductPortletTypeOfStructure + "/option[@selected='']").getText().contains(Variables.StructureName);
 
     }
 

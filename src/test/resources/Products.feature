@@ -131,6 +131,7 @@ Scenario: 005 Create product without additional SKU
     When Go to Products admin CP page and click on Add button
     And All required fields of product add page is filled
     Then Check that product field is created right
+    And Click on Main data tab of Product portlet
     And Click on Type of Structures dropdown menu
     And Click on Type of Structures dropdown item
     And Click on Publish button

@@ -443,6 +443,10 @@ public class DefinitionSteps {
         anna.clickOnTheLinkOnTheLeftAccordion(arg0);
     }
 
+    @And("^Click on Main data tab of Product portlet$")
+    public void clickOnMainDataTabOfProductPortlet() throws Throwable {
+        anna.clickOnMainDataTabOfProductPortlet();
+    }
 
 
 //
