@@ -57,9 +57,6 @@ public interface Locators {
     String AdminStructurePortletSaveButtonOfAddOptionPopUp = "//span[text()='Сохранить']";
     String AdminStructurePortletSaveButtonOfFieldEddit = "//button[text()='Сохранить']";
 
-
-    //TODO: WORKFLOW
-
     //TODO: WORKFLOW
 
     String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[2]";
@@ -80,9 +77,10 @@ public interface Locators {
     String PRODUCT_FROM_PRODUCT_SEARCH = ".//*[@id='checkbox-tree']/ul/li[1]";
     String CREATE_CUSTOMER_FIELDS = "//div[contains(text(),'$1')] /ancestor::div[@class='control-group row-fluid']//div/input";
     String SAVE_USER_BTN = ".//*[@id='userSaveBtn']";
-    //    String SAVE_ORDER_BTN = "//div[@class='pull-right']//button[contains(text(),'$1')]";
-    String SAVE_ORDER_BTN = "//div[@class='pull-right']//button[contains(text(),'Сохранить')]";
+    String SAVE_ORDER_BTN = "//div[@class='pull-right']//button[contains(text(),'$1')]";
     String ORDER_SPAN = "//ul[@class='category-portlets']//span[contains(text(),'$1')]";
+    String SRCH_USR_INPUT = "//input[contains(@id,'searchUser')]";
+    String CUSTOMER = "//div[@class='autocomplete customer-item']";
 
     //TODO:   COMMON ELEMENTS
 
@@ -94,5 +92,4 @@ public interface Locators {
     //TODO:   WELCOME PAGE
     String SuperCarouselItem = "((//div[@class='slick-track' ])[2]/div[@aria-hidden='false']//img)[$1]";
 
-    String TEST = "testdata";
 }

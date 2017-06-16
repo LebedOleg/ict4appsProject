@@ -413,7 +413,13 @@ public class DefinitionSteps {
         anna.clickOnTheLinkOnTheLeftAccordion(arg0);
     }
 
+    @When("^Write \"([^\"]*)\" into search user text box$")
+    public void writeIntoSearchUserTextBox(String arg0) throws Throwable {
+        anna.writeIntoSearchUserTextBox(arg0);
+    }
 
-
-//
+    @When("^Select customer who doesn't have a phone$")
+    public void selectCustomerWhoDoesnTHaveAPhone() throws Throwable {
+        anna.selectCustomerWhoDoesntHaveAPhone();
+    }
 }
