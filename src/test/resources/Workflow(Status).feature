@@ -1,12 +1,5 @@
 Feature: Workflow
 
-#  Background:
-#    Given the user is on Ict4apps staging page
-#    Given Click on LogInLink
-#    And Enter Email address
-#    And Enter Password
-#    And Click on LogInButton
-
   Scenario: 01
     Given the user is on Ictapps staging page
     Given Click on LogInLink
@@ -71,7 +64,6 @@ Feature: Workflow
     Then Check that created order has "Выполнен" status
 
   Scenario: 02
-#    Given the user is on Ict4apps staging page
     Given Switch tab "0"
     Given Click on the "Продукты" span
     Given Click on first product title
@@ -129,15 +121,6 @@ Feature: Workflow
     Then Check that created order has "Выполнен" status
 
   Scenario: 03
-
-#
-#    Given the user is on Ict4apps staging page
-#    Given Click on LogInLink
-#    And Enter Email address
-#    And Enter Password
-#    And Click on LogInButton
-
-
     When Click on Control DropDown menu
     When Click on the "Заказы" span
     When Click on the "Создание заказа" button
@@ -175,21 +158,17 @@ Feature: Workflow
     Then Check that created order has "Выполнен" status
 
 #  Scenario: 04
-#    When Click on Control DropDown menu
-#    When Click on the "Заказы" span
 #    When Click on the "Создание заказа" button
 #    When Click on the "Browse products" button
 #    When Write "11" into input field
 #    When Click on the product from product search
 #    When Click on the "Add to order" button
-#    When Click on the "add" button
-#    When Write data into "First name" field
-#    When Write data into "Last name" field
-#    When Click on the "Сохранить" button
-#    When Click on the "Сохранить" button
+#    When Write "Nina" into search user text box
+#    When Select customer who doesn't have a phone
+#    When Click on the "Сохранить" order button
 #    Then Check that created order page has "Новый" status tag
 #    #    Then Check that created order page has "Новый" status in status history
 #    #    Then Check that created order page has "Новый" status in short status history
-#    When Click Back link
+#    When Click on the "Заказы" link on the left accordion
 #    When Click on the "Последняя" link
 #    Then Check that created order has "Новый" status

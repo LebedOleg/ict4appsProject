@@ -23,7 +23,6 @@ public class EndUserSteps {
     AdminControlPage adminControlPage;
     CRUD crud;
 
-
     @Step
     public void theUserIsOnIctAppsStagingPage() {
         welcomePage.open();
@@ -43,7 +42,7 @@ public class EndUserSteps {
         crud.clickMethod(Locators.LogInLink);
     }
 
-@Step
+    @Step
     public void enterEmailAddress() {
         logInPage.enterEmailAddress();
     }
@@ -71,8 +70,6 @@ public class EndUserSteps {
     @Step
     public void clickOnProductsItemOfCatalogTab(String arg0) {
         crud.waitBit(1500);
-
-
         crud.clickMethod(Locators.ProductsCatalogItem.replace("$1", arg0));
     }
 
@@ -93,20 +90,17 @@ public class EndUserSteps {
 
     @Step
     public void enterRandomTestDateToNameField() {
-
         adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", "Name");
     }
 
     @Step
     public void enterRandomTestDateToDescriptionField() {
-
         adminControlPage.enterRandomTestDataToRetailPriceField(8, "charac2", "Description");
     }
 
     @Step
     public void clickOnCategoriesTabOfProductsPortlet() {
         crud.clickMethod(Locators.AdminProductPortletCategoriesTab);
-
     }
 
     @Step
@@ -116,7 +110,6 @@ public class EndUserSteps {
     @Step
     public void clickOnDetailTabOfProductsPortlet() {
         crud.clickMethod(Locators.AdminProductPortletDetailsTab);
-
     }
 
     @Step
@@ -271,14 +264,17 @@ public class EndUserSteps {
     public void optionShouldAppearedOnOptionList(String arg0) {
         Assert.assertTrue(crud.elementIsPresent(Locators.AdminStructurePortletFieldIsVisible.replace("$1", arg0)));
     }
-@Step
+
+    @Step
     public void clickOnAddFieldToStructureButton() {
         crud.clickMethod(Locators.AdminStructurePortletAddFieldButton);
     }
+
     @Step
     public void clickOnBackButtonOfAdminCP() {
         crud.clickMethod(Locators.AdminControlPanelBackButton);
     }
+
     @Step
     public void clickOnSaveButtonOfFieldEdditPage() {
         crud.clickMethod(Locators.AdminStructurePortletSaveButtonOfFieldEddit);
@@ -397,11 +393,12 @@ public class EndUserSteps {
             crud.clickMethod(Locators.SELF_PICK_UP_CHECKBOX);
         }
 
-        @Step
-        public void selectAddress() {
-            crud.waitBit(1000);
-            adminControlPage.selectAddress();
-        }
+    @Step
+    public void selectAddress() {
+        crud.waitBit(1000);
+        crud.clickMethod(Locators.ADDRESS_SELECT);
+        crud.clickMethod(Locators.ADDRESS);
+    }
 
         @Step
         public void switchTab(String arg0) {
@@ -435,28 +432,33 @@ public class EndUserSteps {
             crud.enterRandomValue(Locators.CREATE_CUSTOMER_FIELDS.replace("$1",arg0));
         }
 
-        @Step
-        public void saveCreatedUser() {
-            adminControlPage.saveCreatedUser();
-        }
-
-        @Step
-        public void clickOnTheOrderButton(String arg0) {
-            adminControlPage.clickOnTheOrderButton(arg0);
-        }
-
-        @Step
-        public void clickOnThe(String arg0) {
-            adminControlPage.clickOnThe(arg0);
-        }
-
-        @Step
-        public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
-            adminControlPage.clickOnTheLinkOnTheLeftAccordion(arg0);
-        }
+    @Step
+    public void saveCreatedUser() {
+        crud.clickMethod(Locators.SAVE_USER_BTN);
+    }
 
     @Step
-    public void clickOnMainDataTabOfProductPortlet() {
-        crud.clickMethod(Locators.AdminProductPortletMainDataTab);
+    public void clickOnTheOrderButton(String arg0) {
+        crud.waitBit(1000);
+        crud.clickMethod(Locators.SAVE_ORDER_BTN.replace("$1",arg0));
+    }
+
+//    @Step
+//    public void clickOnThe(String arg0) {
+//            adminControlPage.clickOnThe(arg0);
+//        }
+
+    @Step
+    public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
+        crud.clickMethod(Locators.ORDER_SPAN.replace("$1",arg0));
+    }
+
+    @Step
+    public void writeIntoSearchUserTextBox(String arg0) {
+        adminControlPage.writeIntoSearchUserTextBox(arg0);
+    }
+
+    public void selectCustomerWhoDoesntHaveAPhone() {
+        crud.clickMethod(Locators.CUSTOMER);
     }
 }

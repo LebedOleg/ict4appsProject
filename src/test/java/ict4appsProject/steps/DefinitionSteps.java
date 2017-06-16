@@ -433,10 +433,10 @@ public class DefinitionSteps {
         anna.clickOnTheOrderButton(arg0);
     }
 
-    @When("^Click on the \"([^\"]*)\"$")
-    public void clickOnThe(String arg0) throws Throwable {
-        anna.clickOnThe(arg0);
-    }
+//    @When("^Click on the \"([^\"]*)\"$")
+//    public void clickOnThe(String arg0) throws Throwable {
+//        anna.clickOnThe(arg0);
+//    }
 
     @When("^Click on the \"([^\"]*)\" link on the left accordion$")
     public void clickOnTheLinkOnTheLeftAccordion(String arg0) throws Throwable {
@@ -447,7 +447,13 @@ public class DefinitionSteps {
     public void clickOnMainDataTabOfProductPortlet() throws Throwable {
         anna.clickOnMainDataTabOfProductPortlet();
     }
+    @When("^Write \"([^\"]*)\" into search user text box$")
+    public void writeIntoSearchUserTextBox(String arg0) throws Throwable {
+        anna.writeIntoSearchUserTextBox(arg0);
+    }
 
-
-//
+    @When("^Select customer who doesn't have a phone$")
+    public void selectCustomerWhoDoesnTHaveAPhone() throws Throwable {
+        anna.selectCustomerWhoDoesntHaveAPhone();
+    }
 }

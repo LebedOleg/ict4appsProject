@@ -11,9 +11,6 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by userqa on 12.06.17.
- */
 public class AdminControlPage extends PageObject {
     CRUD crud;
 
@@ -22,10 +19,6 @@ public class AdminControlPage extends PageObject {
     String RetailPrice;
     String SalePrice;
     String Quantity;
-
-
-
-
 
     public void enterRandomTestDataToRetailPriceField(int size, String chararters,String field) {
         int sizeName = size; // size of random string
@@ -54,7 +47,6 @@ public class AdminControlPage extends PageObject {
         }
         }
 
-
     public boolean compareCurrentNameOfProductWithEntered() {
        return  $(Locators.AdminProductPortletNameField).getValue().equals(Name);
     }
@@ -67,7 +59,6 @@ public class AdminControlPage extends PageObject {
                crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
            }
         }
-
     }
 
     public boolean checkThatTypeOfStructuresDropdownMenuHasRightItem() {
@@ -94,8 +85,6 @@ public class AdminControlPage extends PageObject {
     public boolean checkThatQuntityFieldHasRightData() {
         return $(Locators.AdminProductPortletDetailsTabQuantityField).getValue().equals(Quantity);
     }
-
-
 
     public void test() {
         System.out.println(Name);
@@ -140,29 +129,11 @@ public class AdminControlPage extends PageObject {
         return $(Locators.ORDER_PAGE_HISTORY_SHORT_STATUS).getText().equalsIgnoreCase(arg0);
     }
 
-    public void selectAddress() {
-        $(Locators.ADDRESS_SELECT).click();
-        $(Locators.ADDRESS).click();
+//    public void clickOnThe(String arg0) {
+//        $(Locators.ORDERS_LINK.replace("$1",arg0)).click();
+//    }
+
+    public void writeIntoSearchUserTextBox(String arg0) {
+        $(Locators.SRCH_USR_INPUT).sendKeys(arg0);
     }
-
-    public void saveCreatedUser() {
-        $(Locators.SAVE_USER_BTN).click();
-    }
-
-    public void clickOnTheOrderButton(String arg0) {
-        crud.waitBit(1000);
-//        withTimeoutOf(5,TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locators.SAVE_ORDER_BTN)));
-        $(Locators.SAVE_ORDER_BTN.replace("$1",arg0)).click();
-    }
-
-    public void clickOnThe(String arg0) {
-        $(Locators.ORDERS_LINK.replace("$1",arg0)).click();
-    }
-
-    public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
-        $(Locators.ORDER_SPAN.replace("$1",arg0)).click();
-    }
-
-
-
 }
