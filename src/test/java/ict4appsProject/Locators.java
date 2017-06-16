@@ -85,6 +85,9 @@ public interface Locators {
     String ORDER_SPAN = "//ul[@class='category-portlets']//span[contains(text(),'$1')]";
     String SRCH_USR_INPUT = "//input[contains(@id,'searchUser')]";
     String CUSTOMER = "//div[@class='autocomplete customer-item']";
+    String CANCEL_ORDER_BTN = "//div[@class='pull-left']//button[contains(text(),'Отменить')]";
+    String CANCEL_REASON_DROPDOWN_MENU = "//select[@name='default-reason']";
+    String SECOND_REASON_TO_CANCEL = "(//select[@name='default-reason']//option)[2]";
 
     //TODO:   COMMON ELEMENTS
 

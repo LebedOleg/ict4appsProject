@@ -487,4 +487,19 @@ public class DefinitionSteps {
     public void clickOnConfirmButtonOfAutoGenerationPopUpWindow() throws Throwable {
         anna.clickOnConfirmButtonOfAutoGenerationPopUpWindow();
     }
+
+    @When("^Click on the cancel order button$")
+    public void clickOnTheCancelOrderButton() throws Throwable {
+        anna.clickOnTheCancelOrderButton();
+    }
+
+    @When("^Click on the cancel reason dropdown menu$")
+    public void clickOnTheCancelReasonDropdownMenu() throws Throwable {
+        anna.clickOnTheCancelReasonDropdownMenu();
+    }
+
+    @When("^Select reason$")
+    public void selectReason() throws Throwable {
+        anna.selectReason();
+    }
 }

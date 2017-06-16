@@ -112,13 +112,23 @@ Feature: Workflow
     When Click on the created order id
     When Click on the "Выполнен" button
     Then Check that created order page has "Выполнен" status tag
-    #    Then Check that created order page has " Выполнен" status in status history
-    #    Then Check that created order page has " Выполнен" status in short status history
+    #    Then Check that created order page has "Выполнен" status in status history
+    #    Then Check that created order page has "Выполнен" status in short status history
     When Click on the "Заказы" link on the left accordion
     When Click on the "Последняя" link
     Then Check that created order has "Выполнен" status
 
   Scenario: 03
+    When Click on the cancel order button
+    When Click on the cancel reason dropdown menu
+    When Select reason
+    When Click on the "Отменить заказ" button
+    Then Check that created order page has "Отменено" status tag
+    #    Then Check that created order page has "Отменено" status in status history
+    #    Then Check that created order page has "Отменено" status in short status history
+    When Click on the "Заказы" link on the left accordion
+
+  Scenario: 04
     When Click on the "Создание заказа" button
     When Click on the "Browse products" button
     When Write "11" into input field
@@ -153,7 +163,7 @@ Feature: Workflow
     When Click on the "Последняя" link
     Then Check that created order has "Выполнен" status
 
-  Scenario: 04
+  Scenario: 05
     When Click on the "Создание заказа" button
     When Click on the "Browse products" button
     When Write "11" into input field
@@ -168,3 +178,5 @@ Feature: Workflow
     When Click on the "Заказы" link on the left accordion
     When Click on the "Последняя" link
     Then Check that created order has "Новый" status
+
+

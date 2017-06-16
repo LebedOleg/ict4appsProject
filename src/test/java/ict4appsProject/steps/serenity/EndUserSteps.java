@@ -490,7 +490,23 @@ public class EndUserSteps {
         crud.clickMethod(Locators.AdminProductPortletAddArticulesAutoGenerationItem);
     }
 
+    @Step
     public void clickOnConfirmButtonOfAutoGenerationPopUpWindow() {
         crud.clickMethod(Locators.AdminProductPortletConfirmPopUpButton);
+    }
+
+    @Step
+    public void clickOnTheCancelOrderButton() {
+        crud.clickMethod(Locators.CANCEL_ORDER_BTN);
+    }
+
+    @Step
+    public void clickOnTheCancelReasonDropdownMenu() {
+        crud.clickMethod(Locators.CANCEL_REASON_DROPDOWN_MENU);
+    }
+
+    @Step
+    public void selectReason() {
+        crud.clickMethod(Locators.SECOND_REASON_TO_CANCEL);
     }
 }
