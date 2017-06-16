@@ -443,11 +443,6 @@ public class EndUserSteps {
         crud.clickMethod(Locators.SAVE_ORDER_BTN.replace("$1",arg0));
     }
 
-//    @Step
-//    public void clickOnThe(String arg0) {
-//            adminControlPage.clickOnThe(arg0);
-//        }
-
     @Step
     public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
         crud.clickMethod(Locators.ORDER_SPAN.replace("$1",arg0));
@@ -463,8 +458,4 @@ public class EndUserSteps {
         crud.clickMethod(Locators.CUSTOMER);
     }
 
-    @Step
-    public void clickOnMainDataTabOfProductPortlet() {
-        crud.clickOnMainDataTabOfProductPortlet(Locators.AdminProductPortletMainDataTab);
-    }
 }

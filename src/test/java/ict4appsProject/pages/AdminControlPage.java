@@ -129,10 +129,6 @@ public class AdminControlPage extends PageObject {
         return $(Locators.ORDER_PAGE_HISTORY_SHORT_STATUS).getText().equalsIgnoreCase(arg0);
     }
 
-//    public void clickOnThe(String arg0) {
-//        $(Locators.ORDERS_LINK.replace("$1",arg0)).click();
-//    }
-
     public void writeIntoSearchUserTextBox(String arg0) {
         $(Locators.SRCH_USR_INPUT).sendKeys(arg0);
     }
