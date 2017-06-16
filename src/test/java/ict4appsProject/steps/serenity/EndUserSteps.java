@@ -458,7 +458,13 @@ public class EndUserSteps {
         adminControlPage.writeIntoSearchUserTextBox(arg0);
     }
 
+    @Step
     public void selectCustomerWhoDoesntHaveAPhone() {
         crud.clickMethod(Locators.CUSTOMER);
+    }
+
+    @Step
+    public void clickOnMainDataTabOfProductPortlet() {
+        crud.clickOnMainDataTabOfProductPortlet(Locators.AdminProductPortletMainDataTab);
     }
 }

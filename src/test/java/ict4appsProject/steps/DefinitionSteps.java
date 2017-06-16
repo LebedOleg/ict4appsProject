@@ -447,6 +447,7 @@ public class DefinitionSteps {
     public void clickOnMainDataTabOfProductPortlet() throws Throwable {
         anna.clickOnMainDataTabOfProductPortlet();
     }
+
     @When("^Write \"([^\"]*)\" into search user text box$")
     public void writeIntoSearchUserTextBox(String arg0) throws Throwable {
         anna.writeIntoSearchUserTextBox(arg0);
