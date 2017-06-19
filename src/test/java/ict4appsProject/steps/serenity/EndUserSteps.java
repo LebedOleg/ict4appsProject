@@ -229,6 +229,7 @@ public class EndUserSteps {
     }
     @Step
     public void structureShouldContainedFieldThatWasCreated(String FieldName) {
+        Assert.assertTrue(adminControlPage.structureShouldContainedFieldThatWasCreated(FieldName));
         Assert.assertTrue(crud.elementIsPresent(Locators.AdminStructurePortletFieldIsVisible.replace("$1", FieldName)));
     }
     @Step
@@ -568,5 +569,30 @@ public class EndUserSteps {
     @Step
     public void getListOfPhoneNumbers() {
         adminControlPage.getListOfPhoneNumbers();
+    }
+
+    @Step
+    public void structureListShouldContainStructure(String structure) {
+        Assert.assertTrue(crud.elementIsPresent(Locators.AdminStructurePortletStructuresList.replace("$1", structure)));
+    }
+    @Step
+    public void enterOnStructureNameField(String structureName) {
+        crud.sendKeysMethod(Locators.AdminStructurePortletStructureNameField, structureName);
+    }
+    @Step
+    public void structuresListShouldContainStructure(String structureName) {
+        Assert.assertTrue(adminControlPage.structuresListShouldContainStructure(structureName));
+    }
+    @Step
+    public void structureShouldContainFieldOfBasicStructure(String arg0) {
+        Assert.assertTrue(adminControlPage.structureShouldContainFieldOfBasicStructure(arg0));
+    }
+
+    public void clickOnNameOfStructure(String structure) {
+        crud.clickMethod(Locators.AdminStructurePortletNameOfField.replace("$1", structure));
+    }
+    @Step
+    public void allStructuresShouldContainField(String field) {
+        Assert.assertTrue(adminControlPage.allStructuresShouldContainField(field));
     }
 }

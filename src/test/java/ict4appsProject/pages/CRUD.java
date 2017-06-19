@@ -102,6 +102,16 @@ public class CRUD extends PageObject {
         getDriver().switchTo().window(windows.get(x));
     }
 
+    public boolean tryFindElement(String element) {
+        try {
+            $(element).isVisible();
+            return true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
+
+}
     public WebElementFacade phoneNumber(String xpath) {
         List<WebElementFacade> list = findAll(By.xpath(xpath));
         return list.get(list.size() - 1);
