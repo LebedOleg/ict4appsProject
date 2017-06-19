@@ -520,7 +520,7 @@ public class DefinitionSteps {
     public void allStructuresShouldContainField(String field) throws Throwable {
         anna.allStructuresShouldContainField(field);
     }
-}
+
 
     @When("^Click on the cancel reason dropdown menu$")
     public void clickOnTheCancelReasonDropdownMenu() throws Throwable {

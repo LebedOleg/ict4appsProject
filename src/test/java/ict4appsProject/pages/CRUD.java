@@ -111,7 +111,7 @@ public class CRUD extends PageObject {
         }
     }
 
-}
+
     public WebElementFacade phoneNumber(String xpath) {
         List<WebElementFacade> list = findAll(By.xpath(xpath));
         return list.get(list.size() - 1);
