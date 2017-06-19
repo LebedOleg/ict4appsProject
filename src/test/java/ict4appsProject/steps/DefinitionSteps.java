@@ -105,7 +105,6 @@ public class DefinitionSteps {
     }
 
 
-
     @And("^Enter random test data to Quantity field$")
     public void enterRandomTestDataToQuntityField() throws Throwable {
         anna.enterRandomTestDataToQuntityField();
@@ -304,7 +303,6 @@ public class DefinitionSteps {
     }
 
 
-
     @Then("^Check that product field is created right$")
     public void checkThatProductFieldIsCreatedRight() throws Throwable {
         anna.checkThatProductFieldIsCreatedRight();
@@ -334,6 +332,7 @@ public class DefinitionSteps {
     public void clickOnTheCartIcon() throws Throwable {
         anna.clickOnTheCartIcon();
     }
+
     @When("^Click on the \"([^\"]*)\" link$")
     public void clickOnTheLink(String arg0) throws Throwable {
         anna.clickOnTheLink(arg0);
@@ -425,7 +424,6 @@ public class DefinitionSteps {
     }
 
 
-
     @When("^Write \"([^\"]*)\" into search user text box$")
     public void writeIntoSearchUserTextBox(String arg0) throws Throwable {
         anna.writeIntoSearchUserTextBox(arg0);
@@ -443,7 +441,7 @@ public class DefinitionSteps {
 
     @And("^Fill \"([^\"]*)\" \"([^\"]*)\" fields and select \"([^\"]*)\" structure on \"([^\"]*)\" tab$")
     public void fillFieldsAndSelectStructureOnTab(String addProductNameField, String addProductDescriptionField, String structureDropDownItem, String tab) throws Throwable {
-        anna.fillFieldsAndSelectStructureOnTab(addProductNameField, addProductDescriptionField,structureDropDownItem,tab);
+        anna.fillFieldsAndSelectStructureOnTab(addProductNameField, addProductDescriptionField, structureDropDownItem, tab);
     }
 
     @And("^Select \"([^\"]*)\" category on \"([^\"]*)\" tab$")
@@ -516,5 +514,50 @@ public class DefinitionSteps {
     @Then("^Check that \"([^\"]*)\" element is displayed$")
     public void checkThatElementIsDisplayed(String arg0) throws Throwable {
         anna.checkThatElementIsDisplayed(arg0);
+    }
+
+    @When("^Write \"([^\"]*)\" into phone number input field$")
+    public void writeIntoPhoneNumberInputField(String arg0) throws Throwable {
+        anna.writeIntoPhoneNumberInputField(arg0);
+    }
+
+    @Then("^Check that error message is not displayed$")
+    public void checkThatErrorMessageIsNotDisplayed() throws Throwable {
+        anna.checkThatErrorMessageIsNotDisplayed();
+    }
+
+    @When("^Clear phone number input field$")
+    public void clearPhoneNumberInputField() throws Throwable {
+        anna.clearPhoneNumberInputField();
+    }
+
+    @Then("^Check that error message is displayed$")
+    public void checkThatErrorMessageIsDisplayed() throws Throwable {
+        anna.checkThatErrorMessageIsDisplayed();
+    }
+
+    @When("^Get phone number$")
+    public void getPhoneNumber() throws Throwable {
+        anna.getPhoneNumber();
+    }
+
+    @Then("^Check that we can edit phone number input field$")
+    public void checkThatWeCanEditPhoneNumberInputField() throws Throwable {
+        anna.checkThatWeCanEditPhoneNumberInputField();
+    }
+
+    @When("^Click on the remove icon$")
+    public void clickOnTheRemoveIcon() throws Throwable {
+        anna.clickOnTheRemoveIcon();
+    }
+
+    @Then("^Check that created phone number was deleted$")
+    public void checkThatCreatedPhoneNumberWasDeleted() throws Throwable {
+        anna.checkThatCreatedPhoneNumberWasDeleted();
+    }
+
+    @When("^Get list of phone numbers$")
+    public void getListOfPhoneNumbers() throws Throwable {
+        anna.getListOfPhoneNumbers();
     }
 }

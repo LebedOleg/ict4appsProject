@@ -7,6 +7,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.yecht.Data;
 
 import java.util.List;
 import java.util.Random;
@@ -19,6 +20,8 @@ public class AdminControlPage extends PageObject {
     String RetailPrice;
     String SalePrice;
     String Quantity;
+    String PhoneNum;
+    int x;
 
     public void enterRandomTestDataToRetailPriceField(int size, String chararters,String field) {
         int sizeName = size; // size of random string
@@ -92,7 +95,7 @@ public class AdminControlPage extends PageObject {
         System.out.println(SalePrice);
     }
 
-    public  boolean categoriesListShouldContainCategoryThatWasCreated(String Locator, String Variable) {
+    public boolean categoriesListShouldContainCategoryThatWasCreated(String Locator, String Variable) {
         List<WebElementFacade> list = findAll(Locator);
         for (WebElement element : list) {
             if (element.getText().equals(Variable)) {
@@ -132,4 +135,25 @@ public class AdminControlPage extends PageObject {
     public void writeIntoSearchUserTextBox(String arg0) {
         $(Locators.SRCH_USR_INPUT).sendKeys(arg0);
     }
+
+    public void getPhoneNumber() {
+        PhoneNum = crud.phoneNumber(Locators.PHONE_NUMBER_INPUT).getText();
+    }
+
+    public boolean checkThatWeCanEditPhoneNumberInputField() {
+        return crud.phoneNumber(Locators.PHONE_NUMBER_INPUT).getText().equalsIgnoreCase(PhoneNum);
+    }
+
+    public boolean checkThatCreatedPhoneNumberWasDeleted() {
+        int y = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
+        return y == x-1;
+    }
+
+    public void getListOfPhoneNumbers() {
+        x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
+    }
+
+
+
 }
+

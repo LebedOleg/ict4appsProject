@@ -1,7 +1,7 @@
 package ict4appsProject.pages;
 
-import ict4appsProject.Locators;
 import ict4appsProject.Variables;
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -26,9 +27,9 @@ public class CRUD extends PageObject {
 
     }
 
-    public void waitForElementVisibility(int Time, String Locator) {
-        withTimeoutOf(Time, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locator)));
-    }
+//    public void waitForElementVisibility(int Time, String Locator) {
+//        withTimeoutOf(Time, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locator)));
+//    }
 
     public void waitBit(int i) {
         waitABit(i);
@@ -54,12 +55,15 @@ public class CRUD extends PageObject {
         Actions actions = new Actions(getDriver());
         actions.moveByOffset(1022, 440).click().build().perform();
         $(LocatorForMove).sendKeys(Variables.CategoryName);
-
     }
 
     public boolean elementIsPresent(String Locator) {
         withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locator)));
         return $(Locator).isVisible();
+    }
+
+    public boolean elementIsNotPresent(String Locator) {
+        return !$(Locator).isVisible();
     }
 
 
@@ -79,7 +83,7 @@ public class CRUD extends PageObject {
         getDriver().navigate().refresh();
     }
 
-    public void writeIntoInputField(String Locator,String arg0 ) {
+    public void writeIntoInputField(String Locator, String arg0) {
         withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locator)));
         $(Locator).sendKeys(arg0);
     }
@@ -98,4 +102,13 @@ public class CRUD extends PageObject {
         getDriver().switchTo().window(windows.get(x));
     }
 
+    public WebElementFacade phoneNumber(String xpath) {
+        List<WebElementFacade> list = findAll(By.xpath(xpath));
+        return list.get(list.size() - 1);
+    }
+
+    public int getQuantityOfPhoneNumbers (String xpath) {
+        List<WebElementFacade> list = findAll(By.xpath(xpath));
+        return list.size();
+    }
 }

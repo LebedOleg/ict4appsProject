@@ -88,9 +88,12 @@ public interface Locators {
     String CANCEL_ORDER_BTN = "//div[@class='pull-left']//button[contains(text(),'Отменить')]";
     String CANCEL_REASON_DROPDOWN_MENU = "//select[@name='default-reason']";
     String SECOND_REASON_TO_CANCEL = "(//select[@name='default-reason']//option)[2]";
-    String qwe = "//span[contains(text(),'Системные страницы')] //ancestor::div[contains(@id,'administration.system.pages')]//li//span//a//span[contains(text(),'$1')]";
+    String qwe = "//span[contains(text(),'Системные страницы')] //ancestor::div[contains(@class,'accordion-group')]//li//span[contains(text(),'$1')]";
     String CURRENCY_DROPDOWN_MENU = "//label[contains(text(),'$1')]/ancestor::div/select";
     String CURRENCY_OPTION = "//option[contains(text(),'$1')]";
+    String PHONE_NUMBER_INPUT = "//input[contains(@class,'phoneNumber')]";
+    String PHONE_ERROR_MSG = "//label[@class='error']";
+    String REMOVE_PHONE_NUMBER_ICON = "//i[contains(@class,'remove')]";
 
 
     //TODO:   COMMON ELEMENTS

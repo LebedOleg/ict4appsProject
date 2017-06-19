@@ -524,4 +524,49 @@ public class EndUserSteps {
     public void checkThatElementIsDisplayed(String arg0) {
         Assert.assertTrue(crud.elementIsPresent(Locators.CURRENCY_OPTION.replace("$1",arg0)));
     }
+
+    @Step
+    public void writeIntoPhoneNumberInputField(String arg0) {
+        crud.phoneNumber(Locators.PHONE_NUMBER_INPUT).sendKeys(arg0);
+    }
+
+    @Step
+    public void checkThatErrorMessageIsNotDisplayed() {
+        Assert.assertTrue(crud.elementIsNotPresent(Locators.PHONE_ERROR_MSG));
+    }
+
+    @Step
+    public void clearPhoneNumberInputField() {
+        crud.phoneNumber(Locators.PHONE_NUMBER_INPUT).clear();
+    }
+
+    @Step
+    public void checkThatErrorMessageIsDisplayed() {
+        Assert.assertTrue(crud.elementIsPresent(Locators.PHONE_ERROR_MSG));
+    }
+
+    @Step
+    public void getPhoneNumber() {
+        adminControlPage.getPhoneNumber();
+    }
+
+    @Step
+    public void checkThatWeCanEditPhoneNumberInputField() {
+        Assert.assertTrue(adminControlPage.checkThatWeCanEditPhoneNumberInputField());
+    }
+
+    @Step
+    public void clickOnTheRemoveIcon() {
+        crud.phoneNumber(Locators.REMOVE_PHONE_NUMBER_ICON).click();
+    }
+
+    @Step
+    public void checkThatCreatedPhoneNumberWasDeleted() {
+       Assert.assertTrue(adminControlPage.checkThatCreatedPhoneNumberWasDeleted());
+    }
+
+    @Step
+    public void getListOfPhoneNumbers() {
+        adminControlPage.getListOfPhoneNumbers();
+    }
 }
