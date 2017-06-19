@@ -502,4 +502,19 @@ public class DefinitionSteps {
     public void selectReason() throws Throwable {
         anna.selectReason();
     }
+
+    @When("^Click on the \"([^\"]*)\" link in opened accordion$")
+    public void clickOnTheLinkInOpenedAccordion(String arg0) throws Throwable {
+        anna.clickOnTheLinkInOpenedAccordion(arg0);
+    }
+
+    @When("^Click on the \"([^\"]*)\" dropdown$")
+    public void clickOnTheDropdown(String arg0) throws Throwable {
+        anna.clickOnTheDropdown(arg0);
+    }
+
+    @Then("^Check that \"([^\"]*)\" element is displayed$")
+    public void checkThatElementIsDisplayed(String arg0) throws Throwable {
+        anna.checkThatElementIsDisplayed(arg0);
+    }
 }

@@ -509,4 +509,19 @@ public class EndUserSteps {
     public void selectReason() {
         crud.clickMethod(Locators.SECOND_REASON_TO_CANCEL);
     }
+
+    @Step
+    public void clickOnTheLinkInOpenedAccordion(String arg0) {
+        crud.clickMethod(Locators.qwe.replace("$1",arg0));
+    }
+
+    @Step
+    public void clickOnTheDropdown(String arg0) {
+        crud.clickMethod(Locators.CURRENCY_DROPDOWN_MENU.replace("$1",arg0));
+    }
+
+    @Step
+    public void checkThatElementIsDisplayed(String arg0) {
+        Assert.assertTrue(crud.elementIsPresent(Locators.CURRENCY_OPTION.replace("$1",arg0)));
+    }
 }
