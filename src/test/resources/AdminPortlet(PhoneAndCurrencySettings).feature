@@ -14,6 +14,7 @@ Feature: PhoneAndCurrencySettings
     Then Check that "Украинская гривна" element is displayed
 
 
+
     When Click on the "Добавить" button
 
     When Click on the "Сохранить" button
