@@ -17,4 +17,5 @@ Feature: PhoneAndCurrencySettings
 
     When Click on the "Добавить" button
 
+
     When Click on the "Сохранить" button
