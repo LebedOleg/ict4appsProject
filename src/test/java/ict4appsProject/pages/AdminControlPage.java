@@ -121,11 +121,11 @@ public class AdminControlPage extends PageObject {
 
     public void clickOnTheCreatedOrderId() {
         List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_ID));
-        list.get(list.size() - 1).click();
+        list.get(list.size()-1).click();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusTag(String arg0) {
-        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1", arg0)).isPresent();
+        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1",arg0)).isPresent();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
@@ -189,6 +189,7 @@ public class AdminControlPage extends PageObject {
     }
 
 
+
     public void getPhoneNumber() {
         PhoneNum = crud.phoneNumber(Locators.PHONE_NUMBER_INPUT).getText();
     }
@@ -199,13 +200,19 @@ public class AdminControlPage extends PageObject {
 
     public boolean checkThatCreatedPhoneNumberWasDeleted() {
         int y = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
-        return y == x - 1;
+        return y == x-1;
     }
 
     public void getListOfPhoneNumbers() {
         x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
     }
 
+    public void clickOnTheButtonMoreThanTimes(String arg0, int arg1) {
+        int i;
+        for (i = 0; i <= arg1; i++) {
+            crud.clickMethod(Locators.BUTTON.replace("$1", arg0));
+        }
+    }
 
     public boolean fieldShouldBeDeletedFromBasicStructure(String fieldName, String paginationButton, String listLocator) {
         WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", paginationButton));
@@ -255,4 +262,16 @@ public class AdminControlPage extends PageObject {
 //    }
 }
 
+    public boolean checkThatThereAreNoMoreThanNumbers(int arg0) {
+      x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
+     return x == arg0;
+    }
 
+    public void deleteAllPhoneNumbers() {
+        x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
+        int i;
+        for (i = 0; i < x; i++) {
+            crud.clickMethod(Locators.REMOVE_PHONE_NUMBER_ICON);
+        }
+    }
+}

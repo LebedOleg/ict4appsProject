@@ -595,6 +595,21 @@ public class EndUserSteps {
     public void allStructuresShouldContainField(String field) {
         Assert.assertTrue(adminControlPage.allStructuresShouldContainField(field));
     }
+
+    @Step
+    public void clickOnTheButtonMoreThanTimes(String arg0, int arg1) {
+        adminControlPage.clickOnTheButtonMoreThanTimes(arg0,arg1);
+    }
+
+    @Step
+    public void checkThatThereAreNoMoreThanNumbers(int arg0) {
+        adminControlPage.checkThatThereAreNoMoreThanNumbers(arg0);
+    }
+
+    @Step
+    public void deleteAllPhoneNumbers() {
+        adminControlPage.deleteAllPhoneNumbers();
+    }
     @Step
     public void clickOnActionsButtonNearField(String arg0) {
         crud.clickMethod(Locators.AdminStructurePortletActionsButton.replace("$1", arg0));
