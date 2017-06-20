@@ -569,4 +569,19 @@ public class EndUserSteps {
     public void getListOfPhoneNumbers() {
         adminControlPage.getListOfPhoneNumbers();
     }
+
+    @Step
+    public void clickOnTheButtonMoreThanTimes(String arg0, int arg1) {
+        adminControlPage.clickOnTheButtonMoreThanTimes(arg0,arg1);
+    }
+
+    @Step
+    public void checkThatThereAreNoMoreThanNumbers(int arg0) {
+        Assert.assertTrue(adminControlPage.checkThatThereAreNoMoreThanNumbers(arg0));
+    }
+
+    @Step
+    public void deleteAllPhoneNumbers() {
+        adminControlPage.deleteAllPhoneNumbers();
+    }
 }

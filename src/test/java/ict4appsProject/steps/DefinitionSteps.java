@@ -560,4 +560,19 @@ public class DefinitionSteps {
     public void getListOfPhoneNumbers() throws Throwable {
         anna.getListOfPhoneNumbers();
     }
+
+    @When("^Click on the \"([^\"]*)\" button more than (\\d+) times$")
+    public void clickOnTheButtonMoreThanTimes(String arg0, int arg1) throws Throwable {
+        anna.clickOnTheButtonMoreThanTimes(arg0,arg1);
+    }
+
+    @Then("^Check that there are no more than (\\d+) phone numbers$")
+    public void checkThatThereAreNoMoreThanNumbers(int arg0) throws Throwable {
+        anna.checkThatThereAreNoMoreThanNumbers(arg0);
+    }
+
+    @When("^Delete all phone numbers$")
+    public void deleteAllPhoneNumbers() throws Throwable {
+        anna.deleteAllPhoneNumbers();
+    }
 }

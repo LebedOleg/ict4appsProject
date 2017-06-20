@@ -13,6 +13,10 @@ Feature: PhoneAndCurrencySettings
     When Click on the "Валюта" dropdown
     Then Check that "Украинская гривна" element is displayed
 
+    When Click on the "Добавить" button more than 11 times
+    Then Check that there are no more than 10 phone numbers
+    When Delete all phone numbers
+
     When Click on the "Добавить" button
     When Write "1234567890" into phone number input field
     When Click on the "Сохранить" button

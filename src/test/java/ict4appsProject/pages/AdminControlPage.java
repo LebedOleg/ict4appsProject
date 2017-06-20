@@ -23,49 +23,50 @@ public class AdminControlPage extends PageObject {
     String PhoneNum;
     int x;
 
-    public void enterRandomTestDataToRetailPriceField(int size, String chararters,String field) {
+    public void enterRandomTestDataToRetailPriceField(int size, String chararters, String field) {
         int sizeName = size; // size of random string
         String charac = "123456789"; //Create the character set for random string
         String charac2 = "0123456789abcdefghijklmnopqrstuvwxyz";
-        if(chararters.equals("charac")) {chararters = charac;}
-        else if (chararters.equals("charac2")) chararters = charac2;
+        if (chararters.equals("charac")) {
+            chararters = charac;
+        } else if (chararters.equals("charac2")) chararters = charac2;
         Random r = new Random();
         if (field.equals("retail")) {
-        RetailPrice = crud.generateString(r, chararters, sizeName);
-            $(Locators.AdminProductPortletDetailsTabPriceField.replace("$1", field)).sendKeys(RetailPrice);}
-        else if(field.equals("sale")) {
+            RetailPrice = crud.generateString(r, chararters, sizeName);
+            $(Locators.AdminProductPortletDetailsTabPriceField.replace("$1", field)).sendKeys(RetailPrice);
+        } else if (field.equals("sale")) {
             SalePrice = crud.generateString(r, chararters, sizeName);
-            $(Locators.AdminProductPortletDetailsTabPriceField.replace("$1", field)).sendKeys(SalePrice);}
-         else if (field.equals("Name")){
+            $(Locators.AdminProductPortletDetailsTabPriceField.replace("$1", field)).sendKeys(SalePrice);
+        } else if (field.equals("Name")) {
             Name = crud.generateString(r, chararters, sizeName);
             $(Locators.AdminProductPortletNameField).sendKeys(Name);
-        }else if(field.equals("Description")) {
+        } else if (field.equals("Description")) {
             Description = crud.generateString(r, chararters, sizeName);
             $(Locators.AdminProductPortletDescriptionField).sendKeys(Description);
-        }else if(field.equals("Quantity")) {
+        } else if (field.equals("Quantity")) {
             Quantity = crud.generateString(r, chararters, sizeName);
             $(Locators.AdminProductPortletDetailsTabQuantityField).sendKeys(Quantity);
-        }else if(field.equals("TestCategory")) {
-             crud.clickByPixelLocation(Locators.AddCategoryPopUpContainer);
+        } else if (field.equals("TestCategory")) {
+            crud.clickByPixelLocation(Locators.AddCategoryPopUpContainer);
         }
-        }
+    }
 
     public boolean compareCurrentNameOfProductWithEntered() {
-       return  $(Locators.AdminProductPortletNameField).getValue().equals(Name);
+        return $(Locators.AdminProductPortletNameField).getValue().equals(Name);
     }
 
 
     public void productsListShouldContainsProductThatWasCreated(String Locator) {
         List<WebElementFacade> list = findAll(Locator);
         for (WebElement element : list) {
-           if (element.getText().equals(Name)) {
-               crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
-           }
+            if (element.getText().equals(Name)) {
+                crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
+            }
         }
     }
 
     public boolean checkThatTypeOfStructuresDropdownMenuHasRightItem() {
-       return  $(Locators.AdminProductPortletTypeOfStructure + "/option[@selected='']").getText().contains(Variables.StructureName);
+        return $(Locators.AdminProductPortletTypeOfStructure + "/option[@selected='']").getText().contains(Variables.StructureName);
 
     }
 
@@ -74,13 +75,13 @@ public class AdminControlPage extends PageObject {
     }
 
     public boolean checkThatRightCategoryIsSelected() {
-        return $(Locators.AdminProductPortletCategoriesTabItemCheckbox.replace("$1",Variables.CategoryName) + "[@checked='']").isPresent();
+        return $(Locators.AdminProductPortletCategoriesTabItemCheckbox.replace("$1", Variables.CategoryName) + "[@checked='']").isPresent();
     }
 
     public boolean checkThatPriceFieldHasRightData(String arg0) {
         if (arg0.equals("retail")) {
-      return   $(Locators.AdminProductPortletDetailsTabPriceField.replace("$1", arg0)).getValue().contains(RetailPrice); }
-      else {
+            return $(Locators.AdminProductPortletDetailsTabPriceField.replace("$1", arg0)).getValue().contains(RetailPrice);
+        } else {
             return $(Locators.AdminProductPortletDetailsTabPriceField.replace("$1", arg0)).getValue().contains(SalePrice);
         }
     }
@@ -109,19 +110,18 @@ public class AdminControlPage extends PageObject {
 
     public boolean checkThatCreatedOrderHasStatus(String arg0) {
         List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_STATUS));
-        if (list.get(list.size()-1).getText().contains(arg0)) {
+        if (list.get(list.size() - 1).getText().contains(arg0)) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
     public void clickOnTheCreatedOrderId() {
         List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_ID));
-        list.get(list.size()-1).click();
+        list.get(list.size() - 1).click();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusTag(String arg0) {
-        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1",arg0)).isPresent();
+        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1", arg0)).isPresent();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
@@ -146,14 +146,30 @@ public class AdminControlPage extends PageObject {
 
     public boolean checkThatCreatedPhoneNumberWasDeleted() {
         int y = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
-        return y == x-1;
+        return y == x - 1;
     }
 
     public void getListOfPhoneNumbers() {
         x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
     }
 
+    public void clickOnTheButtonMoreThanTimes(String arg0, int arg1) {
+        int i;
+        for (i = 0; i <= arg1; i++) {
+            crud.clickMethod(Locators.BUTTON.replace("$1", arg0));
+        }
+    }
 
+    public boolean checkThatThereAreNoMoreThanNumbers(int arg0) {
+      x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
+     return x == arg0;
+    }
 
+    public void deleteAllPhoneNumbers() {
+        x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
+        int i;
+        for (i = 0; i < x; i++) {
+            crud.clickMethod(Locators.REMOVE_PHONE_NUMBER_ICON);
+        }
+    }
 }
-
