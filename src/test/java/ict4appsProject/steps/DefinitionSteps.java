@@ -332,7 +332,6 @@ public class DefinitionSteps {
     public void clickOnTheCartIcon() throws Throwable {
         anna.clickOnTheCartIcon();
     }
-
     @When("^Click on the \"([^\"]*)\" link$")
     public void clickOnTheLink(String arg0) throws Throwable {
         anna.clickOnTheLink(arg0);
@@ -490,6 +489,38 @@ public class DefinitionSteps {
     public void clickOnTheCancelOrderButton() throws Throwable {
         anna.clickOnTheCancelOrderButton();
     }
+
+
+    @Then("^Structure list should contain \"([^\"]*)\" structure$")
+    public void structureListShouldContainStructure(String Structure) throws Throwable {
+        anna.structureListShouldContainStructure(Structure);
+    }
+
+    @And("^Enter \"([^\"]*)\" on Structure name field$")
+    public void enterOnStructureNameField(String structureName) throws Throwable {
+        anna.enterOnStructureNameField(structureName);
+    }
+
+    @Then("^Structures list should contain \"([^\"]*)\" structure$")
+    public void structuresListShouldContainStructure(String structureName) throws Throwable {
+        anna.structuresListShouldContainStructure(structureName);
+    }
+
+    @Then("^\"([^\"]*)\" structure should contain field of basic structure$")
+    public void structureShouldContainFieldOfBasicStructure(String arg0) throws Throwable {
+        anna.structureShouldContainFieldOfBasicStructure(arg0);
+    }
+
+    @And("^Click on name of \"([^\"]*)\" structure$")
+    public void clickOnNameOfStructure(String Structure) throws Throwable {
+       anna.clickOnNameOfStructure(Structure);
+    }
+
+    @Then("^All structures should contain \"([^\"]*)\" field$")
+    public void allStructuresShouldContainField(String field) throws Throwable {
+        anna.allStructuresShouldContainField(field);
+    }
+
 
     @When("^Click on the cancel reason dropdown menu$")
     public void clickOnTheCancelReasonDropdownMenu() throws Throwable {

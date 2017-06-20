@@ -45,6 +45,11 @@ public interface Locators {
     String AdminStructurePortletStructureNameField = ".//*[@id='name']";
     String AdminStructurePortletSaveStructureButton = "//button[contains(@class,'btn btn-primary')]";
     String AdminStructurePortletStructuresList = "//a[text()='$1']";
+    String AdminStructurePortletDisabledNextPaginationButton = "//li[@class='disabled']/a[text()=' Следующая ']";
+    String AdminStructurePortletLastPaginationButton = "//a[text()=' Последняя → ']";
+    String AdminStructurePortletListOfStructureFields = "//a[text()='$1']/ancestor::tr//td[@class='table-cell '][3]/a";
+    String AdminStructurePortletFieldsOfAllStructures = "//tr//td[@class='table-cell '][3]/a";
+    String AdminStructurePortletPaginationButton = "//a[text()='$1']";
 
 
     String AdminStructurePortletAddFieldButton = "//a[@title='Добавить Поле']";

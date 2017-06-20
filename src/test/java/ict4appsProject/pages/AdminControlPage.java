@@ -20,6 +20,7 @@ public class AdminControlPage extends PageObject {
     String RetailPrice;
     String SalePrice;
     String Quantity;
+    boolean i;
     String PhoneNum;
     int x;
 
@@ -135,6 +136,56 @@ public class AdminControlPage extends PageObject {
     public void writeIntoSearchUserTextBox(String arg0) {
         $(Locators.SRCH_USR_INPUT).sendKeys(arg0);
     }
+
+
+    public boolean structuresListShouldContainStructure(String structureName) {
+        if (crud.tryFindElement(Locators.AdminStructurePortletDisabledNextPaginationButton) == false) {
+            i = crud.tryFindElement(Locators.AdminStructurePortletStructuresList.replace("$1", structureName));
+        } else {
+            $(Locators.AdminStructurePortletLastPaginationButton).click();
+            i = crud.tryFindElement(Locators.AdminStructurePortletStructuresList.replace("$1", structureName));
+        }
+        return i;
+    }
+
+
+    public boolean structureShouldContainFieldOfBasicStructure(String arg0) {
+        crud.clickMethod(Locators.AdminStructurePortletPaginationButton.replace("$1", " ← Первая "));
+        String basicFields = $(Locators.AdminStructurePortletListOfStructureFields.replace("$1", "Basic")).getText();
+        crud.clickMethod(Locators.AdminStructurePortletPaginationButton.replace("$1", " Последняя → "));
+        return $(Locators.AdminStructurePortletListOfStructureFields.replace("$1", arg0)).getText().contains(basicFields);
+    }
+
+
+    public boolean structureShouldContainedFieldThatWasCreated(String fieldName) {
+        if (crud.tryFindElement(Locators.AdminStructurePortletDisabledNextPaginationButton) == false) {
+            i = crud.tryFindElement(Locators.AdminStructurePortletFieldIsVisible.replace("$1", fieldName));
+        } else {
+            $(Locators.AdminStructurePortletLastPaginationButton).click();
+            i = crud.tryFindElement(Locators.AdminStructurePortletFieldIsVisible.replace("$1", fieldName));
+        }
+        return i;
+    }
+
+    //
+    public boolean allStructuresShouldContainField(String field) {
+        List<WebElementFacade> list = findAll(Locators.AdminStructurePortletFieldsOfAllStructures);
+
+        for (WebElement element : list) {
+            textContains(element.getText(), field);
+        }
+        return i;
+    }
+
+    public void textContains(String text, String field) {
+        if (text.contains(field)) {
+            i = true;
+        } else {
+            i = false;
+        }
+    }
+
+
 
     public void getPhoneNumber() {
         PhoneNum = crud.phoneNumber(Locators.PHONE_NUMBER_INPUT).getText();
