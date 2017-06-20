@@ -260,7 +260,7 @@ public class AdminControlPage extends PageObject {
 //           else crud.clickMethod(Locators.AdminStructurePortletPaginationButton.replace("$1", " Следующая "));
 //        }
 //    }
-}
+
 
     public boolean checkThatThereAreNoMoreThanNumbers(int arg0) {
       x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
