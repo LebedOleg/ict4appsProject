@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class CRUD extends PageObject {
 
     public void clickMethod(String Locator) {
-        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(Locator)));
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.presenceOfElementLocated((By.xpath(Locator))));
         $(Locator).click();
     }
 
@@ -105,6 +105,14 @@ public class CRUD extends PageObject {
     public boolean tryFindElement(String element) {
         try {
             $(element).isVisible();
+            return true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
+    public boolean tryElementIsEnabled(WebElementFacade element) {
+        try {
+            $(element).isEnabled();
             return true;
         } catch (org.openqa.selenium.NoSuchElementException e) {
             return false;

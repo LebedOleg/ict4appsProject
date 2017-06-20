@@ -591,4 +591,31 @@ public class DefinitionSteps {
     public void getListOfPhoneNumbers() throws Throwable {
         anna.getListOfPhoneNumbers();
     }
+
+    @And("^Click on Actions button near \"([^\"]*)\" field$")
+    public void clickOnActionsButtonNearField(String arg0) throws Throwable {
+        anna.clickOnActionsButtonNearField(arg0);
+    }
+
+
+    @And("^Click on \"([^\"]*)\" button near \"([^\"]*)\" field$")
+    public void clickOnButtonNearField(String arg0, String arg1) throws Throwable {
+        anna.clickOnButtonNearField(arg0,arg1);
+    }
+
+    @Then("^\"([^\"]*)\" field should be deleted from basic structure$")
+    public void fieldShouldBeDeletedFromBasicStructure(String arg0) throws Throwable {
+        anna.fieldShouldBeDeletedFromBasicStructure(arg0);
+    }
+
+
+    @Then("^\"([^\"]*)\" field should be deleted from all structures$")
+    public void fieldShouldBeDeletedFromAllStructures(String arg0) throws Throwable {
+        anna.fieldShouldBeDeletedFromAllStructures(arg0);
+    }
+
+    @And("^Click on \"([^\"]*)\" pagination button$")
+    public void clickOnPaginationButton(String arg0) throws Throwable {
+        anna.clickOnPaginationButton(arg0);
+    }
 }

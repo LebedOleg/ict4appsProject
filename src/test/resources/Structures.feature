@@ -38,3 +38,17 @@ Feature: Structures admin portlet.
      And Click on "Параметры" item of Catalog Tab
      Then All structures should contain "TestFieldForBasicStructure" field
 
+   Scenario: 005 Field is deleted form all structures if delete it in basic structure
+     When Click on Control DropDown menu
+     And Click on " Каталог " item of Control DropDown menu
+     And Click on "Параметры" item of Catalog Tab
+     And Click on name of "Basic" structure
+     And Click on " Последняя → " pagination button
+     And Click on "Действия" button near "TestFieldForBasicStructure" field
+     And Click on "Удалить навсегда" button near "TestFieldForBasicStructure" field
+     Then "TestFieldForBasicStructure" field should be deleted from basic structure
+     And Click on Save Structure button
+     Then "TestFieldForBasicStructure" field should be deleted from all structures
+
+
+

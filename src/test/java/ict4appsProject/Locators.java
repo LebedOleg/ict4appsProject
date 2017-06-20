@@ -50,6 +50,10 @@ public interface Locators {
     String AdminStructurePortletListOfStructureFields = "//a[text()='$1']/ancestor::tr//td[@class='table-cell '][3]/a";
     String AdminStructurePortletFieldsOfAllStructures = "//tr//td[@class='table-cell '][3]/a";
     String AdminStructurePortletPaginationButton = "//a[text()='$1']";
+    String AdminStructurePortletActionsButton = "//a[text()='$1']/ancestor::tr//span[text()='$2']";
+    String AdminStructurePortletStructureFieldsList = "//tr//td[@class='table-cell '][1]/a";
+    String AdminStructurePortletNextPaginationButton = "//li[@class='']/a[text()=' Следующая ']";
+    String AdminStructurePortletPagesDropDownItems = "//ul[@class='dropdown-menu lfr-menu-list direction-down' and @role='menu']/li[@role='presentation']";
 
 
     String AdminStructurePortletAddFieldButton = "//a[@title='Добавить Поле']";

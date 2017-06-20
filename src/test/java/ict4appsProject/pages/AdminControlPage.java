@@ -9,8 +9,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.yecht.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class AdminControlPage extends PageObject {
     CRUD crud;
@@ -20,9 +22,10 @@ public class AdminControlPage extends PageObject {
     String RetailPrice;
     String SalePrice;
     String Quantity;
-    boolean i;
+    boolean i =false;
     String PhoneNum;
     int x;
+    List<String> listList = new ArrayList<>();
 
     public void enterRandomTestDataToRetailPriceField(int size, String chararters, String field) {
         int sizeName = size; // size of random string
@@ -118,11 +121,11 @@ public class AdminControlPage extends PageObject {
 
     public void clickOnTheCreatedOrderId() {
         List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_ID));
-        list.get(list.size()-1).click();
+        list.get(list.size() - 1).click();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusTag(String arg0) {
-        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1",arg0)).isPresent();
+        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1", arg0)).isPresent();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
@@ -186,7 +189,6 @@ public class AdminControlPage extends PageObject {
     }
 
 
-
     public void getPhoneNumber() {
         PhoneNum = crud.phoneNumber(Locators.PHONE_NUMBER_INPUT).getText();
     }
@@ -197,7 +199,7 @@ public class AdminControlPage extends PageObject {
 
     public boolean checkThatCreatedPhoneNumberWasDeleted() {
         int y = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
-        return y == x-1;
+        return y == x - 1;
     }
 
     public void getListOfPhoneNumbers() {
@@ -205,6 +207,52 @@ public class AdminControlPage extends PageObject {
     }
 
 
+    public boolean fieldShouldBeDeletedFromBasicStructure(String fieldName, String paginationButton, String listLocator) {
+        WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", paginationButton));
+        String name = fieldName;
+        while (i==false){
+            List<WebElementFacade> list = findAll(listLocator);
+            for (WebElementFacade elementFacade : list) {
+                if (elementFacade.getText().equals(name)){
+                    i = true;
+                    return true;}
+            }
+            if (crud.tryElementIsEnabled(nextButton)==true) {
+                nextButton.click();
+                getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+                //wait that page is refreshed
+            }else return false;
+        }
+        return false;
+    }
 
+    public boolean fieldShouldBeDeletedFromAllStructures(String fieldName, String paginationButton, String listLocator) {
+        WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", paginationButton));
+        String name = fieldName;
+        while (i==false){
+            List<WebElementFacade> list = findAll(listLocator);
+            for (WebElementFacade elementFacade : list) {
+                if (elementFacade.getText().contains(name)){
+                    i = true;
+                    return true;}
+            }
+            if (crud.tryElementIsEnabled(nextButton)==true) {
+                nextButton.click();
+                getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+                //wait that page is refreshed
+            }else return false;
+        }
+        return false;
+    }
+//
+//    public void clickOnItemFromList(String arg0, String arg1) {
+//        WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", " Следующая "));
+//        while (nextButton.isEnabled()){
+//           if(crud.tryFindElement(Locators.AdminStructurePortletActionsButton.replace("$1", arg0).replace("$2", arg1))==true){
+//               crud.clickMethod(Locators.AdminStructurePortletActionsButton.replace("$1", arg0).replace("$2", arg1));}
+//           else crud.clickMethod(Locators.AdminStructurePortletPaginationButton.replace("$1", " Следующая "));
+//        }
+//    }
 }
+
 

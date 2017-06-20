@@ -230,7 +230,6 @@ public class EndUserSteps {
     @Step
     public void structureShouldContainedFieldThatWasCreated(String FieldName) {
         Assert.assertTrue(adminControlPage.structureShouldContainedFieldThatWasCreated(FieldName));
-        Assert.assertTrue(crud.elementIsPresent(Locators.AdminStructurePortletFieldIsVisible.replace("$1", FieldName)));
     }
     @Step
     public void clickOnNameOfFieldThatWasCreated(String FieldName) {
@@ -589,10 +588,34 @@ public class EndUserSteps {
     }
 
     public void clickOnNameOfStructure(String structure) {
+//        adminControlPage.clickOnItemFromList(structure);
         crud.clickMethod(Locators.AdminStructurePortletNameOfField.replace("$1", structure));
     }
     @Step
     public void allStructuresShouldContainField(String field) {
         Assert.assertTrue(adminControlPage.allStructuresShouldContainField(field));
+    }
+    @Step
+    public void clickOnActionsButtonNearField(String arg0) {
+        crud.clickMethod(Locators.AdminStructurePortletActionsButton.replace("$1", arg0));
+    }
+
+    @Step
+    public void clickOnButtonNearField(String arg0, String arg1) {
+//        adminControlPage.clickOnItemFromList(arg0,arg1);
+        crud.clickMethod(Locators.AdminStructurePortletActionsButton.replace("$1", arg1).replace("$2", arg0));
+
+    }
+    @Step
+    public void fieldShouldBeDeletedFromBasicStructure(String arg0) {
+        Assert.assertFalse(adminControlPage.fieldShouldBeDeletedFromBasicStructure(arg0, " Следующая ", Locators.AdminStructurePortletStructureFieldsList));
+    }
+    @Step
+    public void fieldShouldBeDeletedFromAllStructures(String arg0) {
+        Assert.assertFalse(adminControlPage.fieldShouldBeDeletedFromAllStructures(arg0, " Следующая ",Locators.AdminStructurePortletFieldsOfAllStructures));
+    }
+    @Step
+    public void clickOnPaginationButton(String arg0) {
+        crud.clickMethod(Locators.AdminStructurePortletPaginationButton.replace("$1", arg0));
     }
 }
