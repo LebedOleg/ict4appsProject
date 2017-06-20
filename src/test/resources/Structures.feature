@@ -45,7 +45,11 @@ Feature: Structures admin portlet.
      And Click on name of "Basic" structure
      And Click on " Последняя → " pagination button
      And Click on "Действия" button near "TestFieldForBasicStructure" field
-     And Click on "Удалить навсегда" button near "TestFieldForBasicStructure" field
+
+     When Click on the "Удалить навсегда" button in opened pop up
+
+     When Click on the confirm button
+#     And Click on "Удалить навсегда" button near "TestFieldForBasicStructure" field
      Then "TestFieldForBasicStructure" field should be deleted from basic structure
      And Click on Save Structure button
      Then "TestFieldForBasicStructure" field should be deleted from all structures

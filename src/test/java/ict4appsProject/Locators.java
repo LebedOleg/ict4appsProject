@@ -70,6 +70,13 @@ public interface Locators {
     String AdminStructurePortletSaveButtonOfAddOptionPopUp = "//span[text()='Сохранить']";
     String AdminStructurePortletSaveButtonOfFieldEddit = "//button[text()='Сохранить']";
 
+    String xxx = "//a[contains(text(),'TestFieldForBasicStructure')]/ancestor::tr/td[contains(@class,'sortable-column')]";
+
+    String yyy = "//span[contains(text(),'$1')] /ancestor::a[@data-fieldid='$2']";
+
+    String zzz = ".//*[@id='yui_patched_v3_11_0_1_1497973686061_1236']";
+
+
     //TODO: WORKFLOW
 
     String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[2]";
