@@ -178,7 +178,3 @@ Feature: Workflow
     When Click on the "Заказы" link on the left accordion
     When Click on the "Последняя" link
     Then Check that created order has "Новый" status
-
-
-
-

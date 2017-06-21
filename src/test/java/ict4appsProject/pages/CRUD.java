@@ -129,4 +129,8 @@ public class CRUD extends PageObject {
         List<WebElementFacade> list = findAll(By.xpath(xpath));
         return list.size();
     }
+
+
+
+
 }

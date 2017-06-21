@@ -3,16 +3,10 @@ package ict4appsProject.steps.serenity;
 import ict4appsProject.Locators;
 import ict4appsProject.Variables;
 import ict4appsProject.pages.*;
-import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasItem;
 
 public class EndUserSteps {
 
@@ -617,13 +611,14 @@ public class EndUserSteps {
 
     @Step
     public void clickOnButtonNearField(String arg0, String arg1) {
+        adminControlPage.getElementText(Locators.xxx);
 //        adminControlPage.clickOnItemFromList(arg0,arg1);
         crud.clickMethod(Locators.AdminStructurePortletActionsButton.replace("$1", arg1).replace("$2", arg0));
 
     }
     @Step
     public void fieldShouldBeDeletedFromBasicStructure(String arg0) {
-        Assert.assertFalse(adminControlPage.fieldShouldBeDeletedFromBasicStructure(arg0, " Следующая ", Locators.AdminStructurePortletStructureFieldsList));
+        Assert.assertTrue(adminControlPage.fieldShouldBeDeletedFromBasicStructure(arg0, " Следующая ", Locators.AdminStructurePortletStructureFieldsList));
     }
     @Step
     public void fieldShouldBeDeletedFromAllStructures(String arg0) {
@@ -640,5 +635,15 @@ public class EndUserSteps {
     @Step
     public void selectFromHintList(String arg0) {
         crud.clickMethod(Locators.AdminStructurePortletNameOfFieldInputHint.replace("$1",arg0));
+    }
+
+    @Step
+    public void clickOnTheButtonInOpenedPopUp(String arg0) {
+        adminControlPage.clickOnTheButtonInOpenedPopUP(arg0);
+    }
+
+    @Step
+    public void clickOnTheConfirmButton() {
+        crud.clickMethod(Locators.zzz);
     }
 }

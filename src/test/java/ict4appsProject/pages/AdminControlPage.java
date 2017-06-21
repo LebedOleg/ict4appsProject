@@ -1,13 +1,11 @@
 package ict4appsProject.pages;
 
 import ict4appsProject.Locators;
-
 import ict4appsProject.Variables;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.yecht.Data;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +23,9 @@ public class AdminControlPage extends PageObject {
     boolean i =false;
     String PhoneNum;
     int x;
+
+    String FieldID;
+
     List<String> listList = new ArrayList<>();
 
     public void enterRandomTestDataToRetailPriceField(int size, String chararters, String field) {
@@ -273,5 +274,14 @@ public class AdminControlPage extends PageObject {
         for (i = 0; i < x; i++) {
             crud.clickMethod(Locators.REMOVE_PHONE_NUMBER_ICON);
         }
+    }
+
+    public String getElementText(String xpath) {
+         FieldID = find(By.xpath(xpath)).getText();
+       return FieldID;
+    }
+
+    public void clickOnTheButtonInOpenedPopUP(String arg0) {
+        $(Locators.yyy.replace("$1",arg0).replace("$2",FieldID)).click();
     }
 }

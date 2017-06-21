@@ -73,6 +73,14 @@ public interface Locators {
     String AdminStructurePortletEnterNameOfFieldInput = "//label[contains(text(),'$1')]/ancestor::div[@class='control-group']//input";
     String AdminStructurePortletNameOfFieldInputHint = "//div[@class='row']/span[contains(text(),'$1')]";
 
+    String xxx = "//a[contains(text(),'TestFieldForBasicStructure')]/ancestor::tr/td[contains(@class,'sortable-column')]";
+
+    String yyy = "//span[contains(text(),'$1')] /ancestor::a[@data-fieldid='$2']";
+
+    String zzz = "//button//span[contains(text(),'Подтвердить')]";
+
+
+
     //TODO: WORKFLOW
 
     String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[2]";

@@ -1,13 +1,11 @@
 package ict4appsProject.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
-import net.thucydides.core.annotations.Steps;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-
 import ict4appsProject.steps.serenity.EndUserSteps;
+import net.thucydides.core.annotations.Steps;
 
 public class DefinitionSteps {
 
@@ -629,6 +627,16 @@ public class DefinitionSteps {
     @When("^Delete all phone numbers$")
     public void deleteAllPhoneNumbers() throws Throwable {
         anna.deleteAllPhoneNumbers();
+    }
+
+    @When("^Click on the \"([^\"]*)\" button in opened pop up$")
+    public void clickOnTheButtonInOpenedPopUp(String arg0) throws Throwable {
+        anna.clickOnTheButtonInOpenedPopUp(arg0);
+    }
+
+    @When("^Click on the confirm button$")
+    public void clickOnTheConfirmButton() throws Throwable {
+        anna.clickOnTheConfirmButton();
     }
 
     @And("^Select select existing item of Add field to Structure dropdown menu$")
