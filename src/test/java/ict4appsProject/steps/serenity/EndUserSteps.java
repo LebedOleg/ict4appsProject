@@ -618,7 +618,7 @@ public class EndUserSteps {
     }
     @Step
     public void fieldShouldBeDeletedFromBasicStructure(String arg0) {
-        Assert.assertFalse(adminControlPage.fieldShouldBeDeletedFromBasicStructure(arg0, " Следующая ", Locators.AdminStructurePortletStructureFieldsList));
+        Assert.assertTrue(adminControlPage.fieldShouldBeDeletedFromBasicStructure(arg0, " Следующая ", Locators.AdminStructurePortletStructureFieldsList));
     }
     @Step
     public void fieldShouldBeDeletedFromAllStructures(String arg0) {

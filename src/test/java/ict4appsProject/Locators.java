@@ -74,7 +74,8 @@ public interface Locators {
 
     String yyy = "//span[contains(text(),'$1')] /ancestor::a[@data-fieldid='$2']";
 
-    String zzz = ".//*[@id='yui_patched_v3_11_0_1_1497973686061_1236']";
+    String zzz = "//button//span[contains(text(),'Подтвердить')]";
+
 
 
     //TODO: WORKFLOW
