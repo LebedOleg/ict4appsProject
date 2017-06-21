@@ -25,10 +25,6 @@ public class DefinitionSteps {
         anna.theUserClickOnFirstProductImageInSuperImageCarousel(arg0);
     }
 
-    @Then("^product URL should contain \"([^\"]*)\"$")
-    public void productURLShouldContain(String arg0) throws Throwable {
-        anna.productURLShouldContain(arg0);
-    }
 
     @Given("^Click on LogInLink$")
     public void clickOnLogInLink() throws Throwable {
@@ -65,10 +61,7 @@ public class DefinitionSteps {
         anna.clickOnProductsItemOfCatalogTab(arg0);
     }
 
-    @And("^Click on Add product button$")
-    public void clickOnAddProductButton() throws Throwable {
-        anna.clickOnAddProductButton();
-    }
+
 
     @And("^Click on Type of Structures dropdown menu$")
     public void clickOnTypeOfStructuresDropdownMenu() throws Throwable {
@@ -91,12 +84,6 @@ public class DefinitionSteps {
         anna.clickOnCategoriesTabOfProductsPortlet();
     }
 
-
-    @And("^Click on Detail tab of Products portlet$")
-    public void clickOnDetailTabOfProductsPortlet() throws Throwable {
-        anna.clickOnDetailTabOfProductsPortlet();
-    }
-
     @And("^Enter random test data to \"([^\"]*)\" price field$")
     public void enterRandomTestDataToPriceField(String arg0) throws Throwable {
         anna.enterRandomTestDataToRetailPriceField(arg0);
@@ -108,10 +95,6 @@ public class DefinitionSteps {
         anna.enterRandomTestDataToQuntityField();
     }
 
-    @And("^Click on Publish button$")
-    public void clickOnPublishButton() throws Throwable {
-        anna.clickOnPublishButton();
-    }
 
     @Then("^Product name according to name that was entered$")
     public void productNameAccordingToNameThatWasEntered() throws Throwable {
@@ -652,5 +635,45 @@ public class DefinitionSteps {
     @And("^Select \"([^\"]*)\" from Hint list$")
     public void selectFromHintList(String arg0) throws Throwable {
         anna.selectFromHintList(arg0);
+    }
+
+    @When("^Click on our created product title$")
+    public void clickOnOurCreatedProductTitle() throws Throwable {
+        anna.clickOnOurCreatedProductTitle();
+    }
+
+    @Then("^Check that product list contains our created product$")
+    public void checkThatProductListContainsOurCreatedProduct() throws Throwable {
+        anna.checkThatProductListContainsOurCreatedProduct();
+    }
+
+    @When("^Click on our created product title on products page$")
+    public void clickOnOurCreatedProductTitleOnProductsPage() throws Throwable {
+        anna.clickOnOurCreatedProductTitleOnProductsPage();
+    }
+
+    @Then("^Check that short description is visible$")
+    public void checkThatShortDescriptionIsVisible() throws Throwable {
+        anna.checkThatShortDescriptionIsVisible();
+    }
+
+    @Then("^Check that price equals to created in admin CP$")
+    public void checkThatPriceEqualsToCreatedInAdminCP() throws Throwable {
+        anna.checkThatPriceEqualsToCreatedInAdminCP();
+    }
+
+    @Then("^Check that title of product is displayed$")
+    public void checkThatTitleOfProductIsDisplayed() throws Throwable {
+        anna.checkThatTitleOfProductIsDisplayed();
+    }
+
+    @Then("^Check that product description is displayed$")
+    public void checkThatProductDescriptionIsDisplayed() throws Throwable {
+        anna.checkThatProductDescriptionIsDisplayed();
+    }
+
+    @Then("^Check that Quantity of product is displayed$")
+    public void checkThatQuantityOfProductIsDisplayed() throws Throwable {
+        anna.checkThatQuantityOfProductIsDisplayed();
     }
 }

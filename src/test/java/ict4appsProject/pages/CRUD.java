@@ -66,7 +66,6 @@ public class CRUD extends PageObject {
         return !$(Locator).isVisible();
     }
 
-
     public JavascriptExecutor jsExecutor() {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         return js;
@@ -119,7 +118,6 @@ public class CRUD extends PageObject {
         }
     }
 
-
     public WebElementFacade phoneNumber(String xpath) {
         List<WebElementFacade> list = findAll(By.xpath(xpath));
         return list.get(list.size() - 1);
@@ -130,7 +128,9 @@ public class CRUD extends PageObject {
         return list.size();
     }
 
-
+    public boolean elementContains (String xpath,String element){
+        return $(xpath).getText().contains(element);
+    }
 
 
 }

@@ -6,9 +6,6 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
-/**
- * Created by userqa on 15.05.17.
- */
 @DefaultUrl("https://staging.ict4apps.aimprosoft.com")
 public class WelcomePage extends PageObject {
 
