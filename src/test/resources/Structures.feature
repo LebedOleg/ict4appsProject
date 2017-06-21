@@ -43,12 +43,39 @@ Feature: Structures admin portlet.
      And Click on " Каталог " item of Control DropDown menu
      And Click on "Параметры" item of Catalog Tab
      And Click on name of "Basic" structure
-     And Click on " Последняя → " pagination button
+     When Click on the "Последняя" link
      And Click on "Действия" button near "TestFieldForBasicStructure" field
      And Click on "Удалить навсегда" button near "TestFieldForBasicStructure" field
      Then "TestFieldForBasicStructure" field should be deleted from basic structure
      And Click on Save Structure button
      Then "TestFieldForBasicStructure" field should be deleted from all structures
+
+
+   Scenario: 006 New field in child structure can be added
+     When Click on Control DropDown menu
+     And Click on " Каталог " item of Control DropDown menu
+     And Click on "Параметры" item of Catalog Tab
+     When Click on the "Последняя" link
+     And Click on name of "addNewStructureTest" structure
+     And Click on Add Field to Structure button
+     And Select Create new item of Add field to Structure dropdown menu
+     And Enter "subFieldTest" to field name field
+     And Click on Add new field to Structure button
+     Then ####
+
+   Scenario: 007
+     When Click on Control DropDown menu
+     And Click on " Каталог " item of Control DropDown menu
+     And Click on "Параметры" item of Catalog Tab
+     And Click on Add Sructure button
+     And Enter "qwertyTest" on Structure name field
+     And Click on Save Structure button
+     And Click on the "Последняя" link
+     And Click on name of "addNewStructureTest" structure
+     And Click on Add Field to Structure button
+     And Select select existing item of Add field to Structure dropdown menu
+     And Enter "subFieldTes" on " Введите Имя Поля" field
+     And Select "subFieldTest" from Hint list
 
 
 

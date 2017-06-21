@@ -59,6 +59,7 @@ public interface Locators {
     String AdminStructurePortletAddFieldButton = "//a[@title='Добавить Поле']";
     String AdminStructurePortletAddButton = "//button[contains(text(),'Добавить') and @form='addNewField']";
     String AdminStructurePortletAddFieldButtonItem = "//span[contains(text(), 'Создать Новое')]";
+    String AdminStructurePortletSelectExistingButtonItem = "//span[contains(text(), ' Выбрать Существующее ')]";
     String AdminStructurePortletNameOfNewField = "//label[text()=' Имя Поля ']/ancestor::div[@class='control-group']//input";
     String AdminStructurePortletAddNewFieldButton = "//button[text()=' Добавить ']";
     String AdminStructurePortletFieldIsVisible = "//a[text()='$1']";
@@ -69,6 +70,8 @@ public interface Locators {
     String AdminStructurePortletValueFieldOfAddOptionPopUp = ".//input[@id='optionValue']";
     String AdminStructurePortletSaveButtonOfAddOptionPopUp = "//span[text()='Сохранить']";
     String AdminStructurePortletSaveButtonOfFieldEddit = "//button[text()='Сохранить']";
+    String AdminStructurePortletEnterNameOfFieldInput = "//label[contains(text(),'$1')]/ancestor::div[@class='control-group']//input";
+    String AdminStructurePortletNameOfFieldInputHint = "//div[@class='row']/span[contains(text(),'$1')]";
 
     //TODO: WORKFLOW
 

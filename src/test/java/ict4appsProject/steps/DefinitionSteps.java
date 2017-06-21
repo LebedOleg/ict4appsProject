@@ -614,10 +614,7 @@ public class DefinitionSteps {
         anna.fieldShouldBeDeletedFromAllStructures(arg0);
     }
 
-    @And("^Click on \"([^\"]*)\" pagination button$")
-    public void clickOnPaginationButton(String arg0) throws Throwable {
-        anna.clickOnPaginationButton(arg0);
-    }
+
 
     @When("^Click on the \"([^\"]*)\" button more than (\\d+) times$")
     public void clickOnTheButtonMoreThanTimes(String arg0, int arg1) throws Throwable {
@@ -632,5 +629,20 @@ public class DefinitionSteps {
     @When("^Delete all phone numbers$")
     public void deleteAllPhoneNumbers() throws Throwable {
         anna.deleteAllPhoneNumbers();
+    }
+
+    @And("^Select select existing item of Add field to Structure dropdown menu$")
+    public void selectSelectExistingItemOfAddFieldToStructureDropdownMenu() throws Throwable {
+        anna.selectSelectExistingItemOfAddFieldToStructureDropdownMenu();
+    }
+
+    @And("^Enter \"([^\"]*)\" on \"([^\"]*)\" field$")
+    public void enterOnField(String arg0, String arg1) throws Throwable {
+        anna.enterOnField(arg0,arg1);
+    }
+
+    @And("^Select \"([^\"]*)\" from Hint list$")
+    public void selectFromHintList(String arg0) throws Throwable {
+        anna.selectFromHintList(arg0);
     }
 }

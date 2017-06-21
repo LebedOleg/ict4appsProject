@@ -630,7 +630,15 @@ public class EndUserSteps {
         Assert.assertFalse(adminControlPage.fieldShouldBeDeletedFromAllStructures(arg0, " Следующая ",Locators.AdminStructurePortletFieldsOfAllStructures));
     }
     @Step
-    public void clickOnPaginationButton(String arg0) {
-        crud.clickMethod(Locators.AdminStructurePortletPaginationButton.replace("$1", arg0));
+    public void selectSelectExistingItemOfAddFieldToStructureDropdownMenu() {
+        crud.clickMethod(Locators.AdminStructurePortletSelectExistingButtonItem);
+    }
+    @Step
+    public void enterOnField(String arg0, String arg1) {
+        crud.sendKeysMethod(Locators.AdminStructurePortletEnterNameOfFieldInput.replace("$1", arg1), arg0);
+    }
+    @Step
+    public void selectFromHintList(String arg0) {
+        crud.clickMethod(Locators.AdminStructurePortletNameOfFieldInputHint.replace("$1",arg0));
     }
 }
