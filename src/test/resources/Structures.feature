@@ -65,7 +65,7 @@ Feature: Structures admin portlet.
      And Select Create new item of Add field to Structure dropdown menu
      And Enter "subFieldTest" to field name field
      And Click on Add new field to Structure button
-     Then ####
+#     Then ####
 
    Scenario: 007
      When Click on Control DropDown menu
