@@ -100,17 +100,17 @@ Scenario: 005 Create product without additional SKU
   When Click on Control DropDown menu
   And Click on " Каталог " item of Control DropDown menu
   And Click on "Продукты" item of Catalog Tab
-  And Click on Add product button
+  And Click on the "Добавить" span
   And Click on Type of Structures dropdown menu
   And Click on "TestStucture" Type Of Structures Dropdown Item
   And Enter random test data to Name field
   And Enter random test data to Description field
   And Select "TestCategory" category on "Категории" tab
-  And Click on Detail tab of Products portlet
+  And Click on the "Детали" link
   And Enter random test data to "retail" field of Detail tab
   And Enter random test data to "sale" field of Detail tab
   And Enter random test data to "Quantity" field of Detail tab
-  And Click on Publish button
+  And Click on the "Опубликовать" link
   And Click on "Продукты" item of Catalog Tab
   And Click on LAST pagination button
   Then Products List should contains product that was created
@@ -119,7 +119,7 @@ Scenario: 005 Create product without additional SKU
   Then Check that Type of Structures Dropdown menu has right item
   When Click on Categories tab of Products portlet
   Then Check that right category is selected
-  When Click on Detail tab of Products portlet
+  And Click on the "Детали" link
   Then Check that "retail" price field has right data
   Then Check that "sale" price field has right data
   Then Check that quntity field has right data
@@ -135,7 +135,7 @@ Scenario: 005 Create product without additional SKU
     And Click on "Основные Данные" tab of Product portlet
     And Click on Type of Structures dropdown menu
     And Click on "TestStucture" Type Of Structures Dropdown Item
-    And Click on Publish button
+    And Click on the "Опубликовать" link
     And Click on "Продукты" item of Catalog Tab
     And Click on LAST pagination button
     Then Products List should contains product that was created

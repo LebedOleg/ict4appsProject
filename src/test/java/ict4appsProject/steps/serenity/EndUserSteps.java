@@ -6,10 +6,7 @@ import ict4appsProject.pages.*;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 
-import static org.hamcrest.Matchers.containsString;
-
 public class EndUserSteps {
-
 
     WelcomePage welcomePage;
     ProductsPage productsPage;
@@ -26,10 +23,6 @@ public class EndUserSteps {
     @Step
     public void theUserClickOnFirstProductImageInSuperImageCarousel(String arg0) {
         crud.clickMethod(Locators.SuperCarouselItem);
-    }
-    @Step
-    public void productURLShouldContain(String arg0) {
-       Assert.assertThat(productsPage.getCurrentURL(), containsString(arg0));
     }
 
     @Step
@@ -133,7 +126,7 @@ public class EndUserSteps {
 
     @Step
     public void productsListShouldContainsProductThatWasCreated() {
-        adminControlPage.productsListShouldContainsProductThatWasCreated(Locators.AdminProductPortletListOfProductsNames);
+      Assert.assertTrue(adminControlPage.productsListShouldContainsProductThatWasCreated(Locators.AdminProductPortletListOfProductsNames));
     }
 
     @Step
@@ -289,7 +282,7 @@ public class EndUserSteps {
         crud.clickMethod(Locators.ControlDropDownMenu);
         clickOnCatalogItemOfControlDropDownMenu(" Каталог ");
         clickOnProductsItemOfCatalogTab("Продукты");
-        clickOnAddProductButton();
+        crud.clickMethod(Locators.SPAN.replace("$1","Добавить"));
     }
 @Step
     public void controlDropDownMenuShouldAppeared() {
@@ -306,7 +299,7 @@ public class EndUserSteps {
         checkThatTypeOfStructuresDropdownMenuHasRightItem();
         clickOnCategoriesTabOfProductsPortlet();
         checkThatRightCategoryIsSelected();
-        clickOnDetailTabOfProductsPortlet();
+        crud.clickMethod(Locators.LINK.replace("$1","Детали"));
         checkThatPriceFieldHasRightData("retail");
         checkThatPriceFieldHasRightData("sale");
         checkThatQuntityFieldHasRightData();
@@ -337,7 +330,7 @@ public class EndUserSteps {
         @Step
         public void clickOnTheLink(String arg0) {
             crud.clickMethod(Locators.LINK.replace("$1", arg0));
-            crud.waitBit(2000);
+            crud.waitBit(1000);
         }
 
         @Step
@@ -469,7 +462,7 @@ public class EndUserSteps {
         enterRandomTestDataToFieldOfDetailTab(retailPrice);
         enterRandomTestDataToFieldOfDetailTab(salePrice);
         enterRandomTestDataToFieldOfDetailTab(quantityField);
-        clickOnPublishButton();
+        crud.clickMethod(Locators.LINK.replace("$1","Опубликовать"));
 
     }
     @Step
@@ -691,5 +684,45 @@ public class EndUserSteps {
     @Step
     public void clickOnLastHintThatAppeared() {
         crud.clickMethod(Locators.AdminStructurePortletSelectLastHint);
+    }
+
+    @Step
+    public void clickOnOurCreatedProductTitle() {
+        adminControlPage.clickOnOurCreatedProductTitle();
+    }
+
+    @Step
+    public void checkThatProductListContainsOurCreatedProduct() {
+        Assert.assertTrue(adminControlPage.productsListShouldContainsProductThatWasCreated(Locators.LIST_OF_PRODUCT_TITLES));
+    }
+
+    @Step
+    public void clickOnOurCreatedProductTitleOnProductsPage() {
+        productsPage.clickOnOurCreatedProductTitleOnProductsPage();
+    }
+
+    @Step
+    public void checkThatShortDescriptionIsVisible() {
+      Assert.assertTrue(productsPage.checkThatShortDescriptionIsVisible());
+    }
+
+    @Step
+    public void checkThatPriceEqualsToCreatedInAdminCP() {
+      Assert.assertTrue(productsPage.checkThatPriceEqualsToCreatedInAdminCP());
+    }
+
+    @Step
+    public void checkThatTitleOfProductIsDisplayed() {
+      Assert.assertTrue(productsPage.checkThatTitleOfProductIsDisplayed());
+    }
+
+    @Step
+    public void checkThatProductDescriptionIsDisplayed() {
+        Assert.assertTrue(productsPage.checkThatProductDescriptionIsDisplayed());
+    }
+
+    @Step
+    public void checkThatQuantityOfProductIsDisplayed() {
+        Assert.assertTrue(productsPage.checkThatQuantityOfProductIsDisplayed());
     }
 }

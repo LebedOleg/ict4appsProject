@@ -133,6 +133,16 @@ public interface Locators {
     String REMOVE_PHONE_NUMBER_ICON = "//i[contains(@class,'remove')]";
 
 
+    //TODO:   PRODUCTS PAGE
+
+    String LIST_OF_PRODUCT_TITLES = "//a[@class='list_href']";
+    String CREATED_PRODUCT_TITLE = "//h3/a[contains(text(),'$1')]";
+    String SHORT_DESC = "//a[contains(text(),'$1')]/ancestor::div[contains(@class,'product-mask')]/div[contains(@class,'product__introtext')]";
+    String RETAIL_PRICE_LIST = "//a[contains(text(),'$1')]/ancestor::div[contains(@class,'product-mask')]/div[contains(@class,'list-prices')]/label";
+    String PRODUCT_DESC = "//div[@class='info-product table-word-wrap']";
+    String RETAIL_PRICE_PRODUCT_PAGE = "//div[@class='product-stock']/span";
+
+
     //TODO:   COMMON ELEMENTS
 
     String LINK = "//a[contains(text(),'$1')]";

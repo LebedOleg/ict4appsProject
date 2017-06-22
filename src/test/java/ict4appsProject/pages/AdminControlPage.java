@@ -61,13 +61,14 @@ public class AdminControlPage extends PageObject {
     }
 
 
-    public void productsListShouldContainsProductThatWasCreated(String Locator) {
+    public boolean productsListShouldContainsProductThatWasCreated(String Locator) {
         List<WebElementFacade> list = findAll(Locator);
         for (WebElement element : list) {
             if (element.getText().equals(Name)) {
-                crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
+                return true;
             }
         }
+        return false;
     }
 
     public boolean checkThatTypeOfStructuresDropdownMenuHasRightItem() {
@@ -300,5 +301,9 @@ public class AdminControlPage extends PageObject {
 
     public void clickOnTheButtonInOpenedPopUP(String arg0) {
         $(Locators.yyy.replace("$1",arg0).replace("$2",FieldID)).click();
+    }
+
+    public void clickOnOurCreatedProductTitle() {
+        crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
     }
 }
