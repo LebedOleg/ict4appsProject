@@ -161,15 +161,24 @@ public class AdminControlPage extends PageObject {
     }
 
 
-    public boolean structureShouldContainedFieldThatWasCreated(String fieldName) {
-        if (crud.tryFindElement(Locators.AdminStructurePortletDisabledNextPaginationButton) == false) {
-            i = crud.tryFindElement(Locators.AdminStructurePortletFieldIsVisible.replace("$1", fieldName));
-        } else {
-            $(Locators.AdminStructurePortletLastPaginationButton).click();
-            i = crud.tryFindElement(Locators.AdminStructurePortletFieldIsVisible.replace("$1", fieldName));
-        }
-        return i;
-    }
+//    public boolean structureShouldContainedFieldThatWasCreated(String fieldName) {
+//        WebElementFacade nextButton = $(Locators.AdminStructurePortletNextPaginationButton.replace("$1", " Следующая "));
+//        String name = fieldName;
+//        while (i==false){
+//            List<WebElementFacade> list = findAll(listLocator);
+//            for (WebElementFacade elementFacade : list) {
+//                if (elementFacade.getText().equals(name)){
+//                    i = true;
+//                    return true;}
+//            }
+//            if (nextButton.hasClass("disabled")) {
+//                return false;
+//                //wait that page is refreshed
+//            }else {nextButton.click();
+//                getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);}
+//        }
+//        return false;
+//    }
 
     //
     public boolean allStructuresShouldContainField(String field) {
@@ -215,27 +224,35 @@ public class AdminControlPage extends PageObject {
         }
     }
 
-    public boolean fieldShouldBeDeletedFromBasicStructure(String fieldName, String paginationButton, String listLocator) {
-        WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", paginationButton));
-        String name = fieldName;
-        while (i==false){
-            List<WebElementFacade> list = findAll(listLocator);
-            for (WebElementFacade elementFacade : list) {
-                if (elementFacade.getText().equals(name)){
-                    i = true;
-                    return true;}
-            }
-            if (crud.tryElementIsEnabled(nextButton)==true) {
-                nextButton.click();
-                getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-                //wait that page is refreshed
-            }else return false;
+    public boolean fieldShouldBeDeletedFromBasicStructure(String fieldName, String Locator) {
+        try {
+            $(Locators.AdminStructurePortletPaginationButton.replace("$1", " Последняя → ")).click();
+            return $(Locator.replace("$1", fieldName)).isPresent();
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return $(Locator.replace("$1", fieldName)).isPresent();
         }
-        return false;
     }
 
-    public boolean fieldShouldBeDeletedFromAllStructures(String fieldName, String paginationButton, String listLocator) {
-        WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", paginationButton));
+//        WebElementFacade nextButton = $(Locators.AdminStructurePortletNextPaginationButton.replace("$1", " Следующая "));
+//        String name = fieldName;
+//        while (i==false){
+//            List<WebElementFacade> list = findAll(listLocator);
+//            for (WebElementFacade elementFacade : list) {
+//                if (elementFacade.getText().equals(name)){
+//                    i = true;
+//                    return true;}
+//            }
+//            if ($(Locators.AdminStructurePortletNextPaginationButton.replace("$1", " Следующая ")).hasClass("disabled")) {
+//                return false;
+//                //wait that page is refreshed
+//            }else {nextButton.click();
+//                getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);}
+//        }
+//        return false;
+//    }
+
+    public boolean fieldShouldBeDeletedFromAllStructures(String fieldName, String listLocator) {
+        WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", " Следующая "));
         String name = fieldName;
         while (i==false){
             List<WebElementFacade> list = findAll(listLocator);
@@ -244,11 +261,11 @@ public class AdminControlPage extends PageObject {
                     i = true;
                     return true;}
             }
-            if (crud.tryElementIsEnabled(nextButton)==true) {
-                nextButton.click();
-                getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+            if (nextButton.hasClass("disabled")) {
+                return false;
                 //wait that page is refreshed
-            }else return false;
+            }else {nextButton.click();
+                getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);}
         }
         return false;
     }

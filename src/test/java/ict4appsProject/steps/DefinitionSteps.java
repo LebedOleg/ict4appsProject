@@ -1,5 +1,6 @@
 package ict4appsProject.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -649,8 +650,66 @@ public class DefinitionSteps {
         anna.enterOnField(arg0,arg1);
     }
 
-    @And("^Select \"([^\"]*)\" from Hint list$")
-    public void selectFromHintList(String arg0) throws Throwable {
-        anna.selectFromHintList(arg0);
+
+    @And("^Click on Add existing field to Structure button$")
+    public void clickOnAddExistingFieldToStructureButton() throws Throwable {
+        anna.clickOnAddExistingFieldToStructureButton();
+    }
+
+    @And("^Get id of \"([^\"]*)\" field$")
+    public void getIdOfField(String arg0) throws Throwable {
+        anna.getIdOfField(arg0);
+    }
+
+
+
+    @And("^Click on name of \"([^\"]*)\" field$")
+    public void clickOnNameOfField(String fieldName) throws Throwable {
+        anna.clickOnNameOfField(fieldName);
+    }
+
+    @And("^Enter \"([^\"]*)\" on field name field$")
+    public void enterOnFieldNameField(String arg0) throws Throwable {
+        anna.enterOnFieldNameField(arg0);
+    }
+
+    @And("^Enter \"([^\"]*)\" on field description field$")
+    public void enterOnFieldDescriptionField(String arg0) throws Throwable {
+        anna.enterOnFieldDescriptionField(arg0);
+    }
+
+    @And("^Enter \"([^\"]*)\" on field localization field$")
+    public void enterOnFieldLocalizationField(String arg0) throws Throwable {
+        anna.enterOnFieldLocalizationField(arg0);
+    }
+
+    @And("^Click on \"([^\"]*)\" checkbox of display name of field$")
+    public void clickOnCheckboxOfDisplayNameOfField(String arg0) throws Throwable {
+        anna.clickOnCheckboxOfDisplayNameOfField(arg0);
+    }
+
+    @And("^Enter \"([^\"]*)\" on default value of field$")
+    public void enterOnDefaultValueOfField(String arg0) throws Throwable {
+        anna.enterOnDefaultValueOfField(arg0);
+    }
+
+    @And("^Select \"([^\"]*)\" item of Type of displaying dropdown$")
+    public void selectItemOfTypeOfDisplayingDropdown(String arg0) throws Throwable {
+        anna.selectItemOfTypeOfDisplayingDropdown(arg0);
+    }
+
+    @And("^Select \"([^\"]*)\" item of Type of Editing dropdown$")
+    public void selectItemOfTypeOfEditingDropdown(String arg0) throws Throwable {
+        anna.selectItemOfTypeOfEditingDropdown(arg0);
+    }
+
+    @And("^Click on \"([^\"]*)\" field$")
+    public void clickOnField(String arg0) throws Throwable {
+        anna.clickOnField(arg0);
+    }
+
+    @And("^Click on last hint that appeared$")
+    public void clickOnLastHintThatAppeared() throws Throwable {
+        anna.clickOnLastHintThatAppeared();
     }
 }
