@@ -252,6 +252,7 @@ public class AdminControlPage extends PageObject {
 //        return false;
 //    }
 
+
     public boolean fieldShouldBeDeletedFromAllStructures(String fieldName, String listLocator) {
         WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", " Следующая "));
         String name = fieldName;
