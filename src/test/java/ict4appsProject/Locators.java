@@ -52,9 +52,9 @@ public interface Locators {
     String AdminStructurePortletPaginationButton = "//a[text()='$1']";
     String AdminStructurePortletActionsButton = "//a[text()='$1']/ancestor::tr//span[text()='$2']";
     String AdminStructurePortletStructureFieldsList = "//tr//td[@class='table-cell '][1]/a";
-    String AdminStructurePortletNextPaginationButton = "//li[@class='']/a[text()=' Следующая ']";
+    String AdminStructurePortletNextPaginationButton = "//li[@class=]/a[text()='$1']/ancestor::li";
     String AdminStructurePortletPagesDropDownItems = "//ul[@class='dropdown-menu lfr-menu-list direction-down' and @role='menu']/li[@role='presentation']";
-
+//a[text()='name']
 
     String AdminStructurePortletAddFieldButton = "//a[@title='Добавить Поле']";
     String AdminStructurePortletAddButton = "//button[contains(text(),'Добавить') and @form='addNewField']";
@@ -71,7 +71,24 @@ public interface Locators {
     String AdminStructurePortletSaveButtonOfAddOptionPopUp = "//span[text()='Сохранить']";
     String AdminStructurePortletSaveButtonOfFieldEddit = "//button[text()='Сохранить']";
     String AdminStructurePortletEnterNameOfFieldInput = "//label[contains(text(),'$1')]/ancestor::div[@class='control-group']//input";
-    String AdminStructurePortletNameOfFieldInputHint = "//div[@class='row']/span[contains(text(),'$1')]";
+    String AdminStructurePortletSelectLastHint = "(//li[@class='ui-menu-item']//span[@class='field-name'])[last()]";
+
+    //TODO: Items of field
+    String AdminStructurePortletNameOfFieldInput = ".//*[@id='name']";
+    String AdminStructurePortletDescriptionOfFieldInput = ".//*[@id='description']";
+    String AdminStructurePortletLocalizationOfFieldInput = ".//*[@id='_ICT4APPS_CUSTOM_FIELDS_WAR_ict4appsportlet_localizedLabelsInput']";
+    String AdminStructurePortletDisplayNAmeOfFieldSelect = ".//*[@name='showLabel' and @value='$1']";
+    String AdminStructurePortletAspectSearchSelect = ".//*[@name='faceted' and @value='$1']";
+    String AdminStructurePortletAspectOrderInput = ".//*[@id='facetOrder']";
+    String AdminStructurePortletDefaultValueOfFieldInput = ".//*[@id='defaultValue']";
+    String AdminStructurePortletTypeOfDisplayOfFieldSelect = ".//*[@id='typeStr']";
+    String AdminStructurePortletTypeOfDisplayOfFieldSelectItem = ".//*[@id='typeStr']/option[text()='$1']";
+    String AdminStructurePortletTypeOfEdditingFieldSelect = ".//*[@id='editTypeStr']";
+    String AdminStructurePortletTypeOfIndexFieldSelect = ".//*[@id='editTypeStr']";
+    String AdminStructurePortletTypeOfIndexFieldSelectItem = ".//*[@id='editTypeStr']/option[text()='$1']";
+    String AdminStructurePortletDisplayorderFieldInput = ".//*[@id='displayOrder']";
+
+
 
     String xxx = "//a[contains(text(),'TestFieldForBasicStructure')]/ancestor::tr/td[contains(@class,'sortable-column')]";
 

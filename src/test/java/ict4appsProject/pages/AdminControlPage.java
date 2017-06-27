@@ -20,7 +20,7 @@ public class AdminControlPage extends PageObject {
     String RetailPrice;
     String SalePrice;
     String Quantity;
-    boolean i = false;
+    boolean i =false;
     String PhoneNum;
     int x;
 
@@ -124,11 +124,11 @@ public class AdminControlPage extends PageObject {
 
     public void clickOnTheCreatedOrderId() {
         List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_ID));
-        list.get(list.size() - 1).click();
+        list.get(list.size()-1).click();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusTag(String arg0) {
-        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1", arg0)).isPresent();
+        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1",arg0)).isPresent();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
@@ -163,15 +163,24 @@ public class AdminControlPage extends PageObject {
     }
 
 
-    public boolean structureShouldContainedFieldThatWasCreated(String fieldName) {
-        if (crud.tryFindElement(Locators.AdminStructurePortletDisabledNextPaginationButton) == false) {
-            i = crud.tryFindElement(Locators.AdminStructurePortletFieldIsVisible.replace("$1", fieldName));
-        } else {
-            $(Locators.AdminStructurePortletLastPaginationButton).click();
-            i = crud.tryFindElement(Locators.AdminStructurePortletFieldIsVisible.replace("$1", fieldName));
-        }
-        return i;
-    }
+//    public boolean structureShouldContainedFieldThatWasCreated(String fieldName) {
+//        WebElementFacade nextButton = $(Locators.AdminStructurePortletNextPaginationButton.replace("$1", " Следующая "));
+//        String name = fieldName;
+//        while (i==false){
+//            List<WebElementFacade> list = findAll(listLocator);
+//            for (WebElementFacade elementFacade : list) {
+//                if (elementFacade.getText().equals(name)){
+//                    i = true;
+//                    return true;}
+//            }
+//            if (nextButton.hasClass("disabled")) {
+//                return false;
+//                //wait that page is refreshed
+//            }else {nextButton.click();
+//                getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);}
+//        }
+//        return false;
+//    }
 
     //
     public boolean allStructuresShouldContainField(String field) {
@@ -190,6 +199,7 @@ public class AdminControlPage extends PageObject {
             i = false;
         }
     }
+
 
 
     public void getPhoneNumber() {

@@ -13,6 +13,7 @@ public class EndUserSteps {
     LogInPage logInPage;
     AdminControlPage adminControlPage;
     CRUD crud;
+    StructuresPage structuresPage;
 
     @Step
     public void theUserIsOnIctAppsStagingPage() {
@@ -60,7 +61,10 @@ public class EndUserSteps {
         crud.clickMethod(Locators.ProductsCatalogItem.replace("$1", arg0));
     }
 
-
+    @Step
+    public void clickOnAddProductButton() {
+        crud.clickMethod(Locators.AdminProductPortletAddProduct);
+    }
     @Step
     public void clickOnTypeOfStructuresDropdownMenu() {
         crud.clickMethod(Locators.AdminProductPortletTypeOfStructure);
@@ -91,6 +95,10 @@ public class EndUserSteps {
     public void selectTestCategory(String testCategory) {
         crud.clickMethod(Locators.AdminProductPortletCategoriesTabItemCheckbox.replace("$1", testCategory));
     }
+    @Step
+    public void clickOnDetailTabOfProductsPortlet() {
+        crud.clickMethod(Locators.AdminProductPortletDetailsTab);
+    }
 
     @Step
     public void enterRandomTestDataToRetailPriceField(String arg0) {
@@ -101,7 +109,10 @@ public class EndUserSteps {
     public void enterRandomTestDataToQuntityField() {
         adminControlPage.enterRandomTestDataToRetailPriceField(3, "charac", "Quantity");
     }
-
+    @Step
+    public void clickOnPublishButton() {
+        crud.clickMethod(Locators.AdminProductPortletPublishButton);
+    }
 
     public void productNameAccordingToNameThatWasEntered() {
         Assert.assertTrue(adminControlPage.compareCurrentNameOfProductWithEntered() );
@@ -206,7 +217,7 @@ public class EndUserSteps {
     }
     @Step
     public void structureShouldContainedFieldThatWasCreated(String FieldName) {
-        Assert.assertTrue(adminControlPage.structureShouldContainedFieldThatWasCreated(FieldName));
+        Assert.assertTrue(adminControlPage.fieldShouldBeDeletedFromBasicStructure(FieldName,Locators.AdminStructurePortletNameOfField));
     }
     @Step
     public void clickOnNameOfFieldThatWasCreated(String FieldName) {
@@ -600,24 +611,21 @@ public class EndUserSteps {
 
     }
     @Step
-    public void fieldShouldBeDeletedFromBasicStructure(String arg0) {
-        Assert.assertTrue(adminControlPage.fieldShouldBeDeletedFromBasicStructure(arg0, " Следующая ", Locators.AdminStructurePortletStructureFieldsList));
+    public void fieldShouldBeDeletedFromBasicStructure(String fieldName) {
+        Assert.assertFalse(adminControlPage.fieldShouldBeDeletedFromBasicStructure( fieldName,Locators.AdminStructurePortletNameOfField ));
     }
     @Step
-    public void fieldShouldBeDeletedFromAllStructures(String arg0) {
-        Assert.assertFalse(adminControlPage.fieldShouldBeDeletedFromAllStructures(arg0, " Следующая ",Locators.AdminStructurePortletFieldsOfAllStructures));
+    public void fieldShouldBeDeletedFromAllStructures(String fieldName) {
+        Assert.assertFalse(adminControlPage.fieldShouldBeDeletedFromAllStructures(fieldName,Locators.AdminStructurePortletNameOfField));
     }
     @Step
     public void selectSelectExistingItemOfAddFieldToStructureDropdownMenu() {
         crud.clickMethod(Locators.AdminStructurePortletSelectExistingButtonItem);
     }
     @Step
-    public void enterOnField(String arg0, String arg1) {
-        crud.sendKeysMethod(Locators.AdminStructurePortletEnterNameOfFieldInput.replace("$1", arg1), arg0);
-    }
-    @Step
-    public void selectFromHintList(String arg0) {
-        crud.clickMethod(Locators.AdminStructurePortletNameOfFieldInputHint.replace("$1",arg0));
+    public void enterOnField(String field, String arg1) {
+        structuresPage.enterOnAddExistingFieldInput(Locators.AdminStructurePortletEnterNameOfFieldInput.replace("$1", arg1), field);
+
     }
 
     @Step
@@ -628,6 +636,54 @@ public class EndUserSteps {
     @Step
     public void clickOnTheConfirmButton() {
         crud.clickMethod(Locators.zzz);
+    }
+    @Step
+    public void clickOnAddExistingFieldToStructureButton() {
+        structuresPage.clickOnAddExistingFieldToStructureButton();
+    }
+    @Step
+    public void getIdOfField(String arg0) {
+        structuresPage.getIdOfField(arg0);
+    }
+    @Step
+    public void clickOnNameOfField(String fieldName) {
+        structuresPage.clickOnNameOfField(fieldName);
+    }
+    @Step
+    public void enterOnFieldNameField(String arg0) {
+        structuresPage.enterOnFieldNameField(arg0);
+    }
+    @Step
+    public void enterOnFieldDescriptionField(String arg0) {
+        structuresPage.enterOnFieldDescriptionField(arg0);
+    }
+    @Step
+    public void enterOnFieldLocalizationField(String arg0) {
+        structuresPage.enterOnFieldLocalizationField(arg0);
+    }
+    @Step
+    public void clickOnCheckboxOfDisplayNameOfField(String arg0) {
+        structuresPage.clickOnCheckboxOfDisplayNameOfField(arg0);
+    }
+    @Step
+    public void enterOnDefaultValueOfField(String arg0) {
+        structuresPage.enterOnDefaultValueOfField(arg0);
+    }
+    @Step
+    public void selectItemOfTypeOfDisplayingDropdown(String arg0) {
+        structuresPage.selectItemOfTypeOfDisplayingDropdown(arg0);
+    }
+    @Step
+    public void selectItemOfTypeOfEditingDropdown(String arg0) {
+        structuresPage.selectItemOfTypeOfEditingDropdown(arg0);
+    }
+    @Step
+    public void clickOnField(String arg0) {
+        structuresPage.clickOnField(arg0);
+    }
+    @Step
+    public void clickOnLastHintThatAppeared() {
+        crud.clickMethod(Locators.AdminStructurePortletSelectLastHint);
     }
 
     @Step
