@@ -143,3 +143,4 @@ Feature: Products portlet
     Then Then Check that "Новый" label is disappeared on on our product
 
 
+
