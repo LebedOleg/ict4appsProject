@@ -753,4 +753,59 @@ public class EndUserSteps {
     public void selectItemOfDropdownMenu(String arg0, String arg1) {
         productsPage.selectItemOfDropdownMenu(arg0,arg1);
     }
+
+    @Step
+    public void checkThatShortDescriptionIsVisibleInAdminCP() {
+        Assert.assertTrue(productsPage.checkThatShortDescriptionIsVisibleInAdminCP());
+    }
+
+    @Step
+    public void checkThatSalePriceEqualsToCreatedInAdminCP() {
+        Assert.assertTrue(productsPage.checkThatSalePriceEqualsToCreatedInAdminCP());
+    }
+
+    @Step
+    public void checkThatRetailPriceEqualsToCreatedInAdminCPOnProductPage() {
+        Assert.assertTrue(productsPage.checkThatRetailPriceEqualsToCreatedInAdminCPOnProductPage());
+    }
+
+    @Step
+    public void clickOnTheSpecialOfferCheckBox() {
+        crud.clickMethod(Locators.SPECIAL_OFFER_CHECKBOX);
+    }
+
+    @Step
+    public void checkThatSalePriceEqualsToCreatedInAdminCPOnProductPage() {
+        Assert.assertTrue(productsPage.checkThatSalePriceEqualsToCreatedInAdminCPOnProductPage());
+    }
+
+    @Step
+    public void checkThatLabelIsAppearsOnOnOurProduct(String arg0) {
+        Assert.assertTrue(productsPage.checkThatLabelIsAppearsOnOnOurProduct( arg0));
+    }
+
+    @Step
+    public void clickOnTheLinkOnHeader(String arg0) {
+        crud.clickMethod(Locators.SPECIAL_OFFERS_LINK.replace("$1",arg0));
+    }
+
+    @Step
+    public void enterNextDayDate() {
+        adminControlPage.enterNextDayDate();
+    }
+
+    @Step
+    public void enterPrevDayDate() {
+        adminControlPage.enterPrevDayDate();
+    }
+
+    @Step
+    public void thenCheckThatLabelIsDisappearedOnOnOurProduct(String arg0) {
+        Assert.assertTrue(productsPage.thenCheckThatLabelIsDisappearedOnOnOurProduct(arg0));
+    }
+
+    @Step
+    public void clickOnTheSpanUnderProduct(String arg0, String arg1) {
+        productsPage.clickOnTheSpanUnderProduct(arg0,arg1);
+    }
 }

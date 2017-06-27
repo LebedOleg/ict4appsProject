@@ -31,7 +31,38 @@ public class ProductsPage extends PageObject{
     }
 
     public boolean checkThatQuantityOfProductIsDisplayed() {
-        return $(Locators.RETAIL_PRICE_PRODUCT_PAGE).getText().contains(adminControlPage.Quantity);
+        return $(Locators.PRODUCT_QUANTITY).getText().contains(adminControlPage.Quantity);
+    }
+
+    public boolean checkThatShortDescriptionIsVisibleInAdminCP() {
+        return $(Locators.SHORT_DESC_ADMIN.replace("$1",adminControlPage.Name)).getText().contains(adminControlPage.Description);
+    }
+
+    public boolean checkThatSalePriceEqualsToCreatedInAdminCP() {
+        return $(Locators.RETAIL_PRICE_LIST.replace("$1",adminControlPage.Name)).containsText(adminControlPage.SalePrice);
+    }
+
+    public boolean checkThatRetailPriceEqualsToCreatedInAdminCPOnProductPage() {
+        return $(Locators.RETAIL_PRICE_PRODUCT_PORTLET).containsText(adminControlPage.RetailPrice);
+    }
+
+    public boolean checkThatSalePriceEqualsToCreatedInAdminCPOnProductPage() {
+        return $(Locators.RETAIL_PRICE_PRODUCT_PORTLET).containsText(adminControlPage.SalePrice);
+    }
+
+    public boolean checkThatLabelIsAppearsOnOnOurProduct(String arg0) {
+        return $(Locators.SPECIAL_OFFER_LABEL.replace("$1",adminControlPage.Name).replace("$2",arg0)).isVisible();
+    }
+
+    public boolean thenCheckThatLabelIsDisappearedOnOnOurProduct(String arg0) {
+        return !$(Locators.SPECIAL_OFFER_LABEL.replace("$1",adminControlPage.Name).replace("$2",arg0)).isVisible();
+    }
+
+    public void clickOnTheSpanUnderProduct(String arg0, String arg1) {
+        if (!crud.elementIsPresent(Locators.EDIT_PRODUCT.replace("$2",arg0).replace("$1",arg1))){
+            crud.clickMethod(Locators.OFF_OPTIONS);
+            crud.clickMethod(Locators.EDIT_PRODUCT.replace("$2",arg0).replace("$1",arg1));
+        }
     }
 
     public void enterOnNameField(String name) {

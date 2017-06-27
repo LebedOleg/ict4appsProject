@@ -716,7 +716,7 @@ public class DefinitionSteps {
         anna.checkThatShortDescriptionIsVisible();
     }
 
-    @Then("^Check that price equals to created in admin CP$")
+    @Then("^Check that Retail price equals to created in admin CP$")
     public void checkThatPriceEqualsToCreatedInAdminCP() throws Throwable {
         anna.checkThatPriceEqualsToCreatedInAdminCP();
     }
@@ -769,5 +769,60 @@ public class DefinitionSteps {
     @And("^Select \"([^\"]*)\" item of \"([^\"]*)\" dropdown menu$")
     public void selectItemOfDropdownMenu(String arg0, String arg1) throws Throwable {
         anna.selectItemOfDropdownMenu(arg0,arg1);
+    }
+
+    @Then("^Check that short description is visible in admin CP$")
+    public void checkThatShortDescriptionIsVisibleInAdminCP() throws Throwable {
+        anna.checkThatShortDescriptionIsVisibleInAdminCP();
+    }
+
+    @Then("^Check that Sale price equals to created in admin CP$")
+    public void checkThatSalePriceEqualsToCreatedInAdminCP() throws Throwable {
+        anna.checkThatSalePriceEqualsToCreatedInAdminCP();
+    }
+
+    @Then("^Check that Retail price equals to created in admin CP on product page$")
+    public void checkThatRetailPriceEqualsToCreatedInAdminCPOnProductPage() throws Throwable {
+        anna.checkThatRetailPriceEqualsToCreatedInAdminCPOnProductPage();
+    }
+
+    @When("^Click on the special offer check box$")
+    public void clickOnTheSpecialOfferCheckBox() throws Throwable {
+        anna.clickOnTheSpecialOfferCheckBox();
+    }
+
+    @Then("^Check that Sale price equals to created in admin CP on product page$")
+    public void checkThatSalePriceEqualsToCreatedInAdminCPOnProductPage() throws Throwable {
+        anna.checkThatSalePriceEqualsToCreatedInAdminCPOnProductPage();
+    }
+
+    @Then("^Check that \"([^\"]*)\" label is appears on on our product$")
+    public void checkThatLabelIsAppearsOnOnOurProduct(String arg0) throws Throwable {
+        anna.checkThatLabelIsAppearsOnOnOurProduct( arg0);
+    }
+
+    @When("^Click on the \"([^\"]*)\" link on header$")
+    public void clickOnTheLinkOnHeader(String arg0) throws Throwable {
+        anna.clickOnTheLinkOnHeader(arg0);
+    }
+
+    @When("^Enter the next day's date into date text box$")
+    public void enterNextDayDate() throws Throwable {
+        anna.enterNextDayDate();
+    }
+
+    @When("^Enter the previous day's date into date text box$")
+    public void enterThePreviousDaySDateIntoDateTextBox() throws Throwable {
+        anna.enterPrevDayDate();
+    }
+
+    @Then("^Then Check that \"([^\"]*)\" label is disappeared on on our product$")
+    public void thenCheckThatLabelIsDisappearedOnOnOurProduct(String arg0) throws Throwable {
+        anna.thenCheckThatLabelIsDisappearedOnOnOurProduct(arg0);
+    }
+
+    @When("^Click on the \"([^\"]*)\" span under \"([^\"]*)\" product$")
+    public void clickOnTheSpanUnderProduct(String arg0, String arg1) throws Throwable {
+        anna.clickOnTheSpanUnderProduct(arg0,arg1);
     }
 }

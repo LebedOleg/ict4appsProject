@@ -7,9 +7,9 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class AdminControlPage extends PageObject {
@@ -25,6 +25,7 @@ public class AdminControlPage extends PageObject {
     int x;
 
     String FieldID;
+    int DAY;
 
     List<String> listList = new ArrayList<>();
 
@@ -211,7 +212,7 @@ public class AdminControlPage extends PageObject {
 
     public boolean checkThatCreatedPhoneNumberWasDeleted() {
         int y = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
-        return y == x-1;
+        return y == x - 1;
     }
 
     public void getListOfPhoneNumbers() {
@@ -283,8 +284,8 @@ public class AdminControlPage extends PageObject {
 
 
     public boolean checkThatThereAreNoMoreThanNumbers(int arg0) {
-      x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
-     return x == arg0;
+        x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
+        return x == arg0;
     }
 
     public void deleteAllPhoneNumbers() {
@@ -296,16 +297,25 @@ public class AdminControlPage extends PageObject {
     }
 
     public String getElementText(String xpath) {
-         FieldID = find(By.xpath(xpath)).getText();
-       return FieldID;
+        FieldID = find(By.xpath(xpath)).getText();
+        return FieldID;
     }
 
     public void clickOnTheButtonInOpenedPopUP(String arg0) {
-        $(Locators.yyy.replace("$1",arg0).replace("$2",FieldID)).click();
+        $(Locators.yyy.replace("$1", arg0).replace("$2", FieldID)).click();
     }
 
     public void clickOnOurCreatedProductTitle() {
         crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
+    }
+
+    public void enterNextDayDate() {
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, +1);
+        String  date = dateFormat.format(calendar.getTime());
+        $(Locators.DATE_PICKER).clear();
+        $(Locators.DATE_PICKER).sendKeys(date);
     }
 
     public void clickOnLastProductInProductList() {
@@ -318,5 +328,15 @@ public class AdminControlPage extends PageObject {
 
     public void enterOnNameTextbox(String arg0) {
         $(Locators.AdminProductsPageNameTextbox).sendKeys(arg0);
+    }
+}
+
+    public void enterPrevDayDate() {
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -1);
+        String  date = dateFormat.format(calendar.getTime());
+        $(Locators.DATE_PICKER).clear();
+        $(Locators.DATE_PICKER).sendKeys(date);
     }
 }
