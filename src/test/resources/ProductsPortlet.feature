@@ -189,7 +189,7 @@ Feature: Products portlet
 #    And Click on the "Детали" link
 #    Then Check that "retail" price field has right data
 #    Then Check that "sale" price field has right data
-#    Then Check that quntity field has right data
+#    Then Check that quntity field has right dataaa
 
 
   # UI for product eddit
