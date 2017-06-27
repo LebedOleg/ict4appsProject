@@ -775,4 +775,9 @@ public class EndUserSteps {
     public void thenCheckThatLabelIsDisappearedOnOnOurProduct(String arg0) {
         Assert.assertTrue(productsPage.thenCheckThatLabelIsDisappearedOnOnOurProduct(arg0));
     }
+
+    @Step
+    public void clickOnTheSpanUnderProduct(String arg0, String arg1) {
+        productsPage.clickOnTheSpanUnderProduct(arg0,arg1);
+    }
 }

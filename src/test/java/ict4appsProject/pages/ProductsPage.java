@@ -58,4 +58,10 @@ public class ProductsPage extends PageObject{
         return !$(Locators.SPECIAL_OFFER_LABEL.replace("$1",adminControlPage.Name).replace("$2",arg0)).isVisible();
     }
 
+    public void clickOnTheSpanUnderProduct(String arg0, String arg1) {
+        if (!crud.elementIsPresent(Locators.EDIT_PRODUCT.replace("$2",arg0).replace("$1",arg1))){
+            crud.clickMethod(Locators.OFF_OPTIONS);
+            crud.clickMethod(Locators.EDIT_PRODUCT.replace("$2",arg0).replace("$1",arg1));
+        }
+    }
 }

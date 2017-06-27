@@ -785,4 +785,9 @@ public class DefinitionSteps {
     public void thenCheckThatLabelIsDisappearedOnOnOurProduct(String arg0) throws Throwable {
         anna.thenCheckThatLabelIsDisappearedOnOnOurProduct(arg0);
     }
+
+    @When("^Click on the \"([^\"]*)\" span under \"([^\"]*)\" product$")
+    public void clickOnTheSpanUnderProduct(String arg0, String arg1) throws Throwable {
+        anna.clickOnTheSpanUnderProduct(arg0,arg1);
+    }
 }

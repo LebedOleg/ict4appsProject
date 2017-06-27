@@ -158,4 +158,14 @@ public interface Locators {
     //TODO:   WELCOME PAGE
     String SuperCarouselItem = "((//div[@class='slick-track' ])[2]/div[@aria-hidden='false']//img)[$1]";
 
+
+
+
+    //TODO:  ADDITIONAL FIELDS VISIBILITY
+
+    String EDIT_PRODUCT = "//a[text()='$1']//ancestor::li//span[@class='$2Item']";
+
+
+
+
 }
