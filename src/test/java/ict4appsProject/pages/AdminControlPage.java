@@ -7,9 +7,9 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class AdminControlPage extends PageObject {
@@ -20,11 +20,12 @@ public class AdminControlPage extends PageObject {
     String RetailPrice;
     String SalePrice;
     String Quantity;
-    boolean i =false;
+    boolean i = false;
     String PhoneNum;
     int x;
 
     String FieldID;
+    int DAY;
 
     List<String> listList = new ArrayList<>();
 
@@ -123,11 +124,11 @@ public class AdminControlPage extends PageObject {
 
     public void clickOnTheCreatedOrderId() {
         List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_ID));
-        list.get(list.size()-1).click();
+        list.get(list.size() - 1).click();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusTag(String arg0) {
-        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1",arg0)).isPresent();
+        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1", arg0)).isPresent();
     }
 
     public boolean checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
@@ -191,7 +192,6 @@ public class AdminControlPage extends PageObject {
     }
 
 
-
     public void getPhoneNumber() {
         PhoneNum = crud.phoneNumber(Locators.PHONE_NUMBER_INPUT).getText();
     }
@@ -202,7 +202,7 @@ public class AdminControlPage extends PageObject {
 
     public boolean checkThatCreatedPhoneNumberWasDeleted() {
         int y = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
-        return y == x-1;
+        return y == x - 1;
     }
 
     public void getListOfPhoneNumbers() {
@@ -219,18 +219,19 @@ public class AdminControlPage extends PageObject {
     public boolean fieldShouldBeDeletedFromBasicStructure(String fieldName, String paginationButton, String listLocator) {
         WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", paginationButton));
         String name = fieldName;
-        while (i==false){
+        while (i == false) {
             List<WebElementFacade> list = findAll(listLocator);
             for (WebElementFacade elementFacade : list) {
-                if (elementFacade.getText().equals(name)){
+                if (elementFacade.getText().equals(name)) {
                     i = true;
-                    return true;}
+                    return true;
+                }
             }
-            if (crud.tryElementIsEnabled(nextButton)==true) {
+            if (crud.tryElementIsEnabled(nextButton) == true) {
                 nextButton.click();
                 getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
                 //wait that page is refreshed
-            }else return false;
+            } else return false;
         }
         return false;
     }
@@ -238,18 +239,19 @@ public class AdminControlPage extends PageObject {
     public boolean fieldShouldBeDeletedFromAllStructures(String fieldName, String paginationButton, String listLocator) {
         WebElementFacade nextButton = $(Locators.AdminStructurePortletPaginationButton.replace("$1", paginationButton));
         String name = fieldName;
-        while (i==false){
+        while (i == false) {
             List<WebElementFacade> list = findAll(listLocator);
             for (WebElementFacade elementFacade : list) {
-                if (elementFacade.getText().contains(name)){
+                if (elementFacade.getText().contains(name)) {
                     i = true;
-                    return true;}
+                    return true;
+                }
             }
-            if (crud.tryElementIsEnabled(nextButton)==true) {
+            if (crud.tryElementIsEnabled(nextButton) == true) {
                 nextButton.click();
                 getDriver().manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
                 //wait that page is refreshed
-            }else return false;
+            } else return false;
         }
         return false;
     }
@@ -265,8 +267,8 @@ public class AdminControlPage extends PageObject {
 
 
     public boolean checkThatThereAreNoMoreThanNumbers(int arg0) {
-      x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
-     return x == arg0;
+        x = crud.getQuantityOfPhoneNumbers(Locators.PHONE_NUMBER_INPUT);
+        return x == arg0;
     }
 
     public void deleteAllPhoneNumbers() {
@@ -278,15 +280,33 @@ public class AdminControlPage extends PageObject {
     }
 
     public String getElementText(String xpath) {
-         FieldID = find(By.xpath(xpath)).getText();
-       return FieldID;
+        FieldID = find(By.xpath(xpath)).getText();
+        return FieldID;
     }
 
     public void clickOnTheButtonInOpenedPopUP(String arg0) {
-        $(Locators.yyy.replace("$1",arg0).replace("$2",FieldID)).click();
+        $(Locators.yyy.replace("$1", arg0).replace("$2", FieldID)).click();
     }
 
     public void clickOnOurCreatedProductTitle() {
         crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
+    }
+
+    public void enterNextDayDate() {
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, +1);
+        String  date = dateFormat.format(calendar.getTime());
+        $(Locators.DATE_PICKER).clear();
+        $(Locators.DATE_PICKER).sendKeys(date);
+    }
+
+    public void enterPrevDayDate() {
+        DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -1);
+        String  date = dateFormat.format(calendar.getTime());
+        $(Locators.DATE_PICKER).clear();
+        $(Locators.DATE_PICKER).sendKeys(date);
     }
 }

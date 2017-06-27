@@ -1,8 +1,9 @@
 package ict4appsProject.pages;
 
 import ict4appsProject.Locators;
-
 import net.thucydides.core.pages.PageObject;
+
+
 
 public class LogInPage extends PageObject {
 

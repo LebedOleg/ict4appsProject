@@ -112,19 +112,24 @@ public interface Locators {
     String CURRENCY_DROPDOWN_MENU = "//label[contains(text(),'$1')]/ancestor::div/select";
     String CURRENCY_OPTION = "//option[contains(text(),'$1')]";
     String PHONE_NUMBER_INPUT = "//input[contains(@class,'phoneNumber')]";
-    String PHONE_ERROR_MSG = "//label[@class='error']";
+    String PHONE_ERROR_MSG = "//label[contains(@class,'error')]";
     String REMOVE_PHONE_NUMBER_ICON = "//i[contains(@class,'remove')]";
-
 
     //TODO:   PRODUCTS PAGE
 
     String LIST_OF_PRODUCT_TITLES = "//a[@class='list_href']";
     String CREATED_PRODUCT_TITLE = "//h3/a[contains(text(),'$1')]";
     String SHORT_DESC = "//a[contains(text(),'$1')]/ancestor::div[contains(@class,'product-mask')]/div[contains(@class,'product__introtext')]";
-    String RETAIL_PRICE_LIST = "//a[contains(text(),'$1')]/ancestor::div[contains(@class,'product-mask')]/div[contains(@class,'list-prices')]/label";
+    String RETAIL_PRICE_LIST = "//a[contains(text(),'$1')]/ancestor::div[@class='product-mask']//div/label";
     String PRODUCT_DESC = "//div[@class='info-product table-word-wrap']";
-    String RETAIL_PRICE_PRODUCT_PAGE = "//div[@class='product-stock']/span";
-
+    String PRODUCT_QUANTITY = "//div[@class='product-stock']/span";
+    String SHORT_DESC_ADMIN = " //a[contains(text(),'$1')]/ancestor::div[@class='media-body product-compact-view']/div";
+    String RETAIL_PRICE_PRODUCT_PORTLET = "//div[@class='retail-price']";
+    String SPECIAL_OFFER_LABEL = "//div[contains(text(),'$2')]/../..//div[@class='product-mask']/div/h3/a[contains(text(),'$1')]";
+    String SPECIAL_OFFER_CHECKBOX = ".//*[@id='specialOffer']";
+    String SPECIAL_OFFERS_LINK = "//span[contains(text(),'Специальные Предложения')]/..";
+    String DATE = "//a[text()='$1']";
+    String DATE_PICKER = "//input[contains(@class,'hasDatepicker')]";
 
     //TODO:   COMMON ELEMENTS
 
