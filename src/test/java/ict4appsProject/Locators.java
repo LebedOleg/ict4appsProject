@@ -22,14 +22,21 @@ public interface Locators {
 
     String AdminProductPortletTypeOfStructure = ".//*[@id='fields-structures']";
     String AdminProductPortletTypeOfStructureItem = "//select[@id='fields-structures']/option[contains(text(),'$1')]";
-    String AdminProductPortletNameField = "//label[text()='Название товара']/..//input[@type='text']";
+    String AdminProductPortletNameField = "//label[@for='name']/ancestor::div[@class='form-group']//input[@type='text']";
     String AdminProductPortletDescriptionField = "//span[@class='input-localized input-localized-textarea']//textarea";
     String AdminProductPortletCategoriesTab = "//a[text()='Категории']";
     String AdminProductPortletTabs = "//a[text()='$1']";
+
     String AdminProductPortletCategoriesTabItemCheckbox = "//span[text()='$1']/../input";
+
     String AdminProductPortletDetailsTab = "//a[text()='Детали']";
+
     String AdminProductPortletDetailsTabPriceField = ".//*[@id='$1Price-input']";
     String AdminProductPortletDetailsTabQuantityField = ".//*[@id='stockQuantity-input']";
+
+    String AdminProductPortletDetailsAvailabilityStatus = "//select[@name='availabilityStatus']";
+    String AdminProductPortletDetailsAvailabilityStatusItem = "//option[contains(text(),'$1')]";
+
     String AdminProductPortletPublishButton = "//a[contains(text(),'Опубликовать')]";
     String AdminProductPortletAddArticulesDropDown = "//a[@class=' dropdown-toggle']/span [contains(text(),'Добавить')]";
     String AdminProductPortletAddArticulesAutoGenerationItem = "//span[contains(text(), 'Автогенерация Артикулов')]";
@@ -141,6 +148,8 @@ public interface Locators {
     String RETAIL_PRICE_LIST = "//a[contains(text(),'$1')]/ancestor::div[contains(@class,'product-mask')]/div[contains(@class,'list-prices')]/label";
     String PRODUCT_DESC = "//div[@class='info-product table-word-wrap']";
     String RETAIL_PRICE_PRODUCT_PAGE = "//div[@class='product-stock']/span";
+    String AdminProductsPageLastProductInList = "(//h4[@class='media-heading']/a)[last()]";
+    String AdminProductsPageNameTextbox = "//div[@class='form-group']//input[contains(@class,'language-value valid')]";
 
 
     //TODO:   COMMON ELEMENTS

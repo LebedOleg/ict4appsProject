@@ -725,4 +725,32 @@ public class EndUserSteps {
     public void checkThatQuantityOfProductIsDisplayed() {
         Assert.assertTrue(productsPage.checkThatQuantityOfProductIsDisplayed());
     }
+    @Step
+    public void clickOnLastProductInProductList() {
+        adminControlPage.clickOnLastProductInProductList();
+    }
+    @Step
+    public void productEditingPageShouldHaveButton(String name) {
+        Assert.assertTrue(adminControlPage.productEditingPageShouldHaveButton(name));
+    }
+
+    public void enterOnNameTextbox(String arg0) {
+        adminControlPage.enterOnNameTextbox(arg0);
+    }
+
+    public void enterOnNameField(String name) {
+        productsPage.enterOnNameField(name);
+    }
+
+    public void enterOnProductEditingDescriptionField(String description) {
+        productsPage.enterOnProductEditingDescriptionField(description);
+    }
+    @Step
+    public void clickOnDropdownMenu(String dropDownMenu) {
+        productsPage.clickOnDropdownMenu(dropDownMenu);
+    }
+@Step
+    public void selectItemOfDropdownMenu(String arg0, String arg1) {
+        productsPage.selectItemOfDropdownMenu(arg0,arg1);
+    }
 }

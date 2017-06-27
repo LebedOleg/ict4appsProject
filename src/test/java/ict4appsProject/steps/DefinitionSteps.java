@@ -735,4 +735,39 @@ public class DefinitionSteps {
     public void checkThatQuantityOfProductIsDisplayed() throws Throwable {
         anna.checkThatQuantityOfProductIsDisplayed();
     }
+
+    @And("^Click on last product in product list$")
+    public void clickOnLastProductInProductList() throws Throwable {
+        anna.clickOnLastProductInProductList();
+    }
+
+    @Then("^Product editing page should have \"([^\"]*)\" button$")
+    public void productEditingPageShouldHaveButton(String Name) throws Throwable {
+        anna.productEditingPageShouldHaveButton(Name);
+    }
+
+    @When("^Enter \"([^\"]*)\" on Name textbox$")
+    public void enterOnNameTextbox(String arg0) throws Throwable {
+        anna.enterOnNameTextbox(arg0);
+    }
+
+    @And("^Enter \"([^\"]*)\" on Name field$")
+    public void enterOnNameField(String arg0) throws Throwable {
+        anna.enterOnNameField(arg0);
+    }
+
+    @And("^Enter \"([^\"]*)\" on Product editing Description field$")
+    public void enterOnProductEditingDescriptionField(String Description) throws Throwable {
+        anna.enterOnProductEditingDescriptionField(Description);
+    }
+
+    @And("^Click on \"([^\"]*)\" dropdown menu$")
+    public void clickOnDropdownMenu(String dropDownMenu) throws Throwable {
+        anna.clickOnDropdownMenu(dropDownMenu);
+    }
+
+    @And("^Select \"([^\"]*)\" item of \"([^\"]*)\" dropdown menu$")
+    public void selectItemOfDropdownMenu(String arg0, String arg1) throws Throwable {
+        anna.selectItemOfDropdownMenu(arg0,arg1);
+    }
 }

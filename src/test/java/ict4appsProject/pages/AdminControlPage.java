@@ -307,4 +307,16 @@ public class AdminControlPage extends PageObject {
     public void clickOnOurCreatedProductTitle() {
         crud.clickMethod(Locators.AdminProductPortletProductName.replace("$1", Name));
     }
+
+    public void clickOnLastProductInProductList() {
+        $(Locators.AdminProductsPageLastProductInList).click();
+    }
+
+    public boolean productEditingPageShouldHaveButton(String name) {
+        return $(Locators.LINK.replace("$1", name)).isPresent();
+    }
+
+    public void enterOnNameTextbox(String arg0) {
+        $(Locators.AdminProductsPageNameTextbox).sendKeys(arg0);
+    }
 }

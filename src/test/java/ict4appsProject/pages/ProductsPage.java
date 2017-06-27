@@ -33,4 +33,20 @@ public class ProductsPage extends PageObject{
     public boolean checkThatQuantityOfProductIsDisplayed() {
         return $(Locators.RETAIL_PRICE_PRODUCT_PAGE).getText().contains(adminControlPage.Quantity);
     }
+
+    public void enterOnNameField(String name) {
+        $(Locators.AdminProductPortletNameField).sendKeys(name);
+    }
+
+    public void enterOnProductEditingDescriptionField(String description) {
+        $(Locators.AdminProductPortletDescriptionField).sendKeys(description);
+    }
+
+    public void clickOnDropdownMenu(String dropDownMenu) {
+        $(Locators.AdminProductPortletDetailsAvailabilityStatus).click();
+    }
+
+    public void selectItemOfDropdownMenu(String arg0, String arg1) {
+        $(Locators.AdminProductPortletDetailsAvailabilityStatusItem.replace("$1", arg0)).click();
+    }
 }
