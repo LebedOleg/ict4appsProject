@@ -6,11 +6,9 @@ public interface Locators {
     String LogInPasswordField = ".//*[@id='_58_password']";
     String LogInButton = "//button[text()=' Войти ']";
 
-
     String ControlDropDownMenu = "//span[text()=' Управление ']";
     String ControllDropDownMenuCatalogItem = "//span[text()='$1']";
     String ProductsCatalogItem = "//span[text()='$1']";
-
 
     String AdminControlPanelBackButton = "//a[@title='Назад' and @class='icon-circle-arrow-left previous-level']";
 
@@ -18,7 +16,6 @@ public interface Locators {
     String AdminProductPortletLastPaginationButton = "(//a[text()='Последняя →'])[1]";
     String AdminProductPortletListOfProductsNames = "//h4[@class='media-heading']/a";
     String AdminProductPortletProductName = "//h4/a[contains(text(),'$1')]";
-
 
     String AdminProductPortletTypeOfStructure = ".//*[@id='fields-structures']";
     String AdminProductPortletTypeOfStructureItem = "//select[@id='fields-structures']/option[contains(text(),'$1')]";
@@ -47,7 +44,6 @@ public interface Locators {
     String AddCategoryPopUpSaveButton = "//button[contains(@class,'publishCategoryBtn')]";
     String AdminCategoryPortletCategoriesList = "//span[contains(@class, 'jqtree')]";
 
-
     String AdminStructurePortletAddStructureButton = "//a[@class='btn']";
     String AdminStructurePortletStructureNameField = ".//*[@id='name']";
     String AdminStructurePortletSaveStructureButton = "//button[contains(@class,'btn btn-primary')]";
@@ -61,7 +57,6 @@ public interface Locators {
     String AdminStructurePortletStructureFieldsList = "//tr//td[@class='table-cell '][1]/a";
     String AdminStructurePortletNextPaginationButton = "//li[@class=]/a[text()='$1']/ancestor::li";
     String AdminStructurePortletPagesDropDownItems = "//ul[@class='dropdown-menu lfr-menu-list direction-down' and @role='menu']/li[@role='presentation']";
-//a[text()='name']
 
     String AdminStructurePortletAddFieldButton = "//a[@title='Добавить Поле']";
     String AdminStructurePortletAddButton = "//button[contains(text(),'Добавить') and @form='addNewField']";
@@ -81,6 +76,7 @@ public interface Locators {
     String AdminStructurePortletSelectLastHint = "(//li[@class='ui-menu-item']//span[@class='field-name'])[last()]";
 
     //TODO: Items of field
+
     String AdminStructurePortletNameOfFieldInput = ".//*[@id='name']";
     String AdminStructurePortletDescriptionOfFieldInput = ".//*[@id='description']";
     String AdminStructurePortletLocalizationOfFieldInput = ".//*[@id='_ICT4APPS_CUSTOM_FIELDS_WAR_ict4appsportlet_localizedLabelsInput']";
@@ -95,15 +91,11 @@ public interface Locators {
     String AdminStructurePortletTypeOfIndexFieldSelectItem = ".//*[@id='editTypeStr']/option[text()='$1']";
     String AdminStructurePortletDisplayorderFieldInput = ".//*[@id='displayOrder']";
 
-
-
     String xxx = "//a[contains(text(),'TestFieldForBasicStructure')]/ancestor::tr/td[contains(@class,'sortable-column')]";
 
     String yyy = "//span[contains(text(),'$1')] /ancestor::a[@data-fieldid='$2']";
 
     String zzz = "//button//span[contains(text(),'Подтвердить')]";
-
-
 
     //TODO: WORKFLOW
 
@@ -158,7 +150,6 @@ public interface Locators {
     String AdminProductsPageLastProductInList = "(//h4[@class='media-heading']/a)[last()]";
     String AdminProductsPageNameTextbox = "//div[@class='form-group']//input[contains(@class,'language-value valid')]";
 
-
     //TODO:   COMMON ELEMENTS
 
     String LINK = "//a[contains(text(),'$1')]";
@@ -167,16 +158,18 @@ public interface Locators {
     String DIV = "//div[contains(text(),'$1')]";
 
     //TODO:   WELCOME PAGE
+
     String SuperCarouselItem = "((//div[@class='slick-track' ])[2]/div[@aria-hidden='false']//img)[$1]";
-
-
-
 
     //TODO:  ADDITIONAL FIELDS VISIBILITY
 
-    String EDIT_PRODUCT = "//a[text()='$1']//ancestor::li//span[@class='$2Item']";
+    String EDIT_PRODUCT = "//span[text()='$1']/ancestor::div[@class='portlet-body']//span[contains(text(),'$2')]";
+    String STRUCTURES_SELECT = ".//*[@id='fields-structures']";
+    String FIELD_TEST_STRUCTURE = "//option[contains(text(),'$1')]";
+    String ADDITIONAL_FIELD = ".//*[@id='$1']";
+//    String ADDITIONAL_FIELD_PRODUCT_PAGE = "//div[text()='$1']";
+    String ADDITIONAL_FIELD_WITH_DATA_PRODUCT_PAGE = "//div[@class='row-fluid']//div[.=' $1 ' or .=' $2 ']";
 
-
-
+   String ACTIONS_BTN_OF_FIELD  = "//a[text()='$1']/ancestor::tr/td//a[@title='$2']";
 
 }

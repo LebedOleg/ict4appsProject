@@ -329,8 +329,8 @@ public class EndUserSteps {
 
         @Step
         public void clickOnTheLink(String arg0) {
+            crud.waitBit(500);
             crud.clickMethod(Locators.LINK.replace("$1", arg0));
-            crud.waitBit(1000);
         }
 
         @Step
@@ -606,7 +606,6 @@ public class EndUserSteps {
     @Step
     public void clickOnButtonNearField(String arg0, String arg1) {
         adminControlPage.getElementText(Locators.xxx);
-//        adminControlPage.clickOnItemFromList(arg0,arg1);
         crud.clickMethod(Locators.AdminStructurePortletActionsButton.replace("$1", arg1).replace("$2", arg0));
 
     }
@@ -807,5 +806,59 @@ public class EndUserSteps {
     @Step
     public void clickOnTheSpanUnderProduct(String arg0, String arg1) {
         productsPage.clickOnTheSpanUnderProduct(arg0,arg1);
+    }
+
+    @Step
+    public void clickOnTheStructuresSelect() {
+        crud.clickMethod(Locators.STRUCTURES_SELECT);
+    }
+
+    @Step
+    public void clickOnTheStructure(String arg0) {
+        crud.clickMethod(Locators.FIELD_TEST_STRUCTURE.replace("$1",arg0));
+    }
+
+    @Step
+    public void clickOnTheProductTitle(String arg0) {
+        crud.clickMethod(Locators.LINK.replace("$1",arg0));
+    }
+
+    @Step
+    public void clickBackButtonInBrowser() {
+        crud.clickBackButtonInBrowser();
+    }
+
+    @Step
+    public void writeIntoAdditionalInputField(String arg0, String arg1) {
+        crud.sendKeysMethod(Locators.ADDITIONAL_FIELD.replace("$1",arg1),arg0);
+    }
+
+    @Step
+    public void checkThatAdditionalFieldsAreNotVisible() {
+        Assert.assertTrue(productsPage.checkThatFirstAdditionalFieldsAreNotVisible());
+        Assert.assertTrue(productsPage.checkThatSecondAdditionalFieldsAreNotVisible());
+        Assert.assertTrue(productsPage.checkThatThirdAdditionalFieldsAreNotVisible());
+        Assert.assertTrue(productsPage.checkThatFourthAdditionalFieldsAreNotVisible());
+        Assert.assertTrue(productsPage.checkThatFifthAdditionalFieldsAreNotVisible());
+    }
+
+    @Step
+    public void checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) {
+        Assert.assertTrue(productsPage.checkThatAdditionalFieldWithIsVisible(arg0,arg1));
+    }
+
+    @Step
+    public void clearAdditionalInputField(String arg0) {
+        crud.clearField(Locators.ADDITIONAL_FIELD.replace("$1",arg0));
+    }
+
+    @Step
+    public void checkThatAdditionalFieldWithIsNotVisible(String arg0, String arg1) {
+        Assert.assertTrue(productsPage.checkThatFirstAdditionalFieldsAreNotVisible());
+    }
+
+    @Step
+    public void clickOnButtonNearAdditionalField(String arg0, String arg1) {
+        crud.clickMethod(Locators.ACTIONS_BTN_OF_FIELD.replace("$2",arg0).replace("$1",arg1));
     }
 }

@@ -1,6 +1,5 @@
 package ict4appsProject.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -824,5 +823,55 @@ public class DefinitionSteps {
     @When("^Click on the \"([^\"]*)\" span under \"([^\"]*)\" product$")
     public void clickOnTheSpanUnderProduct(String arg0, String arg1) throws Throwable {
         anna.clickOnTheSpanUnderProduct(arg0,arg1);
+    }
+
+    @When("^Click on the structures select$")
+    public void clickOnTheStructuresSelect() throws Throwable {
+        anna.clickOnTheStructuresSelect();
+    }
+
+    @When("^Click on the \"([^\"]*)\" structure$")
+    public void clickOnTheStructure(String arg0) throws Throwable {
+        anna.clickOnTheStructure(arg0);
+    }
+
+    @When("^Click on the \"([^\"]*)\" product title$")
+    public void clickOnTheProductTitle(String arg0) throws Throwable {
+        anna.clickOnTheProductTitle(arg0);
+    }
+
+    @When("^Click back button in browser$")
+    public void clickBackButtonInBrowser() throws Throwable {
+        anna.clickBackButtonInBrowser();
+    }
+
+    @When("^Write \"([^\"]*)\" into \"([^\"]*)\" additional input field$")
+    public void writeIntoAdditionalInputField(String arg0, String arg1) throws Throwable {
+        anna.writeIntoAdditionalInputField(arg0,arg1);
+    }
+
+    @Then("^Check that additional fields are not visible$")
+    public void checkThatAdditionalFieldsAreNotVisible() throws Throwable {
+        anna.checkThatAdditionalFieldsAreNotVisible();
+    }
+
+    @Then("^Check that \"([^\"]*)\" additional field with \"([^\"]*)\" is visible$")
+    public void checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) throws Throwable {
+        anna.checkThatAdditionalFieldWithIsVisible(arg0,arg1);
+    }
+
+    @When("^Clear \"([^\"]*)\" additional input field$")
+    public void clearAdditionalInputField(String arg0) throws Throwable {
+        anna.clearAdditionalInputField(arg0);
+    }
+
+    @Then("^Check that \"([^\"]*)\" additional field is not visible$")
+    public void checkThatAdditionalFieldWithIsNotVisible(String arg0, String arg1) throws Throwable {
+        anna.checkThatAdditionalFieldWithIsNotVisible(arg0,arg1);
+    }
+
+    @When("^Click on \"([^\"]*)\" button near \"([^\"]*)\" additional field$")
+    public void clickOnButtonNearAdditionalField(String arg0, String arg1) throws Throwable {
+        anna.clickOnButtonNearAdditionalField(arg0,arg1);
     }
 }

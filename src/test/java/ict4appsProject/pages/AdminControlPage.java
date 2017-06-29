@@ -329,7 +329,7 @@ public class AdminControlPage extends PageObject {
     public void enterOnNameTextbox(String arg0) {
         $(Locators.AdminProductsPageNameTextbox).sendKeys(arg0);
     }
-}
+
 
     public void enterPrevDayDate() {
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");

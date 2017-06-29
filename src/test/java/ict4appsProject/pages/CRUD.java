@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class CRUD extends PageObject {
 
     public void clickMethod(String Locator) {
-        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated((By.xpath(Locator))));
+        withTimeoutOf(10, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated((By.xpath(Locator))));
         $(Locator).click();
     }
 
@@ -146,4 +146,13 @@ public class CRUD extends PageObject {
     public void pressOnKeyBoardButton(String $1, String enter) {
         $($1).sendKeys(Keys.ENTER);
     }
+
+    public void clickBackButtonInBrowser() {
+        getDriver().navigate().back();
+    }
+
+    public void clearField(String xpath){
+        $(xpath).clear();
+    }
+
 }

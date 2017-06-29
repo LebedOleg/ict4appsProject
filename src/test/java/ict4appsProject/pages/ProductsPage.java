@@ -63,6 +63,7 @@ public class ProductsPage extends PageObject{
             crud.clickMethod(Locators.OFF_OPTIONS);
             crud.clickMethod(Locators.EDIT_PRODUCT.replace("$2",arg0).replace("$1",arg1));
         }
+        else crud.clickMethod(Locators.EDIT_PRODUCT.replace("$2",arg0).replace("$1",arg1));
     }
 
     public void enterOnNameField(String name) {
@@ -79,5 +80,29 @@ public class ProductsPage extends PageObject{
 
     public void selectItemOfDropdownMenu(String arg0, String arg1) {
         $(Locators.AdminProductPortletDetailsAvailabilityStatusItem.replace("$1", arg0)).click();
+    }
+
+    public boolean checkThatFirstAdditionalFieldsAreNotVisible() {
+        return !$(Locators.ADDITIONAL_FIELD.replace("$1","first")).isVisible();
+    }
+
+    public boolean checkThatSecondAdditionalFieldsAreNotVisible() {
+        return !$(Locators.ADDITIONAL_FIELD.replace("$1","second")).isVisible();
+    }
+
+    public boolean checkThatThirdAdditionalFieldsAreNotVisible() {
+        return !$(Locators.ADDITIONAL_FIELD.replace("$1","third")).isVisible();
+    }
+
+    public boolean checkThatFourthAdditionalFieldsAreNotVisible() {
+        return !$(Locators.ADDITIONAL_FIELD.replace("$1","fourth")).isVisible();
+    }
+
+    public boolean checkThatFifthAdditionalFieldsAreNotVisible() {
+        return !$(Locators.ADDITIONAL_FIELD.replace("$1","fifth")).isVisible();
+    }
+
+    public boolean checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) {
+        return $(Locators.ADDITIONAL_FIELD_WITH_DATA_PRODUCT_PAGE.replace("$1",arg0).replace("$2",arg1)).isVisible();
     }
 }
