@@ -82,24 +82,8 @@ public class ProductsPage extends PageObject{
         $(Locators.AdminProductPortletDetailsAvailabilityStatusItem.replace("$1", arg0)).click();
     }
 
-    public boolean checkThatFirstAdditionalFieldsAreNotVisible() {
-        return !$(Locators.ADDITIONAL_FIELD.replace("$1","first")).isVisible();
-    }
-
-    public boolean checkThatSecondAdditionalFieldsAreNotVisible() {
-        return !$(Locators.ADDITIONAL_FIELD.replace("$1","second")).isVisible();
-    }
-
-    public boolean checkThatThirdAdditionalFieldsAreNotVisible() {
-        return !$(Locators.ADDITIONAL_FIELD.replace("$1","third")).isVisible();
-    }
-
-    public boolean checkThatFourthAdditionalFieldsAreNotVisible() {
-        return !$(Locators.ADDITIONAL_FIELD.replace("$1","fourth")).isVisible();
-    }
-
-    public boolean checkThatFifthAdditionalFieldsAreNotVisible() {
-        return !$(Locators.ADDITIONAL_FIELD.replace("$1","fifth")).isVisible();
+    public boolean checkThatAdditionalFieldIsNotVisible(String arg0) {
+        return !$(Locators.ADDITIONAL_FIELD.replace("$1",arg0)).isVisible();
     }
 
     public boolean checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) {

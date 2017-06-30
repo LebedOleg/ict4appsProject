@@ -167,9 +167,7 @@ public interface Locators {
     String STRUCTURES_SELECT = ".//*[@id='fields-structures']";
     String FIELD_TEST_STRUCTURE = "//option[contains(text(),'$1')]";
     String ADDITIONAL_FIELD = ".//*[@id='$1']";
-//    String ADDITIONAL_FIELD_PRODUCT_PAGE = "//div[text()='$1']";
     String ADDITIONAL_FIELD_WITH_DATA_PRODUCT_PAGE = "//div[@class='row-fluid']//div[.=' $1 ' or .=' $2 ']";
-
-   String ACTIONS_BTN_OF_FIELD  = "//a[text()='$1']/ancestor::tr/td//a[@title='$2']";
+    String ACTIONS_BTN_OF_FIELD  = "//a[text()='$1']/ancestor::tr/td//a[@title='$2']";
 
 }

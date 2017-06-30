@@ -676,10 +676,12 @@ public class EndUserSteps {
     public void selectItemOfTypeOfEditingDropdown(String arg0) {
         structuresPage.selectItemOfTypeOfEditingDropdown(arg0);
     }
+
     @Step
     public void clickOnField(String arg0) {
         structuresPage.clickOnField(arg0);
     }
+
     @Step
     public void clickOnLastHintThatAppeared() {
         crud.clickMethod(Locators.AdminStructurePortletSelectLastHint);
@@ -724,31 +726,38 @@ public class EndUserSteps {
     public void checkThatQuantityOfProductIsDisplayed() {
         Assert.assertTrue(productsPage.checkThatQuantityOfProductIsDisplayed());
     }
+
     @Step
     public void clickOnLastProductInProductList() {
         adminControlPage.clickOnLastProductInProductList();
     }
+
     @Step
     public void productEditingPageShouldHaveButton(String name) {
         Assert.assertTrue(adminControlPage.productEditingPageShouldHaveButton(name));
     }
 
+    @Step
     public void enterOnNameTextbox(String arg0) {
         adminControlPage.enterOnNameTextbox(arg0);
     }
 
+    @Step
     public void enterOnNameField(String name) {
         productsPage.enterOnNameField(name);
     }
 
+    @Step
     public void enterOnProductEditingDescriptionField(String description) {
         productsPage.enterOnProductEditingDescriptionField(description);
     }
     @Step
+
     public void clickOnDropdownMenu(String dropDownMenu) {
         productsPage.clickOnDropdownMenu(dropDownMenu);
     }
-@Step
+
+    @Step
     public void selectItemOfDropdownMenu(String arg0, String arg1) {
         productsPage.selectItemOfDropdownMenu(arg0,arg1);
     }
@@ -834,15 +843,6 @@ public class EndUserSteps {
     }
 
     @Step
-    public void checkThatAdditionalFieldsAreNotVisible() {
-        Assert.assertTrue(productsPage.checkThatFirstAdditionalFieldsAreNotVisible());
-        Assert.assertTrue(productsPage.checkThatSecondAdditionalFieldsAreNotVisible());
-        Assert.assertTrue(productsPage.checkThatThirdAdditionalFieldsAreNotVisible());
-        Assert.assertTrue(productsPage.checkThatFourthAdditionalFieldsAreNotVisible());
-        Assert.assertTrue(productsPage.checkThatFifthAdditionalFieldsAreNotVisible());
-    }
-
-    @Step
     public void checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) {
         Assert.assertTrue(productsPage.checkThatAdditionalFieldWithIsVisible(arg0,arg1));
     }
@@ -853,8 +853,8 @@ public class EndUserSteps {
     }
 
     @Step
-    public void checkThatAdditionalFieldWithIsNotVisible(String arg0, String arg1) {
-        Assert.assertTrue(productsPage.checkThatFirstAdditionalFieldsAreNotVisible());
+    public void checkThatAdditionalFieldWithIsNotVisible(String arg0) {
+        Assert.assertTrue(productsPage.checkThatAdditionalFieldIsNotVisible(arg0));
     }
 
     @Step

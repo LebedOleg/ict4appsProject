@@ -850,11 +850,6 @@ public class DefinitionSteps {
         anna.writeIntoAdditionalInputField(arg0,arg1);
     }
 
-    @Then("^Check that additional fields are not visible$")
-    public void checkThatAdditionalFieldsAreNotVisible() throws Throwable {
-        anna.checkThatAdditionalFieldsAreNotVisible();
-    }
-
     @Then("^Check that \"([^\"]*)\" additional field with \"([^\"]*)\" is visible$")
     public void checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) throws Throwable {
         anna.checkThatAdditionalFieldWithIsVisible(arg0,arg1);
@@ -866,8 +861,8 @@ public class DefinitionSteps {
     }
 
     @Then("^Check that \"([^\"]*)\" additional field is not visible$")
-    public void checkThatAdditionalFieldWithIsNotVisible(String arg0, String arg1) throws Throwable {
-        anna.checkThatAdditionalFieldWithIsNotVisible(arg0,arg1);
+    public void checkThatAdditionalFieldIsNotVisible(String arg0) throws Throwable {
+        anna.checkThatAdditionalFieldWithIsNotVisible(arg0);
     }
 
     @When("^Click on \"([^\"]*)\" button near \"([^\"]*)\" additional field$")
