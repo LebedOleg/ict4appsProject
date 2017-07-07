@@ -825,4 +825,9 @@ public class DefinitionSteps {
     public void clickOnTheSpanUnderProduct(String arg0, String arg1) throws Throwable {
         anna.clickOnTheSpanUnderProduct(arg0,arg1);
     }
+
+    @And("^Log out$")
+    public void logOut() throws Throwable {
+        anna.logOut();
+    }
 }

@@ -1,5 +1,6 @@
 package ict4appsProject.pages;
 
+import ict4appsProject.Locators;
 import ict4appsProject.Variables;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.pages.PageObject;
@@ -145,5 +146,10 @@ public class CRUD extends PageObject {
 
     public void pressOnKeyBoardButton(String $1, String enter) {
         $($1).sendKeys(Keys.ENTER);
+    }
+
+    public  void logOut() {
+        $(Locators.personalAccountDropDownMenu).click();
+        $(Locators.personalAccountExitItem).click();
     }
 }

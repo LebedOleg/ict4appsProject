@@ -104,6 +104,11 @@ public interface Locators {
     String zzz = "//button//span[contains(text(),'Подтвердить')]";
 
 
+    String personalAccountDropDownMenu = "//span[@class='nav-item-label']/span[@class='user-full-name']";
+    String personalAccountExitItem = "//a[@role='menuitem' and @title='Выйти']";
+
+
+
 
     //TODO: WORKFLOW
 

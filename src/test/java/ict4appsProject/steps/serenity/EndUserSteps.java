@@ -808,4 +808,8 @@ public class EndUserSteps {
     public void clickOnTheSpanUnderProduct(String arg0, String arg1) {
         productsPage.clickOnTheSpanUnderProduct(arg0,arg1);
     }
+    @Step
+    public void logOut() {
+        crud.logOut();
+    }
 }
