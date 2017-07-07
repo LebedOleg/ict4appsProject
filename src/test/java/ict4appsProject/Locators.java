@@ -6,11 +6,9 @@ public interface Locators {
     String LogInPasswordField = ".//*[@id='_58_password']";
     String LogInButton = "//button[text()=' Войти ']";
 
-
     String ControlDropDownMenu = "//span[text()=' Управление ']";
     String ControllDropDownMenuCatalogItem = "//span[text()='$1']";
     String ProductsCatalogItem = "//span[text()='$1']";
-
 
     String AdminControlPanelBackButton = "//a[@title='Назад' and @class='icon-circle-arrow-left previous-level']";
 
@@ -18,7 +16,6 @@ public interface Locators {
     String AdminProductPortletLastPaginationButton = "(//a[text()='Последняя →'])[1]";
     String AdminProductPortletListOfProductsNames = "//h4[@class='media-heading']/a";
     String AdminProductPortletProductName = "//h4/a[contains(text(),'$1')]";
-
 
     String AdminProductPortletTypeOfStructure = ".//*[@id='fields-structures']";
     String AdminProductPortletTypeOfStructureItem = "//select[@id='fields-structures']/option[contains(text(),'$1')]";
@@ -47,7 +44,6 @@ public interface Locators {
     String AddCategoryPopUpSaveButton = "//button[contains(@class,'publishCategoryBtn')]";
     String AdminCategoryPortletCategoriesList = "//span[contains(@class, 'jqtree')]";
 
-
     String AdminStructurePortletAddStructureButton = "//a[@class='btn']";
     String AdminStructurePortletStructureNameField = ".//*[@id='name']";
     String AdminStructurePortletSaveStructureButton = "//button[contains(@class,'btn btn-primary')]";
@@ -61,7 +57,6 @@ public interface Locators {
     String AdminStructurePortletStructureFieldsList = "//tr//td[@class='table-cell '][1]/a";
     String AdminStructurePortletNextPaginationButton = "//li[@class=]/a[text()='$1']/ancestor::li";
     String AdminStructurePortletPagesDropDownItems = "//ul[@class='dropdown-menu lfr-menu-list direction-down' and @role='menu']/li[@role='presentation']";
-//a[text()='name']
 
     String AdminStructurePortletAddFieldButton = "//a[@title='Добавить Поле']";
     String AdminStructurePortletAddButton = "//button[contains(text(),'Добавить') and @form='addNewField']";
@@ -81,6 +76,7 @@ public interface Locators {
     String AdminStructurePortletSelectLastHint = "(//li[@class='ui-menu-item']//span[@class='field-name'])[last()]";
 
     //TODO: Items of field
+
     String AdminStructurePortletNameOfFieldInput = ".//*[@id='name']";
     String AdminStructurePortletDescriptionOfFieldInput = ".//*[@id='description']";
     String AdminStructurePortletLocalizationOfFieldInput = ".//*[@id='_ICT4APPS_CUSTOM_FIELDS_WAR_ict4appsportlet_localizedLabelsInput']";
@@ -94,8 +90,6 @@ public interface Locators {
     String AdminStructurePortletTypeOfIndexFieldSelect = ".//*[@id='editTypeStr']";
     String AdminStructurePortletTypeOfIndexFieldSelectItem = ".//*[@id='editTypeStr']/option[text()='$1']";
     String AdminStructurePortletDisplayorderFieldInput = ".//*[@id='displayOrder']";
-
-
 
     String xxx = "//a[contains(text(),'TestFieldForBasicStructure')]/ancestor::tr/td[contains(@class,'sortable-column')]";
 
@@ -112,7 +106,7 @@ public interface Locators {
 
     //TODO: WORKFLOW
 
-    String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[2]";
+    String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[1]";
     String CART = "//div[@class='card']//div[@class='cart-icon']/..";
     String ORDER_LINE_STATUS = "//tr[contains(@class,'order-entity')]//td[5]//strong";
     String ORDER_LINE_ID = "//tr[contains(@class,'order-entity')]//td[2]//a";
@@ -125,7 +119,7 @@ public interface Locators {
     String CART_OPTIONS = "//div[@class='card']//span[contains(text(),'Корзина Резюме')]";
     String OFF_OPTIONS = "//span[contains(text(),'Режим Редактирования')]";
     String ORDERS_LINK = "//a[@class=\"taglib-icon\"]/span[contains(text(),'$1')]";
-    String BACK_LINK = "//a[@title='Back']";
+//    String BACK_LINK = "//a[@title='Back']";
     String ADD_PRODUCT_INPUT = ".//*[@id='accordion']/input";
     String PRODUCT_FROM_PRODUCT_SEARCH = ".//*[@id='checkbox-tree']/ul/li[1]";
     String CREATE_CUSTOMER_FIELDS = "//div[contains(text(),'$1')] /ancestor::div[@class='control-group row-fluid']//div/input";
@@ -163,25 +157,36 @@ public interface Locators {
     String AdminProductsPageLastProductInList = "(//h4[@class='media-heading']/a)[last()]";
     String AdminProductsPageNameTextbox = "//div[@class='form-group']//input[contains(@class,'language-value valid')]";
 
-
     //TODO:   COMMON ELEMENTS
 
     String LINK = "//a[contains(text(),'$1')]";
     String BUTTON = "//button[contains(text(),'$1')]";
     String SPAN = "//span[contains(text(),'$1')]";
     String DIV = "//div[contains(text(),'$1')]";
+    String LABEL = "//label[contains(text(),'$1')]";
+    String ANY_ELEMENT = "//*[contains(text(),'$1')]";
 
     //TODO:   WELCOME PAGE
+
     String SuperCarouselItem = "((//div[@class='slick-track' ])[2]/div[@aria-hidden='false']//img)[$1]";
-
-
-
 
     //TODO:  ADDITIONAL FIELDS VISIBILITY
 
-    String EDIT_PRODUCT = "//a[text()='$1']//ancestor::li//span[@class='$2Item']";
+    String EDIT_PRODUCT = "//span[contains(text(),'#1')]/ancestor::div[@class='portlet-body']//span[contains(text(),'$2')]";
+    String STRUCTURES_SELECT = ".//*[@id='fields-structures']";
+    String FIELD_TEST_STRUCTURE = "//option[contains(text(),'$1')]";
+    String ADDITIONAL_FIELD = ".//*[@id='$1']";
+    String ADDITIONAL_FIELD_WITH_DATA_PRODUCT_PAGE = "//div[@class='row-fluid']//div[.=' $1 ' or .=' $2 ']";
+    String ACTIONS_BTN_OF_FIELD  = "//a[text()='$1']/ancestor::tr/td//a[@title='$2']";
 
+    //TODO:  PRODUCT STATUS
 
+    String PRODUCT_STATUS ="//label[contains(text(),'$1')]/../select";
+    String STATUS_OPTIONS = "//option[contains(text(),'$1')]";
+    String WARNING_MSG = ".//*[@id='qty-info-message']";
 
+    String STOCK = "//label[contains(text(),'Остаток')]/../span";
+
+    String BACK_LINK = "//a[@title='Назад']";
 
 }

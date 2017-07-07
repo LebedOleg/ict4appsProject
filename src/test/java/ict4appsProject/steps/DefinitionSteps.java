@@ -1,6 +1,5 @@
 package ict4appsProject.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -61,7 +60,6 @@ public class DefinitionSteps {
     public void clickOnProductsItemOfCatalogTab(String arg0) throws Throwable {
         anna.clickOnProductsItemOfCatalogTab(arg0);
     }
-
 
 
     @And("^Click on Type of Structures dropdown menu$")
@@ -314,6 +312,7 @@ public class DefinitionSteps {
     public void clickOnTheCartIcon() throws Throwable {
         anna.clickOnTheCartIcon();
     }
+
     @When("^Click on the \"([^\"]*)\" link$")
     public void clickOnTheLink(String arg0) throws Throwable {
         anna.clickOnTheLink(arg0);
@@ -495,7 +494,7 @@ public class DefinitionSteps {
 
     @And("^Click on name of \"([^\"]*)\" structure$")
     public void clickOnNameOfStructure(String Structure) throws Throwable {
-       anna.clickOnNameOfStructure(Structure);
+        anna.clickOnNameOfStructure(Structure);
     }
 
     @Then("^All structures should contain \"([^\"]*)\" field$")
@@ -582,7 +581,7 @@ public class DefinitionSteps {
 
     @And("^Click on \"([^\"]*)\" button near \"([^\"]*)\" field$")
     public void clickOnButtonNearField(String arg0, String arg1) throws Throwable {
-        anna.clickOnButtonNearField(arg0,arg1);
+        anna.clickOnButtonNearField(arg0, arg1);
     }
 
     @Then("^\"([^\"]*)\" field should be deleted from basic structure$")
@@ -597,10 +596,9 @@ public class DefinitionSteps {
     }
 
 
-
     @When("^Click on the \"([^\"]*)\" button more than (\\d+) times$")
     public void clickOnTheButtonMoreThanTimes(String arg0, int arg1) throws Throwable {
-        anna.clickOnTheButtonMoreThanTimes(arg0,arg1);
+        anna.clickOnTheButtonMoreThanTimes(arg0, arg1);
     }
 
     @Then("^Check that there are no more than (\\d+) phone numbers$")
@@ -630,7 +628,7 @@ public class DefinitionSteps {
 
     @And("^Enter \"([^\"]*)\" on \"([^\"]*)\" field$")
     public void enterOnField(String arg0, String arg1) throws Throwable {
-        anna.enterOnField(arg0,arg1);
+        anna.enterOnField(arg0, arg1);
     }
 
 
@@ -643,7 +641,6 @@ public class DefinitionSteps {
     public void getIdOfField(String arg0) throws Throwable {
         anna.getIdOfField(arg0);
     }
-
 
 
     @And("^Click on name of \"([^\"]*)\" field$")
@@ -768,7 +765,7 @@ public class DefinitionSteps {
 
     @And("^Select \"([^\"]*)\" item of \"([^\"]*)\" dropdown menu$")
     public void selectItemOfDropdownMenu(String arg0, String arg1) throws Throwable {
-        anna.selectItemOfDropdownMenu(arg0,arg1);
+        anna.selectItemOfDropdownMenu(arg0, arg1);
     }
 
     @Then("^Check that short description is visible in admin CP$")
@@ -798,7 +795,7 @@ public class DefinitionSteps {
 
     @Then("^Check that \"([^\"]*)\" label is appears on on our product$")
     public void checkThatLabelIsAppearsOnOnOurProduct(String arg0) throws Throwable {
-        anna.checkThatLabelIsAppearsOnOnOurProduct( arg0);
+        anna.checkThatLabelIsAppearsOnOnOurProduct(arg0);
     }
 
     @When("^Click on the \"([^\"]*)\" link on header$")
@@ -823,7 +820,113 @@ public class DefinitionSteps {
 
     @When("^Click on the \"([^\"]*)\" span under \"([^\"]*)\" product$")
     public void clickOnTheSpanUnderProduct(String arg0, String arg1) throws Throwable {
-        anna.clickOnTheSpanUnderProduct(arg0,arg1);
+        anna.clickOnTheSpanUnderProduct(arg0, arg1);
+    }
+
+    @When("^Click on the structures select$")
+    public void clickOnTheStructuresSelect() throws Throwable {
+        anna.clickOnTheStructuresSelect();
+    }
+
+    @When("^Click on the \"([^\"]*)\" structure$")
+    public void clickOnTheStructure(String arg0) throws Throwable {
+        anna.clickOnTheStructure(arg0);
+    }
+
+    @When("^Click on the \"([^\"]*)\" product title$")
+    public void clickOnTheProductTitle(String arg0) throws Throwable {
+        anna.clickOnTheProductTitle(arg0);
+    }
+
+    @When("^Click back button in browser$")
+    public void clickBackButtonInBrowser() throws Throwable {
+        anna.clickBackButtonInBrowser();
+    }
+
+    @When("^Write \"([^\"]*)\" into \"([^\"]*)\" additional input field$")
+    public void writeIntoAdditionalInputField(String arg0, String arg1) throws Throwable {
+        anna.writeIntoAdditionalInputField(arg0, arg1);
+    }
+
+    @Then("^Check that \"([^\"]*)\" additional field with \"([^\"]*)\" is visible$")
+    public void checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) throws Throwable {
+        anna.checkThatAdditionalFieldWithIsVisible(arg0, arg1);
+    }
+
+    @When("^Clear \"([^\"]*)\" additional input field$")
+    public void clearAdditionalInputField(String arg0) throws Throwable {
+        anna.clearAdditionalInputField(arg0);
+    }
+
+    @Then("^Check that \"([^\"]*)\" additional field is not visible$")
+    public void checkThatAdditionalFieldIsNotVisible(String arg0) throws Throwable {
+        anna.checkThatAdditionalFieldWithIsNotVisible(arg0);
+    }
+
+    @When("^Click on \"([^\"]*)\" button near \"([^\"]*)\" additional field$")
+    public void clickOnButtonNearAdditionalField(String arg0, String arg1) throws Throwable {
+        anna.clickOnButtonNearAdditionalField(arg0, arg1);
+    }
+
+
+    @And("^Click on the back link$")
+    public void clickOnTheBackLink() throws Throwable {
+        anna.clickOnTheBackLink();
+    }
+
+    @When("^Go to products page on the site$")
+    public void goToProductsPageOnTheSite() throws Throwable {
+        anna.goToProductsPageOnTheSite();
+    }
+
+    @Then("^Check that product has \"([^\"]*)\" status$")
+    public void checkThatProductHasStatus(String arg0) throws Throwable {
+        anna.checkThatProductHasStatus(arg0);
+    }
+
+//    @Then("^Check that \"([^\"]*)\" and \"([^\"]*)\" buttons are clickable$")
+//    public void checkThatAndButtonsIsClickable(String arg0, String arg1) throws Throwable {
+//      anna.checkThatAndButtonsIsClickable(arg0,arg1);
+//    }
+
+    @Then("^Check that \"([^\"]*)\" label is not visible$")
+    public void checkThatLabelIsNotVisible(String arg0) throws Throwable {
+        anna.checkThatLabelIsNotVisible(arg0);
+    }
+
+    @When("^Clear \"([^\"]*)\" price field$")
+    public void clearPriceField(String arg0) throws Throwable {
+        anna.clearPriceField(arg0);
+    }
+
+    @Then("^Check that \"([^\"]*)\" label is visible$")
+    public void checkThatLabelIsVisible(String arg0) throws Throwable {
+        anna.checkThatLabelIsVisible(arg0);
+    }
+
+    @Then("^Check that \"([^\"]*)\" is correct$")
+    public void checkThatIsCorrect(String arg0) throws Throwable {
+        anna.checkThatIsCorrect(arg0);
+    }
+
+    @When("^Clear quantity field$")
+    public void clearQuantityField() throws Throwable {
+        anna.clearQuantityField();
+    }
+
+    @When("^Click on the \"([^\"]*)\" button (\\d+) times$")
+    public void clickOnTheButtonTimes(String arg0, int arg1) throws Throwable {
+        anna.clickOnTheButtonTimes(arg0,arg1);
+    }
+
+    @When("^Write \"([^\"]*)\" into Quantity field$")
+    public void writeIntoQuantityField(String arg0) throws Throwable {
+        anna.writeIntoQuantityField(arg0);
+    }
+
+    @Then("^Check that warning message appears$")
+    public void checkThatWarningMessageAppears() throws Throwable {
+        anna.checkThatWarningMessageAppears();
     }
 
     @And("^Log out$")

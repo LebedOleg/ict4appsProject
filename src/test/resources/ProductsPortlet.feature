@@ -35,7 +35,7 @@ Feature: Products portlet
     And Enter random test data to Description field
     And Click on the "Дополнительные характеристики" link
     And Click on Type of Structures dropdown menu
-    And Click on "TestStucture" Type Of Structures Dropdown Item
+    And Click on "TestStructure" Type Of Structures Dropdown Item
     And Select "TestCategory" category on "Категории" tab
     And Click on the "Детали" link
     And Enter random test data to "retail" field of Detail tab

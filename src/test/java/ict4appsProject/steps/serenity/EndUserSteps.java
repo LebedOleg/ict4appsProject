@@ -329,8 +329,8 @@ public class EndUserSteps {
 
         @Step
         public void clickOnTheLink(String arg0) {
+            crud.waitBit(500);
             crud.clickMethod(Locators.LINK.replace("$1", arg0));
-            crud.waitBit(1000);
         }
 
         @Step
@@ -677,10 +677,12 @@ public class EndUserSteps {
     public void selectItemOfTypeOfEditingDropdown(String arg0) {
         structuresPage.selectItemOfTypeOfEditingDropdown(arg0);
     }
+
     @Step
     public void clickOnField(String arg0) {
         structuresPage.clickOnField(arg0);
     }
+
     @Step
     public void clickOnLastHintThatAppeared() {
         crud.clickMethod(Locators.AdminStructurePortletSelectLastHint);
@@ -725,31 +727,38 @@ public class EndUserSteps {
     public void checkThatQuantityOfProductIsDisplayed() {
         Assert.assertTrue(productsPage.checkThatQuantityOfProductIsDisplayed());
     }
+
     @Step
     public void clickOnLastProductInProductList() {
         adminControlPage.clickOnLastProductInProductList();
     }
+
     @Step
     public void productEditingPageShouldHaveButton(String name) {
         Assert.assertTrue(adminControlPage.productEditingPageShouldHaveButton(name));
     }
 
+    @Step
     public void enterOnNameTextbox(String arg0) {
         adminControlPage.enterOnNameTextbox(arg0);
     }
 
+    @Step
     public void enterOnNameField(String name) {
         productsPage.enterOnNameField(name);
     }
 
+    @Step
     public void enterOnProductEditingDescriptionField(String description) {
         productsPage.enterOnProductEditingDescriptionField(description);
     }
     @Step
+
     public void clickOnDropdownMenu(String dropDownMenu) {
         productsPage.clickOnDropdownMenu(dropDownMenu);
     }
-@Step
+
+    @Step
     public void selectItemOfDropdownMenu(String arg0, String arg1) {
         productsPage.selectItemOfDropdownMenu(arg0,arg1);
     }
@@ -811,5 +820,114 @@ public class EndUserSteps {
     @Step
     public void logOut() {
         crud.logOut();
+    }
+
+    @Step
+    public void clickOnTheStructuresSelect() {
+        crud.clickMethod(Locators.STRUCTURES_SELECT);
+    }
+
+    @Step
+    public void clickOnTheStructure(String arg0) {
+        crud.clickMethod(Locators.FIELD_TEST_STRUCTURE.replace("$1",arg0));
+    }
+
+    @Step
+    public void clickOnTheProductTitle(String arg0) {
+        crud.waitBit(2000);
+        crud.clickMethod(Locators.LINK.replace("$1",arg0));
+    }
+
+    @Step
+    public void clickBackButtonInBrowser() {
+        crud.clickBackButtonInBrowser();
+    }
+
+    @Step
+    public void writeIntoAdditionalInputField(String arg0, String arg1) {
+        crud.sendKeysMethod(Locators.ADDITIONAL_FIELD.replace("$1",arg1),arg0);
+    }
+
+    @Step
+    public void checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) {
+        Assert.assertTrue(productsPage.checkThatAdditionalFieldWithIsVisible(arg0,arg1));
+    }
+
+    @Step
+    public void clearAdditionalInputField(String arg0) {
+        crud.clearField(Locators.ADDITIONAL_FIELD.replace("$1",arg0));
+    }
+
+    @Step
+    public void checkThatAdditionalFieldWithIsNotVisible(String arg0) {
+        Assert.assertTrue(productsPage.checkThatAdditionalFieldIsNotVisible(arg0));
+    }
+
+    @Step
+    public void clickOnButtonNearAdditionalField(String arg0, String arg1) {
+        crud.clickMethod(Locators.ACTIONS_BTN_OF_FIELD.replace("$2",arg0).replace("$1",arg1));
+    }
+
+    @Step
+    public void clickOnTheBackLink() {
+        crud.clickMethod(Locators.BACK_LINK);
+    }
+
+    @Step
+    public void goToProductsPageOnTheSite() {
+        crud.waitBit(5000);
+        productsPage.open();
+        crud.waitBit(5000);
+    }
+
+    @Step
+    public void checkThatProductHasStatus(String arg0) {
+        Assert.assertTrue(crud.elementIsPresent(Locators.DIV.replace("$1",arg0)));
+    }
+
+//    @Step
+//    public void checkThatAndButtonsIsClickable(String arg0, String arg1) {
+//       Assert.assertTrue(crud.elementIsClickable(Locators.BUTTON.replace("$1",arg0)));
+//       Assert.assertTrue(crud.elementIsClickable(Locators.BUTTON.replace("$1",arg1)));
+//    }
+
+    @Step
+    public void checkThatLabelIsNotVisible(String arg0) {
+        Assert.assertTrue(crud.elementIsNotPresent(Locators.LABEL.replace("$1",arg0)));
+    }
+
+    @Step
+    public void clearPriceField(String arg0) {
+        crud.clearField(Locators.AdminProductPortletDetailsTabPriceField.replace("$1",arg0));
+    }
+
+    @Step
+    public void checkThatLabelIsVisible(String arg0) {
+        Assert.assertTrue(crud.elementIsPresent(Locators.LABEL.replace("$1",arg0)));
+    }
+
+    @Step
+    public void checkThatIsCorrect(String arg0) {
+        Assert.assertTrue(productsPage.checkThatIsCorrect(arg0));
+    }
+
+    @Step
+    public void clearQuantityField() {
+        crud.clearField(Locators.AdminProductPortletDetailsTabQuantityField);
+    }
+
+    @Step
+    public void clickOnTheButtonTimes(String arg0, int arg1) {
+        productsPage.clickOnTheButtonTimes(arg0,arg1);
+    }
+
+    @Step
+    public void writeIntoQuantityField(String arg0) {
+        crud.sendKeysMethod(Locators.AdminProductPortletDetailsTabQuantityField,arg0);
+    }
+
+    @Step
+    public void checkThatWarningMessageAppears() {
+        crud.elementIsPresent(Locators.WARNING_MSG);
     }
 }
