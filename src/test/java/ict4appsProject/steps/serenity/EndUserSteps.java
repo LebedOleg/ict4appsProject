@@ -829,6 +829,7 @@ public class EndUserSteps {
 
     @Step
     public void clickOnTheProductTitle(String arg0) {
+        crud.waitBit(2000);
         crud.clickMethod(Locators.LINK.replace("$1",arg0));
     }
 
@@ -860,5 +861,68 @@ public class EndUserSteps {
     @Step
     public void clickOnButtonNearAdditionalField(String arg0, String arg1) {
         crud.clickMethod(Locators.ACTIONS_BTN_OF_FIELD.replace("$2",arg0).replace("$1",arg1));
+    }
+
+    @Step
+    public void clickOnTheBackLink() {
+        crud.clickMethod(Locators.BACK_LINK);
+    }
+
+    @Step
+    public void goToProductsPageOnTheSite() {
+        crud.waitBit(5000);
+        productsPage.open();
+        crud.waitBit(5000);
+    }
+
+    @Step
+    public void checkThatProductHasStatus(String arg0) {
+        Assert.assertTrue(crud.elementIsPresent(Locators.DIV.replace("$1",arg0)));
+    }
+
+//    @Step
+//    public void checkThatAndButtonsIsClickable(String arg0, String arg1) {
+//       Assert.assertTrue(crud.elementIsClickable(Locators.BUTTON.replace("$1",arg0)));
+//       Assert.assertTrue(crud.elementIsClickable(Locators.BUTTON.replace("$1",arg1)));
+//    }
+
+    @Step
+    public void checkThatLabelIsNotVisible(String arg0) {
+        Assert.assertTrue(crud.elementIsNotPresent(Locators.LABEL.replace("$1",arg0)));
+    }
+
+    @Step
+    public void clearPriceField(String arg0) {
+        crud.clearField(Locators.AdminProductPortletDetailsTabPriceField.replace("$1",arg0));
+    }
+
+    @Step
+    public void checkThatLabelIsVisible(String arg0) {
+        Assert.assertTrue(crud.elementIsPresent(Locators.LABEL.replace("$1",arg0)));
+    }
+
+    @Step
+    public void checkThatIsCorrect(String arg0) {
+        Assert.assertTrue(productsPage.checkThatIsCorrect(arg0));
+    }
+
+    @Step
+    public void clearQuantityField() {
+        crud.clearField(Locators.AdminProductPortletDetailsTabQuantityField);
+    }
+
+    @Step
+    public void clickOnTheButtonTimes(String arg0, int arg1) {
+        productsPage.clickOnTheButtonTimes(arg0,arg1);
+    }
+
+    @Step
+    public void writeIntoQuantityField(String arg0) {
+        crud.sendKeysMethod(Locators.AdminProductPortletDetailsTabQuantityField,arg0);
+    }
+
+    @Step
+    public void checkThatWarningMessageAppears() {
+        crud.elementIsPresent(Locators.WARNING_MSG);
     }
 }

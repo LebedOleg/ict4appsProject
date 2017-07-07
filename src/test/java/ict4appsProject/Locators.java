@@ -99,7 +99,7 @@ public interface Locators {
 
     //TODO: WORKFLOW
 
-    String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[2]";
+    String FIRST_PRODUCT_TITLE = "(//a[@class='list_href'])[1]";
     String CART = "//div[@class='card']//div[@class='cart-icon']/..";
     String ORDER_LINE_STATUS = "//tr[contains(@class,'order-entity')]//td[5]//strong";
     String ORDER_LINE_ID = "//tr[contains(@class,'order-entity')]//td[2]//a";
@@ -112,7 +112,7 @@ public interface Locators {
     String CART_OPTIONS = "//div[@class='card']//span[contains(text(),'Корзина Резюме')]";
     String OFF_OPTIONS = "//span[contains(text(),'Режим Редактирования')]";
     String ORDERS_LINK = "//a[@class=\"taglib-icon\"]/span[contains(text(),'$1')]";
-    String BACK_LINK = "//a[@title='Back']";
+//    String BACK_LINK = "//a[@title='Back']";
     String ADD_PRODUCT_INPUT = ".//*[@id='accordion']/input";
     String PRODUCT_FROM_PRODUCT_SEARCH = ".//*[@id='checkbox-tree']/ul/li[1]";
     String CREATE_CUSTOMER_FIELDS = "//div[contains(text(),'$1')] /ancestor::div[@class='control-group row-fluid']//div/input";
@@ -156,6 +156,8 @@ public interface Locators {
     String BUTTON = "//button[contains(text(),'$1')]";
     String SPAN = "//span[contains(text(),'$1')]";
     String DIV = "//div[contains(text(),'$1')]";
+    String LABEL = "//label[contains(text(),'$1')]";
+    String ANY_ELEMENT = "//*[contains(text(),'$1')]";
 
     //TODO:   WELCOME PAGE
 
@@ -163,11 +165,21 @@ public interface Locators {
 
     //TODO:  ADDITIONAL FIELDS VISIBILITY
 
-    String EDIT_PRODUCT = "//span[text()='$1']/ancestor::div[@class='portlet-body']//span[contains(text(),'$2')]";
+    String EDIT_PRODUCT = "//span[contains(text(),'#1')]/ancestor::div[@class='portlet-body']//span[contains(text(),'$2')]";
     String STRUCTURES_SELECT = ".//*[@id='fields-structures']";
     String FIELD_TEST_STRUCTURE = "//option[contains(text(),'$1')]";
     String ADDITIONAL_FIELD = ".//*[@id='$1']";
     String ADDITIONAL_FIELD_WITH_DATA_PRODUCT_PAGE = "//div[@class='row-fluid']//div[.=' $1 ' or .=' $2 ']";
     String ACTIONS_BTN_OF_FIELD  = "//a[text()='$1']/ancestor::tr/td//a[@title='$2']";
+
+    //TODO:  PRODUCT STATUS
+
+    String PRODUCT_STATUS ="//label[contains(text(),'$1')]/../select";
+    String STATUS_OPTIONS = "//option[contains(text(),'$1')]";
+    String WARNING_MSG = ".//*[@id='qty-info-message']";
+
+    String STOCK = "//label[contains(text(),'Остаток')]/../span";
+
+    String BACK_LINK = "//a[@title='Назад']";
 
 }

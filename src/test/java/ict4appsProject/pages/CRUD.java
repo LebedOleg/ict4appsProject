@@ -155,4 +155,8 @@ public class CRUD extends PageObject {
         $(xpath).clear();
     }
 
+//    public boolean elementIsClickable(String xpath){
+//        return !$(xpath).;
+//    }
+
 }

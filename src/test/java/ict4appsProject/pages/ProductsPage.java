@@ -89,4 +89,16 @@ public class ProductsPage extends PageObject{
     public boolean checkThatAdditionalFieldWithIsVisible(String arg0, String arg1) {
         return $(Locators.ADDITIONAL_FIELD_WITH_DATA_PRODUCT_PAGE.replace("$1",arg0).replace("$2",arg1)).isVisible();
     }
+
+    public boolean checkThatIsCorrect(String arg0) {
+      return $(Locators.STOCK.replace("$1",arg0)).getText().equalsIgnoreCase(adminControlPage.Quantity);
+    }
+
+    public void clickOnTheButtonTimes(String arg0, int arg1) {
+        for (int i = 0; i <= arg1; i++)
+        {
+            $(Locators.BUTTON.replace("$1",arg0)).click();
+        }
+    }
 }
+
