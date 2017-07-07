@@ -180,7 +180,7 @@ Feature: Products portlet
 
 
 
-  # UI for product eddit
+  # UI for product edditing
 
 
 
