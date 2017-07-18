@@ -9,8 +9,46 @@ Feature: Products portlet
     And Click on LogInButton
     Then Control DropDown menu should appeared
     When Click on Control DropDown menu
+#    And Click on " Каталог " item of Control DropDown menu
+#    And Click on "Продукты" item of Catalog Tab
+
+
+
+# СОЗДАЕМ ТЕСТОВУЮ КАТЕГОРИЮ
+  Scenario: 00199 Create test Category
     And Click on " Каталог " item of Control DropDown menu
+    And Click on "Категории" item of Catalog Tab
+    And Click on Add Category button
+    And Enter "testCategory" on Category Name textbox
+    And Click on Save button of Create Category form
+    Then Categories list should contain "testCategory" category
+
+
+# СОЗДАЕМ ТЕСТОВЫЕ ПРОДУКТЫ
+    Scenario Outline: 0013 Create product without additional SKU
+      And Click on " Каталог " item of Control DropDown menu
     And Click on "Продукты" item of Catalog Tab
+    And Click on the "Добавить" span
+    And Enter "<Name>" on Name field
+    And Enter "<Description>" on Product editing Description field
+    And Click on the "Дополнительные характеристики" link
+    And Click on Type of Structures dropdown menu
+    And Click on "addNewStructureTest" Type Of Structures Dropdown Item
+    And Select "testCategory" category on "Категории" tab
+    And Click on the "Детали" link
+    And Click on "availabilityStatus" dropdown menu
+    And Select " Всегда в наличии " item of "availabilityStatus" dropdown menu
+    And Enter "200" on "retail" price field
+    And Enter "100" on "sale" price field
+    And Click on the "Применить" link
+    And Log out
+    Examples:
+    |Name         |Description        |
+    |TestProd1    |TestProd           |
+    |TestProd2    |TestProd           |
+    |TestProd3    |TestProd           |
+
+
 #     САЙТ
 #     ЗАЛОГИНИЛИСЬ
 
@@ -152,33 +190,6 @@ Feature: Products portlet
     When Switch tab "0"
     When Refresh page
     Then Then Check that "Новый" label is disappeared on on our product
-
-
-    #Create test product
-  Scenario Outline: 0013 Create product without additional SKU
-    And Click on the "Добавить" span
-    And Enter "<Name>" on Name field
-    And Enter "<Description>" on Product editing Description field
-    And Click on the "Дополнительные характеристики" link
-    And Click on Type of Structures dropdown menu
-    And Click on "addNewStructureTest" Type Of Structures Dropdown Item
-
-    And Select "Категория для тестов" category on "Категории" tab
-    And Click on the "Детали" link
-    And Click on "availabilityStatus" dropdown menu
-    And Select " Всегда в наличии " item of "availabilityStatus" dropdown menu
-    And Enter random test data to "retail" field of Detail tab
-    And Enter random test data to "sale" field of Detail tab
-#    And Enter random test data to "Quantity" field of Detail tab
-    And Click on the "Применить" link
-    And Log out
-    Examples:
-    |Name         |Description        |
-    |TestProd1    |TestProd           |
-    |TestProd2    |TestProd           |
-    |TestProd3    |TestProd           |
-
-
 
   # UI for product edditing
 

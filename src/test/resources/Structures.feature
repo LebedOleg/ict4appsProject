@@ -8,6 +8,7 @@ Feature: Structures admin portlet.
     And Click on " Каталог " item of Control DropDown menu
     And Click on "Параметры" item of Catalog Tab
 
+
   Scenario: 001 Basic structure is available for admin
     When Click on Control DropDown menu
     And Click on " Каталог " item of Control DropDown menu

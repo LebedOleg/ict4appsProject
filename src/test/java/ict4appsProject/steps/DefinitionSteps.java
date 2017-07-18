@@ -1,5 +1,6 @@
 package ict4appsProject.steps;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -932,5 +933,20 @@ public class DefinitionSteps {
     @And("^Log out$")
     public void logOut() throws Throwable {
         anna.logOut();
+    }
+
+    @And("^Enter \"([^\"]*)\" on Category Name textbox$")
+    public void enterOnCategoryNameTextbox(String arg0) throws Throwable {
+        anna.enterOnCategoryNameTextbox(arg0);
+    }
+
+    @Then("^Categories list should contain \"([^\"]*)\" category$")
+    public void categoriesListShouldContainCategory(String arg0) throws Throwable {
+        anna.categoriesListShouldContainCategory(arg0);
+    }
+
+    @And("^Enter \"([^\"]*)\" on \"([^\"]*)\" price field$")
+    public void enterOnPriceField(String arg0, String arg1) throws Throwable {
+        anna.enterOnPriceField(arg0,arg1);
     }
 }

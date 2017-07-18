@@ -12,6 +12,8 @@ public class EndUserSteps {
     ProductsPage productsPage;
     LogInPage logInPage;
     AdminControlPage adminControlPage;
+    AdminControlPageCategories adminControlPageCategories;
+    AdminControlPageProducts adminControlPageProducts;
     CRUD crud;
     StructuresPage structuresPage;
 
@@ -159,7 +161,7 @@ public class EndUserSteps {
 
     @Step
     public void clickOnAddCategoryButton() {
-        crud.clickMethod(Locators.AdminCategoryPortletAddButton);
+        adminControlPageCategories.clickOnAddCategoryButton();
     }
 
     @Step
@@ -188,6 +190,7 @@ public class EndUserSteps {
 
     @Step
     public void categoriesListShouldContainCategoryThatWasCreated() {
+//        Assert.assertTrue(adminControlPageCategories.categoriesListShouldContainCategoryThatWasCreated());
         Assert.assertTrue(adminControlPage.categoriesListShouldContainCategoryThatWasCreated(Locators.AdminCategoryPortletCategoriesList, Variables.CategoryName));
     }
     @Step
@@ -929,5 +932,17 @@ public class EndUserSteps {
     @Step
     public void checkThatWarningMessageAppears() {
         crud.elementIsPresent(Locators.WARNING_MSG);
+    }
+    @Step
+    public void enterOnCategoryNameTextbox(String arg0) {
+        adminControlPageCategories.enterOnCategoryNameTextbox(arg0);
+    }
+    @Step
+    public void categoriesListShouldContainCategory(String arg0) {
+        Assert.assertTrue(adminControlPageCategories.categoriesListShouldContainCategory(arg0));
+    }
+    @Step
+    public void enterOnPriceField(String arg0, String arg1) {
+        adminControlPageProducts.enterOnPriceField(arg0,arg1);
     }
 }
