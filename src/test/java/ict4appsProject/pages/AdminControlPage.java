@@ -118,33 +118,17 @@ public class AdminControlPage extends PageObject {
 
     //TODO: WORKFLOW
 
-    public boolean checkThatCreatedOrderHasStatus(String arg0) {
-        List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_STATUS));
-        if (list.get(list.size() - 1).getText().contains(arg0)) {
-            return true;
-        } else return false;
-    }
 
-    public void clickOnTheCreatedOrderId() {
-        List<WebElementFacade> list = findAll(By.xpath(Locators.ORDER_LINE_ID));
-        list.get(list.size()-1).click();
-    }
 
-    public boolean checkThatCreatedOrderPageHasStatusTag(String arg0) {
-        return $(Locators.ORDER_PAGE_STATUS_TAG.replace("$1",arg0)).isPresent();
-    }
 
-    public boolean checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
-        return $(Locators.ORDER_PAGE_HISTORY_STATUS).getText().equalsIgnoreCase(arg0);
-    }
 
-    public boolean checkThatCreatedOrderPageHasStatusInShortStatusHistory(String arg0) {
-        return $(Locators.ORDER_PAGE_HISTORY_SHORT_STATUS).getText().equalsIgnoreCase(arg0);
-    }
 
-    public void writeIntoSearchUserTextBox(String arg0) {
-        $(Locators.SRCH_USR_INPUT).sendKeys(arg0);
-    }
+
+
+
+
+
+
 
 
     public boolean structuresListShouldContainStructure(String structureName) {

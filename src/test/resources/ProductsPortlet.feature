@@ -33,7 +33,7 @@ Feature: Products portlet
     And Enter "<Description>" on Product editing Description field
     And Click on the "Дополнительные характеристики" link
     And Click on Type of Structures dropdown menu
-    And Click on "addNewStructureTest" Type Of Structures Dropdown Item
+    And Click on "Basic" Type Of Structures Dropdown Item
     And Select "testCategory" category on "Категории" tab
     And Click on the "Детали" link
     And Click on "availabilityStatus" dropdown menu
@@ -222,7 +222,7 @@ Feature: Products portlet
     And Click on the "Последняя" link
     And Click on last product in product list
     When Enter "qwerty" on Name textbox
-    And Click on " Применить " button
+    And Click on the " Применить " button
 
 
 

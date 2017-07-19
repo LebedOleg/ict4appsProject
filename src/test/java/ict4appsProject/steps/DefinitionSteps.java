@@ -1,6 +1,5 @@
 package ict4appsProject.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -289,131 +288,63 @@ public class DefinitionSteps {
         anna.checkThatProductFieldIsCreatedRight();
     }
 
-    @And("^Select test Structure at Structures dropdown menu$")
-    public void selectTestStructureAtStructuresDropdownMenu() throws Throwable {
 
+
+
+
+    @Given("^Click on \"([^\"]*)\" product title$")
+    public void clickOnProductTitle(String arg0) throws Throwable {
+        anna.clickOnProductTitle(arg0);
     }
 
-    @When("^Click on the \"([^\"]*)\" span$")
-    public void clickOnTheSpan(String arg0) throws Throwable {
-        anna.clickOnTheSpan(arg0);
-    }
 
-    @When("^Click on first product title$")
-    public void clickOnFirstProductTitle() throws Throwable {
-        anna.clickOnFirstProductTitle();
-    }
 
-    @When("^Click on the \"([^\"]*)\" button$")
-    public void clickOnTheButton(String arg0) throws Throwable {
-        anna.clickOnTheButton(arg0);
-    }
 
     @When("^Click on the Cart icon$")
     public void clickOnTheCartIcon() throws Throwable {
         anna.clickOnTheCartIcon();
     }
 
-    @When("^Click on the \"([^\"]*)\" link$")
-    public void clickOnTheLink(String arg0) throws Throwable {
-        anna.clickOnTheLink(arg0);
-    }
-
-    @Then("^Check that created order has \"([^\"]*)\" status$")
-    public void checkThatCreatedOrderHasStatus(String arg0) throws Throwable {
-        anna.checkThatCreatedOrderHasStatus(arg0);
-    }
-
-    @When("^Click on the created order id$")
-    public void clickOnTheCreatedOrderId() throws Throwable {
-        anna.clickOnTheCreatedOrderId();
-    }
-
-    @Then("^Check that created order page has \"([^\"]*)\" status tag$")
-    public void checkThatCreatedOrderPageHasStatusTag(String arg0) throws Throwable {
-        anna.checkThatCreatedOrderPageHasStatusTag(arg0);
-    }
-
-    @Then("^Check that created order page has \"([^\"]*)\" status in status history$")
-    public void checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) throws Throwable {
-        anna.checkThatCreatedOrderPageHasStatusInStatusHistory(arg0);
-    }
-
-    @Then("^Check that created order page has \"([^\"]*)\" status in short status history$")
-    public void checkThatCreatedOrderPageHasStatusInShortStatusHistory(String arg0) throws Throwable {
-        anna.checkThatCreatedOrderPageHasStatusInShortStatusHistory(arg0);
-    }
-
-    @Given("^Open new tab$")
-    public void openNewTab() throws Throwable {
-        anna.openNewTab();
-    }
-
-    @When("^Click on the Self Pick Up checkbox$")
-    public void clickOnTheSelfPickUpCheckbox() throws Throwable {
-        anna.clickOnTheSelfPickUpCheckbox();
-    }
-
-    @When("^Select address$")
-    public void selectAddress() throws Throwable {
-        anna.selectAddress();
-    }
-
-    @Given("^Switch tab \"([^\"]*)\"$")
-    public void switchTab(String arg0) throws Throwable {
-        anna.switchTab(arg0);
-    }
-
-    @Given("^Refresh page$")
-    public void refreshPage() throws Throwable {
-        anna.refreshPage();
-    }
-
-    @Given("^Scroll page$")
-    public void scrollPage() throws Throwable {
-        anna.scrollPage();
-    }
-
-    @When("^Write \"([^\"]*)\" into input field$")
-    public void writeIntoInputField(String arg0) throws Throwable {
-        anna.writeIntoInputField(arg0);
-    }
-
-    @When("^Click on the product from product search$")
-    public void clickOnTheProductFromProductSearch() throws Throwable {
-        anna.clickOnTheProductFromProductSearch();
-    }
-
-    @When("^Write data into \"([^\"]*)\" field$")
-    public void writeDataIntoField(String arg0) throws Throwable {
-        anna.writeDataIntoField(arg0);
-    }
-
-    @When("^Save created user$")
-    public void saveCreatedUser() throws Throwable {
-        anna.saveCreatedUser();
-    }
-
-    @When("^Click on the \"([^\"]*)\" order button$")
-    public void clickOnTheOrderButton(String arg0) throws Throwable {
-        anna.clickOnTheOrderButton(arg0);
-    }
-
-    @When("^Click on the \"([^\"]*)\" link on the left accordion$")
-    public void clickOnTheLinkOnTheLeftAccordion(String arg0) throws Throwable {
-        anna.clickOnTheLinkOnTheLeftAccordion(arg0);
-    }
 
 
-    @When("^Write \"([^\"]*)\" into search user text box$")
-    public void writeIntoSearchUserTextBox(String arg0) throws Throwable {
-        anna.writeIntoSearchUserTextBox(arg0);
-    }
 
-    @When("^Select customer who doesn't have a phone$")
-    public void selectCustomerWhoDoesnTHaveAPhone() throws Throwable {
-        anna.selectCustomerWhoDoesntHaveAPhone();
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @And("^Click on \"([^\"]*)\" tab of Product portlet$")
     public void clickOnTabOfProductPortlet(String tabName) throws Throwable {
@@ -467,10 +398,7 @@ public class DefinitionSteps {
         anna.clickOnConfirmButtonOfAutoGenerationPopUpWindow();
     }
 
-    @When("^Click on the cancel order button$")
-    public void clickOnTheCancelOrderButton() throws Throwable {
-        anna.clickOnTheCancelOrderButton();
-    }
+
 
 
     @Then("^Structure list should contain \"([^\"]*)\" structure$")
@@ -504,15 +432,9 @@ public class DefinitionSteps {
     }
 
 
-    @When("^Click on the cancel reason dropdown menu$")
-    public void clickOnTheCancelReasonDropdownMenu() throws Throwable {
-        anna.clickOnTheCancelReasonDropdownMenu();
-    }
 
-    @When("^Select reason$")
-    public void selectReason() throws Throwable {
-        anna.selectReason();
-    }
+
+
 
     @When("^Click on the \"([^\"]*)\" link in opened accordion$")
     public void clickOnTheLinkInOpenedAccordion(String arg0) throws Throwable {
@@ -949,4 +871,138 @@ public class DefinitionSteps {
     public void enterOnPriceField(String arg0, String arg1) throws Throwable {
         anna.enterOnPriceField(arg0,arg1);
     }
+
+    //TODO:Workflow     ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Then("^Check that created order has \"([^\"]*)\" status$")
+    public void checkThatCreatedOrderHasStatus(String arg0) throws Throwable {
+        anna.checkThatCreatedOrderHasStatus(arg0);
+    }
+
+    @When("^Click on the created order id$")
+    public void clickOnTheCreatedOrderId() throws Throwable {
+        anna.clickOnTheCreatedOrderId();
+    }
+
+    @Then("^Check that created order page has \"([^\"]*)\" status tag$")
+    public void checkThatCreatedOrderPageHasStatusTag(String arg0) throws Throwable {
+        anna.checkThatCreatedOrderPageHasStatusTag(arg0);
+    }
+
+    @When("^Click on the \"([^\"]*)\" link on the left accordion$")
+    public void clickOnTheLinkOnTheLeftAccordion(String arg0) throws Throwable {
+        anna.clickOnTheLinkOnTheLeftAccordion(arg0);
+    }
+
+    @When("^Click on the cancel order button$")
+    public void clickOnTheCancelOrderButton() throws Throwable {
+        anna.clickOnTheCancelOrderButton();
+    }
+
+    @When("^Click on the cancel reason dropdown menu$")
+    public void clickOnTheCancelReasonDropdownMenu() throws Throwable {
+        anna.clickOnTheCancelReasonDropdownMenu();
+    }
+
+    @When("^Select reason$")
+    public void selectReason() throws Throwable {
+        anna.selectReason();
+    }
+
+    @Then("^Check that created order page has \"([^\"]*)\" status in status history$")
+    public void checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) throws Throwable {
+        anna.checkThatCreatedOrderPageHasStatusInStatusHistory(arg0);
+    }
+
+    @Then("^Check that created order page has \"([^\"]*)\" status in short status history$")
+    public void checkThatCreatedOrderPageHasStatusInShortStatusHistory(String arg0) throws Throwable {
+        anna.checkThatCreatedOrderPageHasStatusInShortStatusHistory(arg0);
+    }
+
+    @When("^Write \"([^\"]*)\" into search product input field$")
+    public void writeIntoSearchProductInputField(String arg0) throws Throwable {
+        anna.writeIntoSearchProductInputField(arg0);
+    }
+
+    @When("^Click on the product from product search$")
+    public void clickOnTheProductFromProductSearch() throws Throwable {
+        anna.clickOnTheProductFromProductSearch();
+    }
+
+    @When("^Write \"([^\"]*)\" into \"([^\"]*)\" field$")
+    public void writeDataIntoField(String arg0,String arg1) throws Throwable {
+        anna.writeDataIntoField(arg0,arg1);
+    }
+
+    @When("^Save created user$")
+    public void saveCreatedUser() throws Throwable {
+        anna.saveCreatedUser();
+    }
+
+    @When("^Click on the Save order button$")
+    public void clickOnTheSaveOrderButton() throws Throwable {
+        anna.clickOnTheSaveOrderButton();
+    }
+
+    @When("^Write \"([^\"]*)\" into search user text box$")
+    public void writeIntoSearchUserTextBox(String arg0) throws Throwable {
+        anna.writeIntoSearchUserTextBox(arg0);
+    }
+
+    @When("^Select customer who doesn't have a phone$")
+    public void selectCustomerWhoDoesnTHaveAPhone() throws Throwable {
+        anna.selectCustomerWhoDoesntHaveAPhone();
+    }
+
+    //TODO:Cart     ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @When("^Click on the Self Pick Up checkbox$")
+    public void clickOnTheSelfPickUpCheckbox() throws Throwable {
+        anna.clickOnTheSelfPickUpCheckbox();
+    }
+
+    @When("^Select address$")
+    public void selectAddress() throws Throwable {
+        anna.selectAddress();
+    }
+
+    //TODO:General methods      ////////////////////////////////////////////////////////////////////////////////////////
+
+    @Given("^Click on the \"([^\"]*)\" button$")
+    public void clickOnTheButton(String arg0) throws Throwable {
+        anna.clickOnTheButton(arg0);
+    }
+
+    @When("^Click on the \"([^\"]*)\" span$")
+    public void clickOnTheSpan(String arg0) throws Throwable {
+        anna.clickOnTheSpan(arg0);
+    }
+
+    @When("^Click on the \"([^\"]*)\" link$")
+    public void clickOnTheLink(String arg0) throws Throwable {
+        anna.clickOnTheLink(arg0);
+    }
+
+    @Given("^Open new tab$")
+    public void openNewTab() throws Throwable {
+        anna.openNewTab();
+    }
+
+    @Given("^Switch tab \"([^\"]*)\"$")
+    public void switchTab(String arg0) throws Throwable {
+        anna.switchTab(arg0);
+    }
+
+    @Given("^Scroll page$")
+    public void scrollPage() throws Throwable {
+        anna.scrollPage();
+    }
+
+    @Given("^Refresh page$")
+    public void refreshPage() throws Throwable {
+        anna.refreshPage();
+    }
+
+
+
 }

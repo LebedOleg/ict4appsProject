@@ -17,6 +17,11 @@ public class EndUserSteps {
     CRUD crud;
     StructuresPage structuresPage;
 
+
+    AdminControlPageOrders adminControlPageOrders;
+    CartPage cartPage;
+
+
     @Step
     public void theUserIsOnIctAppsStagingPage() {
         welcomePage.open();
@@ -308,20 +313,14 @@ public class EndUserSteps {
         checkThatQuntityFieldHasRightData();
     }
 
-        @Step
-        public void clickOnTheSpan(String arg0) {
-            crud.clickMethod(Locators.SPAN.replace("$1", arg0));
-        }
+
 
         @Step
-        public void clickOnFirstProductTitle() {
-            crud.clickMethod(Locators.FIRST_PRODUCT_TITLE);
+        public void clickOnProductTitle(String arg0) {
+            crud.clickMethod(Locators.LINK.replace("$1", arg0));
         }
 
-        @Step
-        public void clickOnTheButton(String arg0) {
-            crud.clickMethod(Locators.BUTTON.replace("$1", arg0));
-        }
+
 
         @Step
         public void clickOnTheCartIcon() {
@@ -330,111 +329,45 @@ public class EndUserSteps {
             crud.clickMethod(Locators.CART);
         }
 
-        @Step
-        public void clickOnTheLink(String arg0) {
-            crud.waitBit(500);
-            crud.clickMethod(Locators.LINK.replace("$1", arg0));
-        }
 
-        @Step
-        public void checkThatCreatedOrderHasStatus(String arg0) {
-            Assert.assertTrue(adminControlPage.checkThatCreatedOrderHasStatus(arg0));
-        }
 
-        @Step
-        public void clickOnTheCreatedOrderId() {
-            adminControlPage.clickOnTheCreatedOrderId();
-        }
 
-        @Step
-        public void checkThatCreatedOrderPageHasStatusTag(String arg0) {
-            Assert.assertTrue(adminControlPage.checkThatCreatedOrderPageHasStatusTag(arg0));
-        }
 
-        @Step
-        public void checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
-            Assert.assertTrue(adminControlPage.checkThatCreatedOrderPageHasStatusInStatusHistory(arg0));
-        }
 
-        @Step
-        public void checkThatCreatedOrderPageHasStatusInShortStatusHistory(String arg0) {
-            Assert.assertTrue(adminControlPage.checkThatCreatedOrderPageHasStatusInShortStatusHistory(arg0));
-        }
 
-        @Step
-        public void openNewTab() {
-            welcomePage.openNewTab();
-        }
 
-        @Step
-        public void clickOnTheSelfPickUpCheckbox() {
-            crud.clickMethod(Locators.SELF_PICK_UP_CHECKBOX);
-        }
 
-    @Step
-    public void selectAddress() {
-        crud.waitBit(1000);
-        crud.clickMethod(Locators.ADDRESS_SELECT);
-        crud.clickMethod(Locators.ADDRESS);
-    }
 
-        @Step
-        public void switchTab(String arg0) {
-            crud.switchTab(arg0);
-        }
 
-        @Step
-        public void refreshPage() {
-            crud.refreshPage();
-        }
 
-        @Step
-        public void scrollPage() {
-            crud.scrollPage();
-        }
 
-        @Step
-        public void writeIntoInputField(String arg0) {
-            crud.writeIntoInputField(Locators.ADD_PRODUCT_INPUT,arg0);
-        }
 
-        @Step
-        public void clickOnTheProductFromProductSearch() {
-            crud.waitBit(1000);
-            crud.clickMethod(Locators.PRODUCT_FROM_PRODUCT_SEARCH);
-        }
 
-        @Step
-        public void writeDataIntoField(String arg0) {
-            crud.waitBit(500);
-            crud.enterRandomValue(Locators.CREATE_CUSTOMER_FIELDS.replace("$1",arg0));
-        }
 
-    @Step
-    public void saveCreatedUser() {
-        crud.clickMethod(Locators.SAVE_USER_BTN);
-    }
 
-    @Step
-    public void clickOnTheOrderButton(String arg0) {
-        crud.waitBit(1000);
-        crud.clickMethod(Locators.SAVE_ORDER_BTN.replace("$1",arg0));
-    }
 
-    @Step
-    public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
-        crud.clickMethod(Locators.ORDER_SPAN.replace("$1",arg0));
-    }
 
-    @Step
-    public void writeIntoSearchUserTextBox(String arg0) {
-        adminControlPage.writeIntoSearchUserTextBox(arg0);
-    }
 
-    @Step
-    public void selectCustomerWhoDoesntHaveAPhone() {
-        crud.clickMethod(Locators.CUSTOMER);
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     @Step
@@ -486,20 +419,11 @@ public class EndUserSteps {
         crud.clickMethod(Locators.AdminProductPortletConfirmPopUpButton);
     }
 
-    @Step
-    public void clickOnTheCancelOrderButton() {
-        crud.clickMethod(Locators.CANCEL_ORDER_BTN);
-    }
 
-    @Step
-    public void clickOnTheCancelReasonDropdownMenu() {
-        crud.clickMethod(Locators.CANCEL_REASON_DROPDOWN_MENU);
-    }
 
-    @Step
-    public void selectReason() {
-        crud.clickMethod(Locators.SECOND_REASON_TO_CANCEL);
-    }
+
+
+
 
     @Step
     public void clickOnTheLinkInOpenedAccordion(String arg0) {
@@ -945,4 +869,143 @@ public class EndUserSteps {
     public void enterOnPriceField(String arg0, String arg1) {
         adminControlPageProducts.enterOnPriceField(arg0,arg1);
     }
+
+
+    //TODO:Workflow     ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Step
+    public void checkThatCreatedOrderHasStatus(String arg0) {
+        Assert.assertTrue(adminControlPageOrders.checkThatCreatedOrderHasStatus(arg0));
+    }
+
+    @Step
+    public void clickOnTheCreatedOrderId() {
+        adminControlPageOrders.clickOnTheCreatedOrderId();
+    }
+
+    @Step
+    public void checkThatCreatedOrderPageHasStatusTag(String arg0) {
+        Assert.assertTrue(adminControlPageOrders.checkThatCreatedOrderPageHasStatusTag(arg0));
+    }
+
+    @Step
+    public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
+        adminControlPageOrders.clickOnTheLinkOnTheLeftAccordion(arg0);
+    }
+
+    @Step
+    public void clickOnTheCancelOrderButton() {
+        adminControlPageOrders.clickOnTheCancelOrderButton();
+    }
+
+    @Step
+    public void clickOnTheCancelReasonDropdownMenu() {
+        adminControlPageOrders.clickOnTheCancelReasonDropdownMenu();
+    }
+
+    @Step
+    public void selectReason() {
+        adminControlPageOrders.selectReason();
+    }
+
+    @Step
+    public void checkThatCreatedOrderPageHasStatusInStatusHistory(String arg0) {
+        Assert.assertTrue(adminControlPageOrders.checkThatCreatedOrderPageHasStatusInStatusHistory(arg0));
+    }
+
+    @Step
+    public void checkThatCreatedOrderPageHasStatusInShortStatusHistory(String arg0) {
+        Assert.assertTrue(adminControlPageOrders.checkThatCreatedOrderPageHasStatusInShortStatusHistory(arg0));
+    }
+
+    @Step
+    public void writeIntoSearchProductInputField(String arg0) {
+        adminControlPageOrders.writeIntoSearchProductInputField(arg0);
+    }
+
+    @Step
+    public void clickOnTheProductFromProductSearch() {
+        crud.waitBit(1000);
+        adminControlPageOrders.clickOnTheProductFromProductSearch();
+    }
+
+    @Step
+    public void writeDataIntoField(String arg0,String arg1) {
+        crud.waitBit(500);
+        adminControlPageOrders.writeDataIntoField(arg0,arg1);
+    }
+
+    @Step
+    public void saveCreatedUser() {
+        adminControlPageOrders.saveCreatedUser();
+    }
+
+    @Step
+    public void clickOnTheSaveOrderButton() {
+        crud.waitBit(1000);
+        adminControlPageOrders.clickOnTheOrderButton();
+    }
+
+    @Step
+    public void writeIntoSearchUserTextBox(String arg0) {
+        adminControlPageOrders.writeIntoSearchUserTextBox(arg0);
+    }
+
+    @Step
+    public void selectCustomerWhoDoesntHaveAPhone() {
+        adminControlPageOrders.selectCustomerWhoDoesntHaveAPhone();
+    }
+
+    //TODO:Cart     ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    @Step
+    public void clickOnTheSelfPickUpCheckbox() {
+        cartPage.clickOnTheSelfPickUpCheckbox();
+    }
+
+    @Step
+    public void selectAddress() {
+        crud.waitBit(1000);
+        cartPage.clickOnTheAdressSelect();
+        cartPage.clickOntHeAddress();
+    }
+
+    //TODO:General methods      ////////////////////////////////////////////////////////////////////////////////////////
+
+    @Step
+    public void clickOnTheButton(String arg0) {
+        crud.clickMethod(Locators.BUTTON.replace("$1", arg0));
+    }
+
+    @Step
+    public void clickOnTheSpan(String arg0) {
+        crud.clickMethod(Locators.SPAN.replace("$1", arg0));
+    }
+
+    @Step
+    public void clickOnTheLink(String arg0) {
+        crud.waitBit(500);
+        crud.clickMethod(Locators.LINK.replace("$1", arg0));
+    }
+
+    @Step
+    public void openNewTab() {
+        welcomePage.openNewTab();
+    }
+
+    @Step
+    public void switchTab(String arg0) {
+        crud.switchTab(arg0);
+    }
+
+    @Step
+    public void scrollPage() {
+        crud.scrollPage();
+    }
+
+    @Step
+    public void refreshPage() {
+        crud.refreshPage();
+    }
+
 }

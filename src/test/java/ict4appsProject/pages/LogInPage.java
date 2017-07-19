@@ -1,12 +1,10 @@
 package ict4appsProject.pages;
 
 import ict4appsProject.Locators;
-import net.thucydides.core.pages.PageObject;
-
+import net.serenitybdd.core.pages.PageObject;
 
 
 public class LogInPage extends PageObject {
-
 
     public void enterEmailAddress() {
         $(Locators.LogInEmailField).clear();

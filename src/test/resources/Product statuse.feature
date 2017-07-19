@@ -6,6 +6,12 @@ Feature: Products portlet
     And Enter Email address
     And Enter Password
     And Click on LogInButton
+
+
+
+
+
+
     When Click on Control DropDown menu
     When Click on " Каталог " item of Control DropDown menu
     When Click on "Продукты" item of Catalog Tab
@@ -78,4 +84,5 @@ Feature: Products portlet
     Then Check that "Остаток" is correct
     When Click on the "+" button 11 times
     Then Check that warning message appears
+
 

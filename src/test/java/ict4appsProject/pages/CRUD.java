@@ -165,4 +165,5 @@ public class CRUD extends PageObject {
         $(Locators.personalAccountDropDownMenu).click();
         $(Locators.personalAccountExitItem).click();
     }
+
 }
