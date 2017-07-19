@@ -18,6 +18,8 @@ public interface LocatorsForAdminCPorders {
     String SAVE_ORDER_BTN = "//div[@class='pull-right']//button[contains(text(),'Сохранить')]";
     String SRCH_USR_INPUT = "//input[contains(@id,'searchUser')]";
     String CUSTOMER = "//div[@class='autocomplete customer-item']";
+    String ACCORDION_TOGGLE = "//div[@class='accordion-toggle']/span[contains(text(),'$1')]";
+
 
 
 

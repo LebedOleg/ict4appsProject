@@ -10,7 +10,8 @@ Feature: Workflow
   Scenario: 02 Create product without additional SKU
     Given Open new tab
     Given Switch tab "1"
-    And Click on " Каталог " item of Control DropDown menu
+    When Click on Control DropDown menu
+    When Click on the "Каталог" span
     And Click on "Продукты" item of Catalog Tab
     And Click on the "Добавить" span
     And Enter "test1" on Name field
@@ -28,19 +29,22 @@ Feature: Workflow
 
   Scenario: 03
     Given Click on the "Продукты" span
+    Given Refresh page
     Given Click on "test1" product title
     Given Click on the "Добавить В Корзину" button
     Given Click on the Cart icon
     Given Click on the "Proceed to checkout" button
     Given Switch tab "1"
-    When Click on Control DropDown menu
-    When Click on the "Заказы" span
+
+    Given Click on the "Заказы" accordion toggle
+    When Click on the "Заказы" link on the left accordion
+
     When Click on the "Последняя" link
     Then Check that created order has "Не Заполнен" status
     When Click on the created order id
     Then Check that created order page has "Не Заполнен" status tag
-        Then Check that created order page has "Не заполнен" status in status history
-        Then Check that created order page has "Не заполнен" status in short status history
+#        Then Check that created order page has "Не заполнен" status in status history
+#        Then Check that created order page has "Не заполнен" status in short status history
     Given Switch tab "0"
     When Click on the Self Pick Up checkbox
     When Select address
@@ -49,8 +53,8 @@ Feature: Workflow
     Given Switch tab "1"
     Given Refresh page
     Then Check that created order page has "Не Заполнен" status tag
-        Then Check that created order page has "Не заполнен" status in status history
-        Then Check that created order page has "Не заполнен" status in short status history
+#        Then Check that created order page has "Не заполнен" status in status history
+#        Then Check that created order page has "Не заполнен" status in short status history
     When Click on the "Заказы" link on the left accordion
     When Click on the "Последняя" link
     Then Check that created order has "Не Заполнен" status
@@ -58,6 +62,7 @@ Feature: Workflow
     Given Switch tab "0"
     When Click on the "Cash On Delivery" button
     When Click on the "Confirm" span
+    When Click on the "Continue Shopping" link
     Given Switch tab "1"
     Given Refresh page
     Then Check that created order page has "Новый" status tag
@@ -113,6 +118,7 @@ Feature: Workflow
     Given Switch tab "0"
     When Click on the "Cash On Delivery" button
     When Click on the "Confirm" span
+    When Click on the "Continue Shopping" link
     Given Switch tab "1"
     Given Refresh page
     Then Check that created order page has "Новый" status tag

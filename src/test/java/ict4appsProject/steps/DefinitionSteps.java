@@ -288,63 +288,15 @@ public class DefinitionSteps {
         anna.checkThatProductFieldIsCreatedRight();
     }
 
-
-
-
-
     @Given("^Click on \"([^\"]*)\" product title$")
     public void clickOnProductTitle(String arg0) throws Throwable {
         anna.clickOnProductTitle(arg0);
     }
 
-
-
-
     @When("^Click on the Cart icon$")
     public void clickOnTheCartIcon() throws Throwable {
         anna.clickOnTheCartIcon();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @And("^Click on \"([^\"]*)\" tab of Product portlet$")
     public void clickOnTabOfProductPortlet(String tabName) throws Throwable {
@@ -398,9 +350,6 @@ public class DefinitionSteps {
         anna.clickOnConfirmButtonOfAutoGenerationPopUpWindow();
     }
 
-
-
-
     @Then("^Structure list should contain \"([^\"]*)\" structure$")
     public void structureListShouldContainStructure(String Structure) throws Throwable {
         anna.structureListShouldContainStructure(Structure);
@@ -430,11 +379,6 @@ public class DefinitionSteps {
     public void allStructuresShouldContainField(String field) throws Throwable {
         anna.allStructuresShouldContainField(field);
     }
-
-
-
-
-
 
     @When("^Click on the \"([^\"]*)\" link in opened accordion$")
     public void clickOnTheLinkInOpenedAccordion(String arg0) throws Throwable {
@@ -554,7 +498,6 @@ public class DefinitionSteps {
         anna.enterOnField(arg0, arg1);
     }
 
-
     @And("^Click on Add existing field to Structure button$")
     public void clickOnAddExistingFieldToStructureButton() throws Throwable {
         anna.clickOnAddExistingFieldToStructureButton();
@@ -564,7 +507,6 @@ public class DefinitionSteps {
     public void getIdOfField(String arg0) throws Throwable {
         anna.getIdOfField(arg0);
     }
-
 
     @And("^Click on name of \"([^\"]*)\" field$")
     public void clickOnNameOfField(String fieldName) throws Throwable {
@@ -807,11 +749,6 @@ public class DefinitionSteps {
         anna.checkThatProductHasStatus(arg0);
     }
 
-//    @Then("^Check that \"([^\"]*)\" and \"([^\"]*)\" buttons are clickable$")
-//    public void checkThatAndButtonsIsClickable(String arg0, String arg1) throws Throwable {
-//      anna.checkThatAndButtonsIsClickable(arg0,arg1);
-//    }
-
     @Then("^Check that \"([^\"]*)\" label is not visible$")
     public void checkThatLabelIsNotVisible(String arg0) throws Throwable {
         anna.checkThatLabelIsNotVisible(arg0);
@@ -954,6 +891,11 @@ public class DefinitionSteps {
         anna.selectCustomerWhoDoesntHaveAPhone();
     }
 
+    @Given("^Click on the \"([^\"]*)\" accordion toggle$")
+    public void clickOnTheAccordionToggle(String arg0) throws Throwable {
+        anna.clickOnTheAccordionToggle(arg0);
+    }
+
     //TODO:Cart     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
     @When("^Click on the Self Pick Up checkbox$")
@@ -1002,7 +944,5 @@ public class DefinitionSteps {
     public void refreshPage() throws Throwable {
         anna.refreshPage();
     }
-
-
 
 }

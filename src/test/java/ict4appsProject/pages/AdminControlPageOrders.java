@@ -6,6 +6,7 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class AdminControlPageOrders extends PageObject{
 
@@ -26,6 +27,7 @@ public class AdminControlPageOrders extends PageObject{
     }
 
     public void clickOnTheLinkOnTheLeftAccordion(String arg0) {
+        withTimeoutOf(5, TimeUnit.SECONDS).waitFor($(LocatorsForAdminCPorders.ORDER_SPAN.replace("$1",arg0))).isDisplayed();
         $(LocatorsForAdminCPorders.ORDER_SPAN.replace("$1",arg0)).click();
     }
 
@@ -75,5 +77,9 @@ public class AdminControlPageOrders extends PageObject{
 
     public void selectCustomerWhoDoesntHaveAPhone() {
         $(LocatorsForAdminCPorders.CUSTOMER).click();
+    }
+
+    public void clickOnTheAccordionToggle(String arg0) {
+        $(LocatorsForAdminCPorders.ACCORDION_TOGGLE.replace("$1",arg0)).click();
     }
 }

@@ -106,10 +106,11 @@ public interface Locators {
 
     //TODO: WORKFLOW
 
-    String CART = "//div[@class='card']//div[@class='cart-icon']/..";
-    String CART_OPTIONS = "//div[@class='card']//span[contains(text(),'Корзина Резюме')]";
+    String CART = "//div[@class='cart-container']";
+
+//    String CART = "//div[@class='card']//div[@class='cart-icon']/..";
+    String CART_OPTIONS = "//span[contains(text(),'Корзина Резюме')]";
     String OFF_OPTIONS = "//span[contains(text(),'Режим Редактирования')]";
-    String ORDERS_LINK = "//a[@class=\"taglib-icon\"]/span[contains(text(),'$1')]";
 
 
 
@@ -146,7 +147,6 @@ public interface Locators {
     String SPAN = "//span[contains(text(),'$1')]";
     String DIV = "//div[contains(text(),'$1')]";
     String LABEL = "//label[contains(text(),'$1')]";
-    String ANY_ELEMENT = "//*[contains(text(),'$1')]";
 
     //TODO:   WELCOME PAGE
 

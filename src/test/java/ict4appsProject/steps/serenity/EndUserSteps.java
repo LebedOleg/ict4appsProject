@@ -80,7 +80,6 @@ public class EndUserSteps {
     @Step
     public void clickOnTypeOfStructuresDropdownItem(String StructureItem) {
         crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem.replace("$1", StructureItem));
-
     }
 
     @Step
@@ -313,14 +312,10 @@ public class EndUserSteps {
         checkThatQuntityFieldHasRightData();
     }
 
-
-
         @Step
         public void clickOnProductTitle(String arg0) {
             crud.clickMethod(Locators.LINK.replace("$1", arg0));
         }
-
-
 
         @Step
         public void clickOnTheCartIcon() {
@@ -328,47 +323,6 @@ public class EndUserSteps {
             crud.waitBit(100);
             crud.clickMethod(Locators.CART);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @Step
     public void clickOnTabOfProductPortlet(String tabName) {
@@ -418,12 +372,6 @@ public class EndUserSteps {
     public void clickOnConfirmButtonOfAutoGenerationPopUpWindow() {
         crud.clickMethod(Locators.AdminProductPortletConfirmPopUpButton);
     }
-
-
-
-
-
-
 
     @Step
     public void clickOnTheLinkInOpenedAccordion(String arg0) {
@@ -552,7 +500,6 @@ public class EndUserSteps {
     @Step
     public void enterOnField(String field, String arg1) {
         structuresPage.enterOnAddExistingFieldInput(Locators.AdminStructurePortletEnterNameOfFieldInput.replace("$1", arg1), field);
-
     }
 
     @Step
@@ -954,6 +901,11 @@ public class EndUserSteps {
     @Step
     public void selectCustomerWhoDoesntHaveAPhone() {
         adminControlPageOrders.selectCustomerWhoDoesntHaveAPhone();
+    }
+
+    @Step
+    public void clickOnTheAccordionToggle(String arg0) {
+        adminControlPageOrders.clickOnTheAccordionToggle(arg0);
     }
 
     //TODO:Cart     ////////////////////////////////////////////////////////////////////////////////////////////////////
