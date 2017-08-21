@@ -6,4 +6,6 @@ package ict4appsProject;
 public interface LocatorsForAdminCPcategories {
     String CategoryNameTextBox = "//input[contains(@id,'addRootname') and contains(@class,'value')]";
     String CertainCategoryInList = "//span[text()='$1']";
+    String AddCategoryPopUpSaveButton = "//button[contains(@class,'publishCategoryBtn')]";
+
 }

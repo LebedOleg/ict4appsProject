@@ -27,4 +27,9 @@ public class AdminControlPageCategories extends PageObject {
         withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(LocatorsForAdminCPcategories.CertainCategoryInList.replace("$1", arg0))));
         return  $(LocatorsForAdminCPcategories.CertainCategoryInList.replace("$1", arg0)).isPresent();
     }
+
+    public void clickOnSaveButtonOfCreateCategoryForm() {
+        withTimeoutOf(16, TimeUnit.SECONDS).waitFor(ExpectedConditions.visibilityOfElementLocated(By.xpath(LocatorsForAdminCPcategories.AddCategoryPopUpSaveButton)));
+        $(LocatorsForAdminCPcategories.AddCategoryPopUpSaveButton).click();
+    }
 }

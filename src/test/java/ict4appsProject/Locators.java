@@ -19,8 +19,6 @@ public interface Locators {
 
     String AdminProductPortletTypeOfStructure = ".//*[@id='fields-structures']";
     String AdminProductPortletTypeOfStructureItem = "//select[@id='fields-structures']/option[contains(text(),'$1')]";
-    String AdminProductPortletNameField = "//label[@for='name']/ancestor::div[@class='form-group']//input[@type='text']";
-    String AdminProductPortletDescriptionField = "//span[@class='input-localized input-localized-textarea']//textarea";
     String AdminProductPortletCategoriesTab = "//a[text()='Категории']";
     String AdminProductPortletTabs = "//a[text()='$1']";
 
@@ -41,7 +39,6 @@ public interface Locators {
 
     String AdminCategoryPortletAddButton = "//span[@class='nav-item-label' and contains(text(),'Добавить Категорию')]";
     String AddCategoryPopUpContainer = "//fieldset[@class='formData']//div[@class='form-group']//input[@class='language-value']";
-    String AddCategoryPopUpSaveButton = "//button[contains(@class,'publishCategoryBtn')]";
     String AdminCategoryPortletCategoriesList = "//span[contains(@class, 'jqtree')]";
 
     String AdminStructurePortletAddStructureButton = "//a[@class='btn']";

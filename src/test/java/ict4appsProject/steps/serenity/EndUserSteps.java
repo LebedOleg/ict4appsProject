@@ -80,6 +80,7 @@ public class EndUserSteps {
     @Step
     public void clickOnTypeOfStructuresDropdownItem(String StructureItem) {
         crud.clickMethod(Locators.AdminProductPortletTypeOfStructureItem.replace("$1", StructureItem));
+
     }
 
     @Step
@@ -174,7 +175,7 @@ public class EndUserSteps {
     }
     @Step
     public void clickOnSaveButtonOfCreateCategoryForm() {
-        crud.clickMethod(Locators.AddCategoryPopUpSaveButton);
+        adminControlPageCategories.clickOnSaveButtonOfCreateCategoryForm();
     }
 
     @Step
@@ -315,6 +316,19 @@ public class EndUserSteps {
         @Step
         public void clickOnProductTitle(String arg0) {
             crud.clickMethod(Locators.LINK.replace("$1", arg0));
+        public void clickOnTheSpan(String arg0) {
+        adminControlPageProducts.clickOnTheAddProductButton();
+            crud.clickMethod(Locators.SPAN.replace("$1", arg0));
+        }
+
+        @Step
+        public void clickOnFirstProductTitle() {
+            crud.clickMethod(Locators.FIRST_PRODUCT_TITLE);
+        }
+
+        @Step
+        public void clickOnTheButton(String arg0) {
+            crud.clickMethod(Locators.BUTTON.replace("$1", arg0));
         }
 
         @Step
@@ -500,6 +514,7 @@ public class EndUserSteps {
     @Step
     public void enterOnField(String field, String arg1) {
         structuresPage.enterOnAddExistingFieldInput(Locators.AdminStructurePortletEnterNameOfFieldInput.replace("$1", arg1), field);
+
     }
 
     @Step
@@ -619,12 +634,12 @@ public class EndUserSteps {
 
     @Step
     public void enterOnNameField(String name) {
-        productsPage.enterOnNameField(name);
+        adminControlPageProducts.enterOnNameField(name);
     }
 
     @Step
     public void enterOnProductEditingDescriptionField(String description) {
-        productsPage.enterOnProductEditingDescriptionField(description);
+        adminControlPageProducts.enterOnProductEditingDescriptionField(description);
     }
     @Step
 
