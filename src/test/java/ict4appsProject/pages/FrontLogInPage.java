@@ -4,7 +4,7 @@ import ict4appsProject.Locators;
 import net.serenitybdd.core.pages.PageObject;
 
 
-public class LogInPage extends PageObject {
+public class FrontLogInPage extends PageObject {
 
     public void enterEmailAddress() {
         $(Locators.LogInEmailField).clear();

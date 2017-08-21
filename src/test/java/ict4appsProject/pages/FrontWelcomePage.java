@@ -7,7 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
 @DefaultUrl("https://staging.ict4apps.aimprosoft.com")
-public class WelcomePage extends PageObject {
+public class FrontWelcomePage extends PageObject {
 
 
     public void openNewTab () {

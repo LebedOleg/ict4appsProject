@@ -5,7 +5,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("https://staging.ict4apps.aimprosoft.com/products")
-public class ProductsPage extends PageObject{
+public class FrontProductsPage extends PageObject{
 
     AdminControlPage adminControlPage;
     CRUD crud;

@@ -8,9 +8,9 @@ import org.junit.Assert;
 
 public class EndUserSteps {
 
-    WelcomePage welcomePage;
-    ProductsPage productsPage;
-    LogInPage logInPage;
+    FrontWelcomePage welcomePage;
+    FrontProductsPage productsPage;
+    FrontLogInPage logInPage;
     AdminControlPage adminControlPage;
     AdminControlPageCategories adminControlPageCategories;
     AdminControlPageProducts adminControlPageProducts;
@@ -19,7 +19,7 @@ public class EndUserSteps {
 
 
     AdminControlPageOrders adminControlPageOrders;
-    CartPage cartPage;
+    FrontCartPage cartPage;
 
 
     @Step
